@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<db>
+  <anagrafica>
+    <item itemName="nome">Giovanni</item>
+    <item itemName="cognome">Rodighiero</item>
+    <item itemName="nascita">11/02/1993</item>
+    <item itemName="residenza">Corso Padova 128</item>
+    <item itemName="città">Vicenza, VI</item>
+  </anagrafica>
+</db>
