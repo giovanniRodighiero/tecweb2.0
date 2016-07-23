@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <db>
-  <anagrafica>
-    <item itemName="nome">Giovanni</item>
-    <item itemName="cognome">Rodighiero</item>
+  <anagraphic>
+    <item>
+      <fieldName>nome</fieldName>
+      <content>Giovanni</content>
+    </item>
+    <item>
+      <fieldName>cognome</fieldName>
+      <content>cognome</content>
+    </item>
+    <item>
+      <fieldName>nascita</fieldName>
+      <content>11/02/1993</content>
+    </item>
     <item itemName="nascita">11/02/1993</item>
-    <item itemName="residenza">Corso Padova 128</item>
-    <item itemName="città">Vicenza, VI</item>
-  </anagrafica>
+    <item>
+      <fieldName>nascita</fieldName>
+      <content>11/02/1993</content>
+    </item>
+    <item>
+      <fieldName>residenza</fieldName>
+      <content>Corso Padova 128</content>
+    </item>
+    <item>
+      <fieldName>città</fieldName>
+      <content>Vicenza, VI</content>
+    </item>
+  </anagraphic>
 </db>
