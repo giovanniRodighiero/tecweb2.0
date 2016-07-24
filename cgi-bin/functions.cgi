@@ -1,11 +1,15 @@
+sub getDoc{
+  my $fileDati='public_html/xml/db.xml';
+  my $parser = XML::LibXML->new();
+  my $doc = $parser->parse_file($fileDati);
+  return $doc;
+}
 sub stampa{
   my ($collection, $xslName) = @_;
-  my $fileDati='public_html/xml/db.xml';
   my $trasformata='public_html/xsl/'.$xslName.'.xsl';
-  my $parser = XML::LibXML->new();
 	my $xslt = XML::LibXSLT->new();
-
-	my $doc = $parser->parse_file($fileDati);
+  my $parser = XML::LibXML->new();
+	my $doc = getDoc();
   my $query="//".$collection;
   my $node = $doc->findnodes($query)->get_node();
 	my $xslt_doc = $parser->parse_file($trasformata);
@@ -15,13 +19,26 @@ sub stampa{
   print $nuovaPagina;
 }
 sub buildAnagraphicNode{
-  my ($node, $item_name, $text) = @_;
-  my $new_node = "\t<item>\n\t\t<fieldName>".$item_name."</fieldName>\n\t\t<content>".$text."</content>\n\t</item>\n";
+  my ($collection, $item_name, $text) = @_;
+  $doc = getDoc();
+  $next_id = generateNextId($doc, '//'.$collection.'/item[last()]');
+
+  my $new_node = "\t<item id=\"".$next_id."\">\n\t\t<fieldName>".$item_name."</fieldName>\n\t\t<content>".$text."</content>\n\t</item>\n";
   return $new_node;
 }
 
+sub generateNextId{
+  my($doc, $query) = @_;
+  my $node = $doc->findnodes($query)->get_node(1);
+  if($node eq undef){
+    return 1;
+  }else{
+    my $oldId = $node->getAttribute("id");
+    return $oldId+1;
+  }
+}
 sub insert{
-  my ($collection, $item_name, $text) = @_;
+  my ($collection) = @_;
   my $fileDati='public_html/xml/db.xml';
   my $parser = XML::LibXML->new();
   my $doc = $parser->parse_file($fileDati);
@@ -29,15 +46,14 @@ sub insert{
   $query="//".$collection;
   my $node = $root->findnodes($query)->get_node(1);
   my $new_node;
-  warn $collection;
   if($collection eq 'anagraphic'){
     $new_node = buildAnagraphicNode(@_);
   }
+  my $parser = XML::LibXML->new();
   my $fragment = $parser->parse_balanced_chunk($new_node);
-  	$node->appendChild($fragment) || die("");
-    open(OUT, ">$fileDati");
-    print OUT $doc->toString;
-    close(OUT);
-    #$testo=undef;
+	$node->appendChild($fragment) || die("");
+  open(OUT, ">$fileDati");
+  print OUT $doc->toString;
+  close(OUT);
 }
 1;
