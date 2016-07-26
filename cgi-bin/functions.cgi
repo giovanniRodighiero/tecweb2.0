@@ -56,4 +56,6 @@ sub insert{
   print OUT $doc->toString;
   close(OUT);
 }
+# TODO: update(id, collection), use another function which find by id and delete and replace or just update the content
+# TODO: refactor the structure of the files, a file for each action with subs for each collection
 1;

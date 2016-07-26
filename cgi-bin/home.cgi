@@ -8,4 +8,5 @@ require 'cgi-bin/functions.cgi';
 print "Content-type: text/html\n\n";
 
 stampa('db','anagraphic_read');
+
 stampa('db','anagraphic_write');
