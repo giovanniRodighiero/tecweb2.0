@@ -5,8 +5,8 @@ sub getDoc{
   return $doc;
 }
 sub myPrint{
-  my ($collection, $xslName) = @_;
-  my $trasformata='public_html/xsl/'.$xslName.'.xsl';
+  my ($collection, $xslName, $read_write) = @_;
+  my $trasformata='public_html/xsl/'.$xslName.'/'.$read_write.'.xsl';
 	my $xslt = XML::LibXSLT->new();
   my $parser = XML::LibXML->new();
 	my $doc = getDoc();
