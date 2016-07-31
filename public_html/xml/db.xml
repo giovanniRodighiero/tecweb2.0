@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<db>
+  <anagraphic>
+    <item id="1">
+      <fieldName>nome</fieldName>
+      <content>Giovanni</content>
+    </item>
+    <item id="2">
+      <fieldName>cognome</fieldName>
+      <content>cognome</content>
+    </item>
+    <item id="3">
+      <fieldName>nascita</fieldName>
+      <content>11/02/1993</content>
+    </item>
+    <item id="4">
+      <fieldName>nascita</fieldName>
+      <content>11/02/1993</content>
+    </item>
+    <item id="5">
+      <fieldName>residenza</fieldName>
+      <content>Corso Padova 128</content>
+    </item>
+    <item id="6">
+      <fieldName>città</fieldName>
+      <content>Vicenza, VI</content>
+    </item>
+  </anagraphic>
+</db>
