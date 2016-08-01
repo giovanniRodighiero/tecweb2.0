@@ -7,7 +7,6 @@ $cgi = new CGI;
 
 sub anagraphic{
   my($collection ,$id, $fieldName, $content) = @_;
-  print $id;
   my $fileDati='public_html/xml/db.xml';
   my $parser = XML::LibXML->new();
   my $doc = $parser->parse_file($fileDati);

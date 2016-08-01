@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <db>
   <anagraphic>
     <item id="1">
@@ -25,5 +25,21 @@
       <fieldName>città</fieldName>
       <content>Vicenza, VI</content>
     </item>
-  </anagraphic>
+  	<item id="7">
+		<fieldName>nuovo</fieldName>
+		<content>content</content>
+	</item>
+	<item id="8">
+		<fieldName>nuovo</fieldName>
+		<content>content</content>
+	</item>
+	<item id="9">
+		<fieldName>nuovo</fieldName>
+		<content>content</content>
+	</item>
+	<item id="10">
+		<fieldName>nuovo</fieldName>
+		<content>content</content>
+	</item>
+</anagraphic>
 </db>

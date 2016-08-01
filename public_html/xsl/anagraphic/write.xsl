@@ -3,7 +3,7 @@
   <xsl:template match="//anagraphic">
     <h1>Dati anagrafici</h1>
     <div>
-      <form action="new" method="post">
+      <form action="new.cgi" method="post">
         <fieldset>
           <input type="hidden" name="collection" value="anagraphic"/>
           <button type="submit">New field</button>

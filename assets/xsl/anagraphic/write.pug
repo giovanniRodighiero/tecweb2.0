@@ -3,7 +3,7 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
   xsl:template(match="//anagraphic")
     h1 Dati anagrafici
     div
-      form(action="new" method="post")
+      form(action="new.cgi" method="post")
         fieldset
           input(type="hidden" name="collection" value="anagraphic")
           button(type="submit") New field
