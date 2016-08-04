@@ -5,10 +5,7 @@
       <fieldName>nome</fieldName>
       <content>Giovanni</content>
     </item>
-    <item id="2">
-      <fieldName>cognome</fieldName>
-      <content>cognome</content>
-    </item>
+    
     <item id="3">
       <fieldName>nascita</fieldName>
       <content>11/02/1993</content>
@@ -25,21 +22,5 @@
       <fieldName>città</fieldName>
       <content>Vicenza, VI</content>
     </item>
-  	<item id="7">
-		<fieldName>nuovo</fieldName>
-		<content>content</content>
-	</item>
-	<item id="8">
-		<fieldName>nuovo</fieldName>
-		<content>content</content>
-	</item>
-	<item id="9">
-		<fieldName>nuovo</fieldName>
-		<content>content</content>
-	</item>
-	<item id="10">
-		<fieldName>nuovo</fieldName>
-		<content>content</content>
-	</item>
-</anagraphic>
+  </anagraphic>
 </db>

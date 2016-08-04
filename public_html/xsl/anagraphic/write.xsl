@@ -44,6 +44,16 @@
                   <xsl:value-of select="@id" />
                 </xsl:attribute>
               </input>
+              <input type="hidden" name="fieldName" >
+                <xsl:attribute name="value">
+                  <xsl:value-of select="fieldName" />
+                </xsl:attribute>
+              </input>
+              <input type="hidden" name="content" >
+                <xsl:attribute name="value">
+                  <xsl:value-of select="content" />
+                </xsl:attribute>
+              </input>
               <button type="submit"> Delete </button>
             </fieldset>
           </form>
