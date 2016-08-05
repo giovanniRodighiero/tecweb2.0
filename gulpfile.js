@@ -1,5 +1,6 @@
 var pug = require('gulp-pug');
 var gulp = require('gulp');
+var sass = require('gulp-sass');
 var ext_replace = require('gulp-ext-replace');
 
 gulp.task('xml', function buildHTML() {
@@ -21,10 +22,15 @@ gulp.task('xsl', function buildHTML() {
   .pipe(ext_replace('.xsl'))
   .pipe(gulp.dest('public_html/xsl/'))
 });
-
+gulp.task('style', () => {
+  return gulp.src('assets/style/**/*.sass')
+  .pipe(sass().on('error', sass.logError))
+  .pipe(gulp.dest('public_html/style/'));
+})
 gulp.task('watch', function(){
   gulp.watch('assets/xml/**/*.pug', ['xml']);
   gulp.watch('assets/xsl/**/*.pug', ['xsl']);
+  gulp.watch('assets/style/**/*.sass', ['style']);
 });
 
-gulp.task('default', ['xml','xsl','watch']);
+gulp.task('default', ['xml','xsl','style','watch']);
