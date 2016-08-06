@@ -34,4 +34,4 @@ sub update{
   }
 }
 update();
-print $cgi->header(-location =>'update.cgi',-refresh => '0; ../pages/home.cgi' );
+print $cgi->header(-location =>'update.cgi',-refresh => '0; ../pages/admin/home.cgi' );

@@ -11,7 +11,7 @@ my $collection = $cgi->param("collection");
 
 sub anagraphic{
   my $anagraphic = qq{
-        <form id="" action="../actions/create.cgi" method="post">
+        <form id="" action="../../actions/create.cgi" method="post">
           <fieldset>
             <label for="fieldName">Field Name</label>
             <input type="text" id="fieldName" name="fieldName"/>

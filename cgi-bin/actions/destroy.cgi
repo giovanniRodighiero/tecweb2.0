@@ -33,4 +33,4 @@ sub destroyNode{
 }
 
 destroyNode();
-print $cgi->header(-location =>'destroy.cgi',-refresh => '0; ../pages/home.cgi' );
+print $cgi->header(-location =>'destroy.cgi',-refresh => '0; ../pages/admin/home.cgi' );

@@ -17,7 +17,7 @@ sub anagraphic{
         <div>
           <h3> Proceed with the deletion of this field ? </h3>
           <span>$fieldName:</span><span>$content</span>
-          <form id="" action="../actions/destroy.cgi" method="post">
+          <form id="" action="../../actions/destroy.cgi" method="post">
             <fieldset>
               <input type ="hidden" name="collection" value="$collection" />
               <input type ="hidden" name="id" value="$id" />

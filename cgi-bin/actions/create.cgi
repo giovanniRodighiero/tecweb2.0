@@ -43,4 +43,4 @@ sub insert{
   }
 }
 insert();
-print $cgi->header(-location =>'create.cgi',-refresh => '0; ../pages/home.cgi' );
+print $cgi->header(-location =>'create.cgi',-refresh => '0; ../pages/admin/home.cgi' );

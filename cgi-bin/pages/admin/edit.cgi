@@ -14,7 +14,7 @@ sub anagraphic {
   my $fieldName = $cgi->param("fieldName");
   my $content = $cgi->param("content");
   my $anagraphic = qq{
-        <form id="" action="../actions/update.cgi" method="post">
+        <form id="" action="../../actions/update.cgi" method="post">
           <fieldset>
             <label for="fieldName">Field Name</label>
             <input type="text" id="fieldName" name="fieldName" value="$fieldName" />
