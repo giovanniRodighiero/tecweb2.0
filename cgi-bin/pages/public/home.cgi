@@ -7,5 +7,8 @@ require 'cgi-bin/functions.cgi';
 
 print "Content-type: text/html\n\n";
 
-myPrint('anagraphic','read');
-myPrint('studyTitles','read');
+my $anagraphic = myPrint('anagraphic','read');
+my $studyTitles = myPrint('studyTitles','read');
+
+print $anagraphic;
+print $studyTitles;

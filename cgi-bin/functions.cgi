@@ -16,6 +16,6 @@ sub myPrint{
 	my $stylesheet = $xslt->parse_stylesheet($xslt_doc);
 	my $risultato = $stylesheet->transform($node);
 	my $nuovaPagina =$stylesheet->output_as_bytes($risultato);
-  print $nuovaPagina;
+  return $nuovaPagina;
 }
 1;

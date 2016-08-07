@@ -5,7 +5,7 @@
     <ul>
       <xsl:for-each select="item">
         <li>
-          <div><strong>Year of obtening</strong><span>
+          <div><strong>Year</strong><span>
               <xsl:value-of select="year"/></span></div>
           <div><strong>Title</strong><span>
               <xsl:value-of select="title"/></span></div>
