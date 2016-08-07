@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <db>
   <anagraphic>
     <item id="1">
@@ -13,10 +13,6 @@
       <fieldName>nascita</fieldName>
       <content>11/02/1993</content>
     </item>
-    <item id="4">
-      <fieldName>nascita</fieldName>
-      <content>11/02/1993</content>
-    </item>
     <item id="5">
       <fieldName>residenza</fieldName>
       <content>Corso Padova 128</content>
@@ -25,9 +21,17 @@
       <fieldName>città</fieldName>
       <content>Vicenza, VI</content>
     </item>
-  	<item id="7">
-		<fieldName>nuovo</fieldName>
-		<content>pass</content>
-	</item>
-</anagraphic>
+  </anagraphic>
+  <studyTitles>
+    <item id="1">
+      <year>2010</year>
+      <title>titolo 1</title>
+      <school>scuola</school>
+    </item>
+    <item id="2">
+      <year>2013</year>
+      <title>titolo 2</title>
+      <school>scuola</school>
+    </item>
+  </studyTitles>
 </db>
