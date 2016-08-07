@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <db>
   <anagraphic>
     <item id="1">
@@ -33,5 +33,18 @@
       <title>titolo 2</title>
       <school>scuola</school>
     </item>
-  </studyTitles>
+  	<item id="3">
+		<fieldName>100</fieldName>
+		<content/>
+	</item>
+	<item id="4">
+		<fieldName>100</fieldName>
+		<content>titolo</content>
+	</item>
+	<item id="5">
+		<year>100</year>
+		<title>titolo</title>
+		<school>scuol</school> 
+	</item>
+</studyTitles>
 </db>

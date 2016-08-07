@@ -23,6 +23,24 @@ sub buildAnagraphicNode{
   print OUT $doc->toString;
   close(OUT);
 }
+sub buildStudyTitlesNode{
+  my ($collection, $year, $title, $school) = @_;
+  my $fileDati='public_html/xml/db.xml';
+  my $parser = XML::LibXML->new();
+  my $doc = $parser->parse_file($fileDati);
+  my $root = $doc->getDocumentElement || die("Non accedo alla radice");
+
+  my $next_id = generateNextId($doc, '//'.$collection.'/item[last()]');
+  my $new_node = "\t<item id=\"".$next_id."\">\n\t\t<year>".$year."</year>\n\t\t<title>".$title."</title>\n\t\t<school>".$school."</school> \n\t</item>\n";
+
+  $query="//".$collection;
+  my $node = $root->findnodes($query)->get_node(1);
+  my $fragment = $parser->parse_balanced_chunk($new_node);
+  $node->appendChild($fragment) || die("");
+  open(OUT, ">$fileDati");
+  print OUT $doc->toString;
+  close(OUT);
+}
 
 sub generateNextId{
   my($doc, $query) = @_;
@@ -40,6 +58,12 @@ sub insert{
     my $fieldName =$cgi->param("fieldName");
     my $content =$cgi->param("content");
     buildAnagraphicNode($collection, $fieldName, $content);
+  }
+  if($collection eq 'studyTitles'){
+    my $year =$cgi->param("year");
+    my $title =$cgi->param("title");
+    my $school =$cgi->param("school");
+    buildStudyTitlesNode($collection, $year, $title, $school);
   }
 }
 insert();
