@@ -41,10 +41,6 @@
 		<fieldName>100</fieldName>
 		<content>titolo</content>
 	</item>
-	<item id="5">
-		<year>100</year>
-		<title>titolo2</title>
-		<school>scuol</school> 
-	</item>
+	
 </studyTitles>
 </db>
