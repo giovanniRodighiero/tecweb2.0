@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
-  xsl:template(match="//anagraphic")
+  xsl:template(match="anagraphic")
     h1 Dati anagrafici
     ul
       xsl:for-each(select="item")
-        span
-          xsl:value-of(select="fieldName")/
         li
-          xsl:value-of(select="content")/
+          span
+            xsl:value-of(select="fieldName")/
+          span
+            xsl:value-of(select="content")/

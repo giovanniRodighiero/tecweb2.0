@@ -10,6 +10,11 @@ sub anagraphic{
   my $query="//anagraphic/item[\@id = \"".$id."\"]";
   return $query;
 }
+sub studyTitles{
+  my($id) = @_;
+  my $query="//studyTitles/item[\@id = \"".$id."\"]";
+  return $query;
+}
 
 
 sub destroyNode{
@@ -24,6 +29,9 @@ sub destroyNode{
   if($collection eq 'anagraphic'){
     $query = anagraphic($id);
   }
+  if($collection eq 'studyTitles'){
+    $query = studyTitles($id);
+  }
   my $node = $root->findnodes($query)->get_node(1);
   my $parent = $node->parentNode;
   $parent->removeChild($node);
@@ -33,4 +41,4 @@ sub destroyNode{
 }
 
 destroyNode();
-print $cgi->header(-location =>'destroy.cgi',-refresh => '0; ../pages/home.cgi' );
+print $cgi->header(-location =>'destroy.cgi',-refresh => '0; ../pages/admin/home.cgi' );
