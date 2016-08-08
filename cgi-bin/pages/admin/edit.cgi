@@ -27,10 +27,33 @@ sub anagraphic {
         </form>};
   return $anagraphic;
 }
+sub studyTitles {
+  my $year = $cgi->param("year");
+  my $title = $cgi->param("title");
+  my $school = $cgi->param("school");
+  my $studyTitles = qq{
+        <form id="" action="../../actions/update.cgi" method="post">
+          <fieldset>
+            <label for="year">Year</label>
+            <input type="text" id="year" name="year" value="$year" />
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" value="$title" />
+            <label for="school">School</label>
+            <input type="text" id="school" name="school" value="$school" />
+            <input type ="hidden" name="collection" value="$collection" />
+            <input type ="hidden" name="id" value="$id" />
+            <button type="submit">Save</button>
+          </fieldset>
+        </form>};
+  return $studyTitles;
+}
 sub renderForm{
    my($collection) = @_;
   if($collection eq 'anagraphic'){
     return anagraphic;
+  }
+  if($collection eq 'studyTitles'){
+    return studyTitles;
   }
 }
 
