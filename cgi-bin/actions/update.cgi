@@ -24,7 +24,7 @@ sub anagraphic{
   close(OUT);
 }
 sub studyTitles{
-  my($collection ,$id, $year, $title, $school, $content) = @_;
+  my($collection ,$id, $year, $title, $school) = @_;
   my $fileDati='public_html/xml/db.xml';
   my $parser = XML::LibXML->new();
   my $doc = $parser->parse_file($fileDati);
