@@ -20,6 +20,12 @@ sub updateNode{
 
 sub anagraphic{
   my($collection ,$id, $fieldName, $content) = @_;
+  my @errors;
+  @errors = validate($fieldName, "Field's Name", true, @errors);
+  @errors = validate($content, "Field's content", true, @errors);
+  if(scalar @errors > 0){
+    return @errors;
+  }
   # update fieldName field
   $fieldName_query="//".$collection."/item[\@id = \"".$id."\"]/fieldName/text()";
   updateNode($fieldName_query, $fieldName);
@@ -45,11 +51,11 @@ sub studyTitles{
 sub update{
   my $collection = $cgi->param("collection");
   my $id = $cgi->param("id");
-
+  my @errors;
   if($collection eq 'anagraphic'){
     my $fieldName =$cgi->param("fieldName");
     my $content =$cgi->param("content");
-    anagraphic($collection, $id, $fieldName, $content);
+    @errors = anagraphic($collection, $id, $fieldName, $content);
   }
   if($collection eq 'studyTitles'){
     my $year =$cgi->param("year");
@@ -57,9 +63,13 @@ sub update{
     my $school =$cgi->param("school");
     studyTitles($collection, $id, $year, $title, $school);
   }
-  open(OUT, ">$fileDati");
-  print OUT $doc->toString;
-  close(OUT);
+  if(scalar @errors > 0){
+    return @errors;
+  }else{
+    open(OUT, ">$fileDati");
+    print OUT $doc->toString;
+    close(OUT);
+  }
 }
-update();
-print $cgi->header(-location =>'update.cgi',-refresh => '0; ../pages/admin/home.cgi' );
+#update();
+#print $cgi->header(-location =>'update.cgi',-refresh => '0; ../pages/admin/home.cgi' );

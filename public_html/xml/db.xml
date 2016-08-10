@@ -21,7 +21,15 @@
       <fieldName>città</fieldName>
       <content>Vicenza, VI</content>
     </item>
-  </anagraphic>
+  	<item id="7">
+		<fieldName>ciao</fieldName>
+		<content>ciao</content>
+	</item>
+	<item id="8">
+		<fieldName>foo</fieldName>
+		<content>bar</content>
+	</item>
+</anagraphic>
   <studyTitles>
     <item id="1">
       <year>2010</year>
@@ -33,5 +41,10 @@
       <title>titolo 2</title>
       <school>scuola</school>
     </item>
-  </studyTitles>
+  	<item id="3">
+		<year>100</year>
+		<title>300</title>
+		<school>dd</school> 
+	</item>
+</studyTitles>
 </db>

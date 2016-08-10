@@ -33,12 +33,10 @@ sub validate{
     push(@errors, $message);
 		}
   }
-  warn @errors;
   return @errors;
 }
 sub printErrors{
   my (@errors) = @_;
-  warn @errors;
   my $html = qq{
     <div>
       <h2> Unable to perform the request</h2>

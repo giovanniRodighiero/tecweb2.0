@@ -16,8 +16,10 @@ sub renderPage{
       print "Content-type: text/html\n\n";
       renderForm($collection);
     }else{# came here after the submit of the creation form => validation
-      @errors = buildNode();
-      if(scalar @errors > 0){
+      my @errors = buildNode();
+      warn @errors;
+      if(@errors != 0){
+        warn scalar @errors;
         print "Content-type: text/html\n\n";
         print printErrors(@errors);
         renderForm($collection);
@@ -28,39 +30,6 @@ sub renderPage{
   }
 }
 
-sub anagraphic{
-  my $anagraphic = qq{
-        <form id="" action="new.cgi" method="post">
-          <fieldset>
-            <label for="fieldName">Field Name</label>
-            <input type="text" id="fieldName" name="fieldName"/>
-            <label for="content">Content</label>
-            <input type="text" id="content" name="content"/>
-            <input type ="hidden" name="collection" value="$collection" />
-            <input type ="hidden" name="submit" value="submit" />
-            <button type="submit">Create</button>
-          </fieldset>
-        </form>};
-  return $anagraphic;
-}
-sub studyTitles{
-  my $studyTitles = qq{
-        <form id="" action="new.cgi" method="post">
-          <fieldset>
-            <label for="fieldName">Year</label>
-            <input type="text" id="year" name="year"/>
-            <label for="title">Title</label>
-            <input type="text" id="title" name="title"/>
-            <label for="title">SchoolTitle</label>
-            <input type="text" id="school" name="school"/>
-            <input type ="hidden" name="collection" value="$collection" />
-            <input type ="hidden" name="submit" value="submit" />
-            <button type="submit">Create</button>
-          </fieldset>
-        </form>};
-  return $studyTitles;
-}
-
 sub renderForm{
   my($collection) = @_;
   my $html;
@@ -69,7 +38,8 @@ sub renderForm{
     $html = getCreationForm();
   }
   if($collection eq 'studyTitles'){
-    $html = studyTitles;
+    require "cgi-bin/pages/forms/studyTitles.cgi";
+    $html = getCreationForm();
   }
   print $html;
 }
