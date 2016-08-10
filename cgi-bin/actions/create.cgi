@@ -5,45 +5,37 @@ use XML::LibXML;
 use CGI;
 $cgi = new CGI;
 
-sub buildAnagraphicNode{
-  my ($collection, $item_name, $text) = @_;
-  my $fileDati='public_html/xml/db.xml';
-  my $parser = XML::LibXML->new();
-  my $doc = $parser->parse_file($fileDati);
-  my $root = $doc->getDocumentElement || die("Non accedo alla radice");
+require "cgi-bin/globals.cgi";
 
-  my $next_id = generateNextId($doc, '//'.$collection.'/item[last()]');
-  my $new_node = "\t<item id=\"".$next_id."\">\n\t\t<fieldName>".$item_name."</fieldName>\n\t\t<content>".$text."</content>\n\t</item>\n";
+my $fileDati = getFileData();
+my $parser = getParser();
+my $doc = getDoc();
+my $root = getRoot();
 
-  $query="//".$collection;
+
+sub appendFragment{
+  my ($query, $new_node) = @_;
   my $node = $root->findnodes($query)->get_node(1);
   my $fragment = $parser->parse_balanced_chunk($new_node);
   $node->appendChild($fragment) || die("");
-  open(OUT, ">$fileDati");
-  print OUT $doc->toString;
-  close(OUT);
+}
+sub buildAnagraphicNode{
+  my ($collection, $item_name, $text) = @_;
+  my $next_id = generateNextId('//'.$collection.'/item[last()]');
+  my $new_node = "\t<item id=\"".$next_id."\">\n\t\t<fieldName>".$item_name."</fieldName>\n\t\t<content>".$text."</content>\n\t</item>\n";
+  $query="//".$collection;
+  appendFragment($query, $new_node);
 }
 sub buildStudyTitlesNode{
   my ($collection, $year, $title, $school) = @_;
-  my $fileDati='public_html/xml/db.xml';
-  my $parser = XML::LibXML->new();
-  my $doc = $parser->parse_file($fileDati);
-  my $root = $doc->getDocumentElement || die("Non accedo alla radice");
-
-  my $next_id = generateNextId($doc, '//'.$collection.'/item[last()]');
+  my $next_id = generateNextId('//'.$collection.'/item[last()]');
   my $new_node = "\t<item id=\"".$next_id."\">\n\t\t<year>".$year."</year>\n\t\t<title>".$title."</title>\n\t\t<school>".$school."</school> \n\t</item>\n";
-
   $query="//".$collection;
-  my $node = $root->findnodes($query)->get_node(1);
-  my $fragment = $parser->parse_balanced_chunk($new_node);
-  $node->appendChild($fragment) || die("");
-  open(OUT, ">$fileDati");
-  print OUT $doc->toString;
-  close(OUT);
+  appendFragment($query, $new_node);
 }
 
 sub generateNextId{
-  my($doc, $query) = @_;
+  my($query) = @_;
   my $node = $doc->findnodes($query)->get_node(1);
   if($node eq undef){
     return 1;
@@ -52,7 +44,8 @@ sub generateNextId{
     return $oldId+1;
   }
 }
-sub insert{
+
+sub buildNode{
   my $collection = $cgi->param("collection");
   if($collection eq 'anagraphic'){
     my $fieldName =$cgi->param("fieldName");
@@ -65,6 +58,10 @@ sub insert{
     my $school =$cgi->param("school");
     buildStudyTitlesNode($collection, $year, $title, $school);
   }
+  open(OUT, ">$fileDati");
+  print OUT $doc->toString;
+  close(OUT);
 }
-insert();
+
+buildNode();
 print $cgi->header(-location =>'create.cgi',-refresh => '0; ../pages/admin/home.cgi' );
