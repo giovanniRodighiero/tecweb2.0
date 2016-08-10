@@ -4,7 +4,7 @@ use XML::LibXSLT;
 use XML::LibXML;
 use CGI;
 $cgi = new CGI;
-
+require "cgi-bin/mixins.cgi";
 require "cgi-bin/globals.cgi";
 
 my $fileDati = getFileData();
@@ -21,6 +21,12 @@ sub appendFragment{
 }
 sub buildAnagraphicNode{
   my ($collection, $item_name, $text) = @_;
+  my @errors;
+  @errors = validate($item_name, "Field Name", true, @errors);
+  @errors = validate($text, "Field content", true, @errors);
+  if(scalar @errors > 0){
+    return @errors;
+  }
   my $next_id = generateNextId('//'.$collection.'/item[last()]');
   my $new_node = "\t<item id=\"".$next_id."\">\n\t\t<fieldName>".$item_name."</fieldName>\n\t\t<content>".$text."</content>\n\t</item>\n";
   $query="//".$collection;
@@ -47,10 +53,11 @@ sub generateNextId{
 
 sub buildNode{
   my $collection = $cgi->param("collection");
+  my @errors;
   if($collection eq 'anagraphic'){
     my $fieldName =$cgi->param("fieldName");
     my $content =$cgi->param("content");
-    buildAnagraphicNode($collection, $fieldName, $content);
+    @errors = buildAnagraphicNode($collection, $fieldName, $content);
   }
   if($collection eq 'studyTitles'){
     my $year =$cgi->param("year");
@@ -58,10 +65,17 @@ sub buildNode{
     my $school =$cgi->param("school");
     buildStudyTitlesNode($collection, $year, $title, $school);
   }
-  open(OUT, ">$fileDati");
-  print OUT $doc->toString;
-  close(OUT);
+  if(scalar @errors > 0){
+    warn "dentro l'if";
+    warn @errors;
+    return @errors;
+  }else{
+    warn "niente errori";
+    open(OUT, ">$fileDati");
+    print OUT $doc->toString;
+    close(OUT);
+  }
 }
 
-buildNode();
-print $cgi->header(-location =>'create.cgi',-refresh => '0; ../pages/admin/home.cgi' );
+#buildNode();
+#print $cgi->header(-location =>'create.cgi',-refresh => '0; ../pages/admin/home.cgi' );

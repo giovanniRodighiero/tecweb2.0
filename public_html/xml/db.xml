@@ -21,20 +21,10 @@
       <fieldName>città</fieldName>
       <content>Vicenza, VI</content>
     </item>
-  	<item id="7">
-		<fieldName>foo</fieldName>
-		<content>bar</content>
-	</item>
-	
-	
-	<item id="8">
-		<fieldName>foo</fieldName>
-		<content>bar3</content>
-	</item>
-</anagraphic>
+  </anagraphic>
   <studyTitles>
     <item id="1">
-      <year>2011</year>
+      <year>2010</year>
       <title>titolo 1</title>
       <school>scuola</school>
     </item>
