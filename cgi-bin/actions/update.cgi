@@ -5,52 +5,47 @@ use XML::LibXML;
 use CGI;
 $cgi = new CGI;
 
+require "cgi-bin/globals.cgi";
+
+my $fileDati = getFileData();
+my $parser = getParser();
+my $doc = getDoc();
+my $root = getRoot();
+
+sub updateNode{
+  my ($query, $data) = @_;
+  my $node = $root->findnodes($query)->get_node(1);
+  $node->setData($data);
+}
+
 sub anagraphic{
   my($collection ,$id, $fieldName, $content) = @_;
-  my $fileDati='public_html/xml/db.xml';
-  my $parser = XML::LibXML->new();
-  my $doc = $parser->parse_file($fileDati);
-  my $root = $doc->getDocumentElement || die("Non accedo alla radice");
   # update fieldName field
   $fieldName_query="//".$collection."/item[\@id = \"".$id."\"]/fieldName/text()";
-  my $fieldName_node = $root->findnodes($fieldName_query)->get_node(1);
-  $fieldName_node->setData($fieldName);
+  updateNode($fieldName_query, $fieldName);
   #update content field
   $content_query="//".$collection."/item[\@id = \"".$id."\"]/content/text()";
-  my $content_node = $root->findnodes($content_query)->get_node(1);
-  $content_node->setData($content);
-  open(OUT, ">$fileDati");
-  print OUT $doc->toString;
-  close(OUT);
+  updateNode($content_query, $content);
 }
 sub studyTitles{
   my($collection ,$id, $year, $title, $school) = @_;
-  my $fileDati='public_html/xml/db.xml';
-  my $parser = XML::LibXML->new();
-  my $doc = $parser->parse_file($fileDati);
-  my $root = $doc->getDocumentElement || die("Non accedo alla radice");
   #update year field
   $year_query="//".$collection."/item[\@id = \"".$id."\"]/year/text()";
-  my $year_node = $root->findnodes($year_query)->get_node(1);
-  $year_node->setData($year);
+  updateNode($year_query, $year);
+
   # update title field
   $title_query="//".$collection."/item[\@id = \"".$id."\"]/title/text()";
-  my $title_node = $root->findnodes($title_query)->get_node(1);
-  $title_node->setData($title);
+  updateNode($title_query, $title);
+
   # update school field
   $school_query="//".$collection."/item[\@id = \"".$id."\"]/school/text()";
-  my $school_node = $root->findnodes($school_query)->get_node(1);
-  $school_node->setData($school);
-
-  open(OUT, ">$fileDati");
-  print OUT $doc->toString;
-  close(OUT);
+  updateNode($school_query, $school);
 }
 
-my $collection = $cgi->param("collection");
-my $id = $cgi->param("id");
-
 sub update{
+  my $collection = $cgi->param("collection");
+  my $id = $cgi->param("id");
+
   if($collection eq 'anagraphic'){
     my $fieldName =$cgi->param("fieldName");
     my $content =$cgi->param("content");
@@ -62,6 +57,9 @@ sub update{
     my $school =$cgi->param("school");
     studyTitles($collection, $id, $year, $title, $school);
   }
+  open(OUT, ">$fileDati");
+  print OUT $doc->toString;
+  close(OUT);
 }
 update();
 print $cgi->header(-location =>'update.cgi',-refresh => '0; ../pages/admin/home.cgi' );

@@ -6,6 +6,7 @@ use CGI;
 $cgi = new CGI;
 
 require "cgi-bin/globals.cgi";
+
 my $fileDati = getFileData();
 my $parser = getParser();
 my $doc = getDoc();

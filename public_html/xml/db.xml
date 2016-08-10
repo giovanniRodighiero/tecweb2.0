@@ -28,13 +28,13 @@
 	
 	
 	<item id="8">
-		<fieldName>foo3</fieldName>
+		<fieldName>foo</fieldName>
 		<content>bar3</content>
 	</item>
 </anagraphic>
   <studyTitles>
     <item id="1">
-      <year>2010</year>
+      <year>2011</year>
       <title>titolo 1</title>
       <school>scuola</school>
     </item>
