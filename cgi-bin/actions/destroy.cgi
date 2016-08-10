@@ -5,6 +5,13 @@ use XML::LibXML;
 use CGI;
 $cgi = new CGI;
 
+require "cgi-bin/globals.cgi";
+
+my $fileDati = getFileData();
+my $parser = getParser();
+my $doc = getDoc();
+my $root = getRoot();
+
 sub anagraphic{
   my($id) = @_;
   my $query="//anagraphic/item[\@id = \"".$id."\"]";
@@ -21,10 +28,6 @@ sub destroyNode{
   my $collection = $cgi->param("collection");
   my $id = $cgi->param("id");
 
-  my $fileDati='public_html/xml/db.xml';
-  my $parser = XML::LibXML->new();
-  my $doc = $parser->parse_file($fileDati);
-  my $root = $doc->getDocumentElement || die("Non accedo alla radice");
   my $query;
   if($collection eq 'anagraphic'){
     $query = anagraphic($id);
