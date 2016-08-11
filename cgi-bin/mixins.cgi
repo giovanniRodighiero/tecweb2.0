@@ -6,7 +6,7 @@ sub myPrint{
 	my $xslt = XML::LibXSLT->new();
   my $parser = XML::LibXML->new();
   my $doc = $parser->parse_file($fileDati);
-  my $query="//".$xslName;
+  my $query="/";
   my $node = $doc->findnodes($query)->get_node(1);
 	my $xslt_doc = $parser->parse_file($trasformata);
 	my $stylesheet = $xslt->parse_stylesheet($xslt_doc);

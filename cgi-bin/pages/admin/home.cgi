@@ -8,6 +8,6 @@ require 'cgi-bin/mixins.cgi';
 print "Content-type: text/html\n\n";
 
 my $anagraphic = myPrint('anagraphic', 'write');
-my $studyTitles = myPrint('studyTitles', 'write');
+#my $studyTitles = myPrint('studyTitles', 'write');
 print $anagraphic;
-print $studyTitles;
+#print $studyTitles;
