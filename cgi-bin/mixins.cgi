@@ -1,3 +1,4 @@
+use CGI::Session;
 
 sub myPrint{
   my ($xslName, $read_write) = @_;
@@ -52,5 +53,15 @@ sub printErrors{
     }
   $html = $html."</ul></div>";
   return $html;
+}
+
+sub getSession{
+   $session = CGI::Session->load() or die $!;
+  if ($session->is_expired || $session->is_empty ) {
+      return undef;
+  } else {
+    my $utente = $session->param("id");
+    return $utente;
+  }
 }
 1;

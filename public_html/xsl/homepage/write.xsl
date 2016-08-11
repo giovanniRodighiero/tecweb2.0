@@ -37,7 +37,7 @@
             <xsl:apply-templates select="studyTitles"/>
           </div>
         </div>
-        <div id="footer"><a href="#">Log out</a>
+        <div id="footer"><a href="logout.cgi">Log out</a>
           <p class="copyright">Copyright (c) 2016 Copyright Holder All Rights Reserved.</p>
         </div>
       </div>

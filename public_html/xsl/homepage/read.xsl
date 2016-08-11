@@ -37,7 +37,7 @@
             <xsl:apply-templates select="studyTitles"/>
           </div>
         </div>
-        <div id="footer"><a href="#">Admin area</a>
+        <div id="footer"><a href="login.cgi">Admin area</a>
           <p class="copyright">Copyright (c) 2016 Copyright Holder All Rights Reserved.</p>
         </div>
       </div>
