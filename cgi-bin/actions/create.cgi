@@ -80,6 +80,3 @@ sub buildNode{
   }
   return @errors;
 }
-
-#buildNode();
-#print $cgi->header(-location =>'create.cgi',-refresh => '0; ../pages/admin/home.cgi' );

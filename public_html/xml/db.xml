@@ -2,7 +2,7 @@
 <db>
   <anagraphic>
     <item id="1">
-      <fieldName>nome</fieldName>
+      <fieldName>ciao</fieldName>
       <content>Giovanni</content>
     </item>
     <item id="2">
@@ -44,6 +44,11 @@
   	<item id="3">
 		<year>100</year>
 		<title>300</title>
+		<school>dd</school> 
+	</item>
+	<item id="4">
+		<year>100</year>
+		<title>300c</title>
 		<school>dd</school> 
 	</item>
 </studyTitles>
