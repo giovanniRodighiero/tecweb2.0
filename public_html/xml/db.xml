@@ -2,7 +2,7 @@
 <db>
   <anagraphic>
     <item id="1">
-      <fieldName>nome</fieldName>
+      <fieldName>ciao</fieldName>
       <content>Giovanni</content>
     </item>
     <item id="2">
@@ -22,19 +22,17 @@
       <content>Vicenza, VI</content>
     </item>
   	<item id="7">
-		<fieldName>foo</fieldName>
-		<content>bar</content>
+		<fieldName>ciao</fieldName>
+		<content>ciao</content>
 	</item>
-	
-	
 	<item id="8">
 		<fieldName>foo</fieldName>
-		<content>bar3</content>
+		<content>bar</content>
 	</item>
 </anagraphic>
   <studyTitles>
     <item id="1">
-      <year>2011</year>
+      <year>2010</year>
       <title>titolo 1</title>
       <school>scuola</school>
     </item>
@@ -43,5 +41,15 @@
       <title>titolo 2</title>
       <school>scuola</school>
     </item>
-  </studyTitles>
+  	<item id="3">
+		<year>100</year>
+		<title>300</title>
+		<school>dd</school> 
+	</item>
+	<item id="4">
+		<year>100</year>
+		<title>300c</title>
+		<school>dd</school> 
+	</item>
+</studyTitles>
 </db>
