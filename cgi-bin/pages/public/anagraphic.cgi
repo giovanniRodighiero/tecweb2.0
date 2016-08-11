@@ -7,5 +7,5 @@ require 'cgi-bin/mixins.cgi';
 
 print "Content-type: text/html\n\n";
 
-my $homepage = myPrint('homepage', 'write');
-print $homepage;
+my $anagraphic = myPrint('anagraphic', 'write');
+print $anagraphic;
