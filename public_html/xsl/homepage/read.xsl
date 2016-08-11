@@ -2,11 +2,24 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   <xsl:output version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="yes"/>
   <xsl:template match="//db">
-    <head></head>
+    <head>
+      <title>HomePage - Giovanni Rodighiero Resume</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <meta name="title" content="Giovanni Rodighiero Resume - HomePage"/>
+      <meta name="description" content="HomePage of the website that presents Giovanni Rodighiero's resume."/>
+      <meta name="keywords" content="Giovanni, Rodighiero, Resume, Curriculum Vitae, Experience, Education"/>
+      <meta name="author" content="Giovanni Rodighiero"/>
+      <meta name="language" content="english en"/>
+      <link rel="stylesheet" type="text/css" href="../../../public_html/styles/main.min.css" media="screen"/>
+      <link rel="stylesheet" type="text/css" href="../../../public_html/styles/print.min.css" media="print"/>
+    </head>
     <body>
       <div id="homepage">
         <div id="header">
-          <h1>Giovanni Rodighiero Resume</h1>
+          <h1><span xml:lang="it">Giovanni Rodighiero</span>  Resume</h1>
+        </div>
+        <div id="path">
+          <p>Home</p>
         </div>
         <div id="nav">
           <ul>
