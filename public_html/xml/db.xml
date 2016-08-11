@@ -26,7 +26,7 @@
 		<content>ciao</content>
 	</item>
 	<item id="8">
-		<fieldName>foo</fieldName>
+		<fieldName>ccc</fieldName>
 		<content>bar</content>
 	</item>
 </anagraphic>
@@ -44,12 +44,11 @@
   	<item id="3">
 		<year>100</year>
 		<title>300</title>
-		<school>dd</school> 
+		<school>bar</school> 
 	</item>
-	<item id="4">
-		<year>100</year>
-		<title>300c</title>
-		<school>dd</school> 
-	</item>
+	
+	
+	
+	
 </studyTitles>
 </db>

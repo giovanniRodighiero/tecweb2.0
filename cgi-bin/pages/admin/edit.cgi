@@ -12,7 +12,7 @@ my $id = $cgi->param("id");
 
 sub renderPage{
   if($collection eq ""){# came here by a simple link or manually typing the url => redirect
-    print $cgi->header(-location =>'new.cgi',-refresh => '0; home.cgi' );
+    print $cgi->header(-location =>'edit.cgi',-refresh => '0; home.cgi' );
   }else{
     if($cgi->param("submit") eq ""){# came here from the home page => the form is rendered
       print "Content-type: text/html\n\n";
@@ -24,7 +24,7 @@ sub renderPage{
         print printErrors(@errors);
         renderForm($collection);
       }else{
-        print $cgi->header(-location =>'new.cgi',-refresh => '0; home.cgi' );
+        print $cgi->header(-location =>'edit.cgi',-refresh => '0; home.cgi' );
       }
     }
   }

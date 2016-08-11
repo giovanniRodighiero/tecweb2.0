@@ -38,17 +38,24 @@ sub anagraphic{
 }
 sub studyTitles{
   my($collection ,$id, $year, $title, $school) = @_;
-  #update year field
-  $year_query="//".$collection."/item[\@id = \"".$id."\"]/year/text()";
-  updateNode($year_query, $year);
+  
+  @errors = validate($year, "Year", true, @errors);
+  @errors = validate($title, "Title", true, @errors);
+  @errors = validate($school, "School", true, @errors);
+  if(scalar @errors < 1){
+    #update year field
+    $year_query="//".$collection."/item[\@id = \"".$id."\"]/year/text()";
+    updateNode($year_query, $year);
 
-  # update title field
-  $title_query="//".$collection."/item[\@id = \"".$id."\"]/title/text()";
-  updateNode($title_query, $title);
+    # update title field
+    $title_query="//".$collection."/item[\@id = \"".$id."\"]/title/text()";
+    updateNode($title_query, $title);
 
-  # update school field
-  $school_query="//".$collection."/item[\@id = \"".$id."\"]/school/text()";
-  updateNode($school_query, $school);
+    # update school field
+    $school_query="//".$collection."/item[\@id = \"".$id."\"]/school/text()";
+    updateNode($school_query, $school);
+  }
+  return @errors;
 }
 
 sub update{
@@ -64,7 +71,7 @@ sub update{
     my $year =$cgi->param("year");
     my $title =$cgi->param("title");
     my $school =$cgi->param("school");
-    studyTitles($collection, $id, $year, $title, $school);
+    @errors = studyTitles($collection, $id, $year, $title, $school);
   }
   if(scalar @errors < 1){
     open(OUT, ">$fileDati");

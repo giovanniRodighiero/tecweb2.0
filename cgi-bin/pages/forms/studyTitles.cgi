@@ -32,7 +32,7 @@ sub getEditionForm{
   my $collection = $cgi->param("collection");
   my $id = $cgi->param("id");
   my $studyTitles = qq{
-    <form id="" action="new.cgi" method="post">
+    <form id="" action="edit.cgi" method="post">
       <fieldset>
         <label for="fieldName">Year</label>
         <input type="text" id="year" name="year" value="$year"/>
