@@ -3,10 +3,10 @@
   <xsl:output version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="yes"/>
   <xsl:template match="//db">
     <head>
-      <title>HomePage - Giovanni Rodighiero Resume</title>
+      <title>HomePage Admin - Giovanni Rodighiero Resume</title>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-      <meta name="title" content="Giovanni Rodighiero Resume - HomePage"/>
-      <meta name="description" content="HomePage of the website that presents Giovanni Rodighiero's resume."/>
+      <meta name="title" content="Giovanni Rodighiero Resume - Admin HomePage"/>
+      <meta name="description" content="ADmin homepage of the website that presents Giovanni Rodighiero's resume."/>
       <meta name="keywords" content="Giovanni, Rodighiero, Resume, Curriculum Vitae, Experience, Education"/>
       <meta name="author" content="Giovanni Rodighiero"/>
       <meta name="language" content="english en"/>
@@ -16,16 +16,16 @@
     <body>
       <div id="homepage">
         <div id="header">
-          <h1><span xml:lang="it">Giovanni Rodighiero</span>  Resume</h1>
+          <h1>Giovanni Rodighiero Resume</h1>
         </div>
         <div id="path">
           <p>Home</p>
         </div>
         <div id="nav">
           <ul>
-            <li><a href="/cgi-bin/pages/public/anagraphic.cgi">Anagraphic</a></li>
-            <li><a href="#">Study Titles</a></li>
-            <li><a href="#">Working Experience</a></li>
+            <li><a href="#">Edit Anagraphic</a></li>
+            <li><a href="#">Edit Study Titles</a></li>
+            <li><a href="#">Edit Working Experience</a></li>
           </ul>
         </div>
         <div id="content">
@@ -37,7 +37,7 @@
             <xsl:apply-templates select="studyTitles"/>
           </div>
         </div>
-        <div id="footer"><a href="#">Admin area</a>
+        <div id="footer"><a href="#">Log out</a>
           <p class="copyright">Copyright (c) 2016 Copyright Holder All Rights Reserved.</p>
         </div>
       </div>
@@ -56,7 +56,7 @@
           </div>
         </li>
       </xsl:for-each>
-    </ul><a href="#">Show all</a>
+    </ul><a href="#">Edit Anagraphic</a>
   </xsl:template>
   <xsl:template match="studyTitles">
     <h2>Study titles</h2>
@@ -80,6 +80,6 @@
           </div>
         </li>
       </xsl:for-each>
-    </ul><a href="#">Show all</a>
+    </ul><a href="#">Edit Study Titles</a>
   </xsl:template>
 </xsl:stylesheet>

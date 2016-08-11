@@ -3,10 +3,10 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
   xsl:output(version='1.0' encoding='UTF-8' indent='yes' omit-xml-declaration="yes")/
   xsl:template(match="//db")
     head
-      title HomePage - Giovanni Rodighiero Resume
+      title HomePage Admin - Giovanni Rodighiero Resume
       meta(http-equiv="Content-Type" content="text/html; charset=utf-8")/
-      meta(name="title" content="Giovanni Rodighiero Resume - HomePage")/
-      meta(name="description" content="HomePage of the website that presents Giovanni Rodighiero's resume.")/
+      meta(name="title" content="Giovanni Rodighiero Resume - Admin HomePage")/
+      meta(name="description" content="ADmin homepage of the website that presents Giovanni Rodighiero's resume.")/
       meta(name="keywords" content="Giovanni, Rodighiero, Resume, Curriculum Vitae, Experience, Education")/
       meta(name="author" content="Giovanni Rodighiero")/
       meta(name="language" content="english en")/
@@ -15,20 +15,18 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
     body
       div(id="homepage")
         div(id="header")
-          h1
-            span(xml:lang="it") Giovanni Rodighiero
-            |   Resume
+          h1 Giovanni Rodighiero Resume
         div(id="path")
           p
             | Home
         div(id="nav")
           ul
             li
-              a(href="/cgi-bin/pages/public/anagraphic.cgi") Anagraphic
+              a(href="#") Edit Anagraphic
             li
-              a(href="#") Study Titles
+              a(href="#") Edit Study Titles
             li
-              a(href="#") Working Experience
+              a(href="#") Edit Working Experience
         div(id="content")
           div
             img(src="../../../public_html/images/photo.png")
@@ -37,7 +35,7 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
           div
             xsl:apply-templates(select="studyTitles")/
         div(id="footer")
-          a(href="#") Admin area
+          a(href="#") Log out
           p(class="copyright") Copyright (c) 2016 Copyright Holder All Rights Reserved.
   xsl:template(match="anagraphic")
     h2 Anagraphic data
@@ -49,7 +47,7 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
               xsl:value-of(select="fieldName")/
             p(class="value")
               xsl:value-of(select="content")/
-    a(href="#") Show all
+    a(href="#") Edit Anagraphic
   xsl:template(match="studyTitles")
     h2 Study titles
     ul
@@ -67,4 +65,4 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
             span(class="key") School
             p(class="value")
               xsl:value-of(select="school")/
-    a(href="#") Show all
+    a(href="#") Edit Study Titles
