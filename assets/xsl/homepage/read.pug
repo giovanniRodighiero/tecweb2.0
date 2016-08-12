@@ -16,55 +16,58 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
       div(id="homepage")
         div(id="header")
           h1
-            span(xml:lang="it") Giovanni Rodighiero
-            |   Resume
+            span(xml:lang="it") Giovanni Rodighiero,
+            span(class="subtitle") Personal Resume
         div(id="path")
           p
-            | Home
+            span(class="active") Home
         div(id="nav")
+          h2 More about:
           ul
             li
-              a(href="/cgi-bin/pages/public/anagraphic.cgi") Anagraphic
+              a(href="/cgi-bin/pages/public/anagraphic.cgi") Anagraphic Informations
             li
-              a(href="#") Study Titles
+              a(href="/cgi-bin/pages/public/studyTitles.cgi") Study Titles and Education
             li
               a(href="#") Working Experience
         div(id="content")
-          div
+          div(class="image")
             img(src="../../../public_html/images/photo.png")
-          div
+          div(class="box right-box")
             xsl:apply-templates(select="anagraphic")/
-          div
+          div(class="box")
             xsl:apply-templates(select="studyTitles")/
         div(id="footer")
-          a(href="login.cgi") Admin area
+          a(href="login.cgi" class="admin") Admin area
           p(class="copyright") Copyright (c) 2016 Copyright Holder All Rights Reserved.
   xsl:template(match="anagraphic")
-    h2 Anagraphic data
+    h2 Anagraphic Informations
     ul
-      xsl:for-each(select="item[position() < 4]")
+      xsl:for-each(select="item[position() < 6]")
         li
-          div
+          div(class="item")
             span(class="key")
               xsl:value-of(select="fieldName")/
             p(class="value")
               xsl:value-of(select="content")/
-    a(href="#") Show all
+    a(href="/cgi-bin/pages/public/anagraphic.cgi") Show all
   xsl:template(match="studyTitles")
-    h2 Study titles
+    h2 Study titles and Education
     ul
       xsl:for-each(select="item[position() < 4]")
+        xsl:sort(select="position()" data-type="number" order="descending")/
         li
-          div
-            span(class="key") Year of attainment
-            p(class="value")
-              xsl:value-of(select="year")/
-          div
-            span(class="key") Title
-            p(class="value")
+          div(class="studyTitle")
+            p(class="titleName")
               xsl:value-of(select="title")/
-          div
-            span(class="key") School
-            p(class="value")
-              xsl:value-of(select="school")/
-    a(href="#") Show all
+            div(class="infos")
+              div
+                span(class="key") Year of attainment
+                p(class="value")
+                  xsl:value-of(select="year")/
+              div
+                span(class="key") School
+                p(class="value")
+                  xsl:value-of(select="school")/
+
+    a(href="/cgi-bin/pages/public/studyTitles.cgi") Show all
