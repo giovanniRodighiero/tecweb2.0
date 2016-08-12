@@ -16,28 +16,30 @@
     <body>
       <div id="homepage">
         <div id="header">
-          <h1>Giovanni Rodighiero Resume</h1>
+          <h1><span xml:lang="it">Giovanni Rodighiero,</span><span class="subtitle">Personal Resume</span></h1>
         </div>
         <div id="path">
-          <p>Home</p>
+          <p>Admin Panel<span class="active">Home</span></p>
         </div>
         <div id="nav">
+          <h2>Resume Pages:</h2>
           <ul>
-            <li><a href="anagraphic.cgi">Edit Anagraphic</a></li>
-            <li><a href="#">Edit Study Titles</a></li>
+            <li><span class="active">Overview</span></li>
+            <li><a href="anagraphic.cgi">Edit Anagraphic Informations</a></li>
+            <li><a href="studyTitles">Edit Study Titles and Educations</a></li>
             <li><a href="#">Edit Working Experience</a></li>
           </ul>
         </div>
         <div id="content">
-          <div><img src="../../../public_html/images/photo.png"/></div>
-          <div>
+          <div class="image"><img src="../../../public_html/images/photo.png"/></div>
+          <div class="box right-box">
             <xsl:apply-templates select="anagraphic"/>
           </div>
-          <div>
+          <div class="box">
             <xsl:apply-templates select="studyTitles"/>
           </div>
         </div>
-        <div id="footer"><a href="logout.cgi">Log out</a>
+        <div id="footer"><a class="admin" href="logout.cgi">Log out</a>
           <p class="copyright">Copyright (c) 2016 Copyright Holder All Rights Reserved.</p>
         </div>
       </div>
@@ -46,7 +48,7 @@
   <xsl:template match="anagraphic">
     <h2>Anagraphic data</h2>
     <ul>
-      <xsl:for-each select="item[position() &lt; 4]">
+      <xsl:for-each select="item[position() &lt; 6]">
         <li>
           <div><span class="key">
               <xsl:value-of select="fieldName"/></span>
@@ -62,24 +64,27 @@
     <h2>Study titles</h2>
     <ul>
       <xsl:for-each select="item[position() &lt; 4]">
+        <xsl:sort select="position()" data-type="number" order="descending"/>
         <li>
-          <div><span class="key">Year of attainment</span>
-            <p class="value">
-              <xsl:value-of select="year"/>
-            </p>
-          </div>
-          <div><span class="key">Title</span>
-            <p class="value">
+          <div class="studyTitle">
+            <p class="titleName">
               <xsl:value-of select="title"/>
             </p>
-          </div>
-          <div><span class="key">School</span>
-            <p class="value">
-              <xsl:value-of select="school"/>
-            </p>
+            <div class="infos">
+              <div><span class="key">Year of attainment</span>
+                <p class="value">
+                  <xsl:value-of select="year"/>
+                </p>
+              </div>
+              <div><span class="key">School</span>
+                <p class="value">
+                  <xsl:value-of select="school"/>
+                </p>
+              </div>
+            </div>
           </div>
         </li>
       </xsl:for-each>
-    </ul><a href="#">Edit Study Titles</a>
+    </ul><a href="/cgi-bin/pages/public/studyTitles.cgi">Edit Study Titles</a>
   </xsl:template>
 </xsl:stylesheet>

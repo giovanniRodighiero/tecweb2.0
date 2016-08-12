@@ -16,39 +16,41 @@
     <body>
       <div id="homepage">
         <div id="header">
-          <h1><span xml:lang="it">Giovanni Rodighiero</span>  Resume</h1>
+          <h1><span xml:lang="it">Giovanni Rodighiero,</span><span class="subtitle">Personal Resume</span></h1>
         </div>
         <div id="path">
-          <p>Home</p>
+          <p><span class="active">Home</span></p>
         </div>
         <div id="nav">
+          <h2>Resume Pages:</h2>
           <ul>
-            <li><a href="/cgi-bin/pages/public/anagraphic.cgi">Anagraphic</a></li>
-            <li><a href="#">Study Titles</a></li>
+            <li><span class="active">Overview</span></li>
+            <li><a href="/cgi-bin/pages/public/anagraphic.cgi">Anagraphic Informations</a></li>
+            <li><a href="/cgi-bin/pages/public/studyTitles.cgi">Study Titles and Education</a></li>
             <li><a href="#">Working Experience</a></li>
           </ul>
         </div>
         <div id="content">
-          <div><img src="../../../public_html/images/photo.png"/></div>
-          <div>
+          <div class="image"><img src="../../../public_html/images/photo.png"/></div>
+          <div class="box right-box">
             <xsl:apply-templates select="anagraphic"/>
           </div>
-          <div>
+          <div class="box">
             <xsl:apply-templates select="studyTitles"/>
           </div>
         </div>
-        <div id="footer"><a href="login.cgi">Admin area</a>
+        <div id="footer"><a class="admin" href="login.cgi">Admin area</a>
           <p class="copyright">Copyright (c) 2016 Copyright Holder All Rights Reserved.</p>
         </div>
       </div>
     </body>
   </xsl:template>
   <xsl:template match="anagraphic">
-    <h2>Anagraphic data</h2>
+    <h2>Anagraphic Informations</h2>
     <ul>
-      <xsl:for-each select="item[position() &lt; 4]">
+      <xsl:for-each select="item[position() &lt; 6]">
         <li>
-          <div><span class="key">
+          <div class="item"><span class="key">
               <xsl:value-of select="fieldName"/></span>
             <p class="value">
               <xsl:value-of select="content"/>
@@ -56,30 +58,33 @@
           </div>
         </li>
       </xsl:for-each>
-    </ul><a href="#">Show all</a>
+    </ul><a href="/cgi-bin/pages/public/anagraphic.cgi">Show all</a>
   </xsl:template>
   <xsl:template match="studyTitles">
-    <h2>Study titles</h2>
+    <h2>Study titles and Education</h2>
     <ul>
       <xsl:for-each select="item[position() &lt; 4]">
+        <xsl:sort select="position()" data-type="number" order="descending"/>
         <li>
-          <div><span class="key">Year of attainment</span>
-            <p class="value">
-              <xsl:value-of select="year"/>
-            </p>
-          </div>
-          <div><span class="key">Title</span>
-            <p class="value">
+          <div class="studyTitle">
+            <p class="titleName">
               <xsl:value-of select="title"/>
             </p>
-          </div>
-          <div><span class="key">School</span>
-            <p class="value">
-              <xsl:value-of select="school"/>
-            </p>
+            <div class="infos">
+              <div><span class="key">Year of attainment</span>
+                <p class="value">
+                  <xsl:value-of select="year"/>
+                </p>
+              </div>
+              <div><span class="key">School</span>
+                <p class="value">
+                  <xsl:value-of select="school"/>
+                </p>
+              </div>
+            </div>
           </div>
         </li>
       </xsl:for-each>
-    </ul><a href="#">Show all</a>
+    </ul><a href="/cgi-bin/pages/public/studyTitles.cgi">Show all</a>
   </xsl:template>
 </xsl:stylesheet>

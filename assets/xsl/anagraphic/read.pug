@@ -1,11 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
-  xsl:template(match="//anagraphic")
-    h1 Dati anagrafici
+  xsl:output(version='1.0' encoding='UTF-8' indent='yes' omit-xml-declaration="yes")/
+  xsl:template(match="//db")
+    head
+      title Anagraphic Informations - Giovanni Rodighiero Resume
+      meta(http-equiv="Content-Type" content="text/html; charset=utf-8")/
+      meta(name="title" content="Giovanni Rodighiero Resume - Anagraphic Informations")/
+      meta(name="description" content="Anagraphic Informations of the website that presents Giovanni Rodighiero's resume.")/
+      meta(name="keywords" content="Anagraphic Informations, Birth, Address, Giovanni, Rodighiero, Resume, Curriculum Vitae, Experience, Education")/
+      meta(name="author" content="Giovanni Rodighiero")/
+      meta(name="language" content="english en")/
+      link(rel="stylesheet" type="text/css" href="../../../public_html/styles/main.min.css" media="screen")/
+      link(rel="stylesheet" type="text/css" href="../../../public_html/styles/print.min.css" media="print")/
+    body
+      div(id="anagraphic")
+        div(id="header")
+          h1
+            span(xml:lang="it") Giovanni Rodighiero,
+            span(class="subtitle") Personal Resume
+        div(id="path")
+          p
+            a(href="/cgi-bin/pages/public/home.cgi") Home
+            span(class="active") / Anagraphic Informations
+        div(id="nav")
+          h2 Resume Pages:
+          ul
+            li
+              a(href="/cgi-bin/pages/public/home.cgi") Overview
+            li
+               span(class="active") Anagraphic Informations
+            li
+              a(href="/cgi-bin/pages/public/studyTitles.cgi") Study Titles and Education
+            li
+              a(href="#") Working Experience
+        div(id="content")
+          div(class="box-full")
+            xsl:apply-templates(select="anagraphic")/
+        div(id="footer")
+          a(href="login.cgi" class="admin") Admin area
+          p(class="copyright") Copyright (c) 2016 Copyright Holder All Rights Reserved.
+  xsl:template(match="anagraphic")
+    h2 Anagraphic Informations
     ul
       xsl:for-each(select="item")
         li
-          span
-            xsl:value-of(select="fieldName")/
-          span
-            xsl:value-of(select="content")/
+          div(class="item")
+            span(class="key")
+              xsl:value-of(select="fieldName")/
+            p(class="value")
+              xsl:value-of(select="content")/

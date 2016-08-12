@@ -7,5 +7,5 @@ require 'cgi-bin/mixins.cgi';
 
 print "Content-type: text/html\n\n";
 
-my $anagraphic = myPrint('anagraphic', 'write');
+my $anagraphic = myPrint('anagraphic', 'read');
 print $anagraphic;

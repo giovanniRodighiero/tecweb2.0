@@ -15,32 +15,38 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
     body
       div(id="homepage")
         div(id="header")
-          h1 Giovanni Rodighiero Resume
+          h1
+            span(xml:lang="it") Giovanni Rodighiero,
+            span(class="subtitle") Personal Resume
         div(id="path")
           p
-            | Home
+            | Admin Panel
+            span(class="active") Home
         div(id="nav")
+          h2 Resume Pages:
           ul
             li
-              a(href="anagraphic.cgi") Edit Anagraphic
+              span(class="active") Overview
             li
-              a(href="#") Edit Study Titles
+              a(href="anagraphic.cgi") Edit Anagraphic Informations
+            li
+              a(href="studyTitles") Edit Study Titles and Educations
             li
               a(href="#") Edit Working Experience
         div(id="content")
-          div
+          div(class="image")
             img(src="../../../public_html/images/photo.png")
-          div
+          div(class="box right-box")
             xsl:apply-templates(select="anagraphic")/
-          div
+          div(class="box")
             xsl:apply-templates(select="studyTitles")/
         div(id="footer")
-          a(href="logout.cgi") Log out
+          a(href="logout.cgi" class="admin") Log out
           p(class="copyright") Copyright (c) 2016 Copyright Holder All Rights Reserved.
   xsl:template(match="anagraphic")
     h2 Anagraphic data
     ul
-      xsl:for-each(select="item[position() < 4]")
+      xsl:for-each(select="item[position() < 6]")
         li
           div
             span(class="key")
@@ -52,17 +58,18 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
     h2 Study titles
     ul
       xsl:for-each(select="item[position() < 4]")
+        xsl:sort(select="position()" data-type="number" order="descending")/
         li
-          div
-            span(class="key") Year of attainment
-            p(class="value")
-              xsl:value-of(select="year")/
-          div
-            span(class="key") Title
-            p(class="value")
+          div(class="studyTitle")
+            p(class="titleName")
               xsl:value-of(select="title")/
-          div
-            span(class="key") School
-            p(class="value")
-              xsl:value-of(select="school")/
-    a(href="#") Edit Study Titles
+            div(class="infos")
+              div
+                span(class="key") Year of attainment
+                p(class="value")
+                  xsl:value-of(select="year")/
+              div
+                span(class="key") School
+                p(class="value")
+                  xsl:value-of(select="school")/
+    a(href="/cgi-bin/pages/public/studyTitles.cgi") Edit Study Titles

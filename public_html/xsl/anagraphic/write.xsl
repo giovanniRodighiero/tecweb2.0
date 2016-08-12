@@ -3,19 +3,30 @@
   <xsl:output version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="yes"/>
   <xsl:template match="//db">
     <head>
+      <title>Anagraphic Informations Admin - Giovanni Rodighiero Resume</title>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-      <title>titolo</title>
+      <meta name="title" content="Giovanni Rodighiero Resume - Anagraphic Informations"/>
+      <meta name="description" content="Anagraphic Informations admin panel of the website that presents Giovanni Rodighiero's resume."/>
+      <meta name="keywords" content="Anagraphic Informations,Admin, Birth, Address, Giovanni, Rodighiero, Resume, Curriculum Vitae, Experience, Education"/>
+      <meta name="author" content="Giovanni Rodighiero"/>
+      <meta name="language" content="english en"/>
       <link rel="stylesheet" type="text/css" href="../../../public_html/styles/main.min.css" media="screen"/>
+      <link rel="stylesheet" type="text/css" href="../../../public_html/styles/print.min.css" media="print"/>
     </head>
     <body>
       <div id="homepage">
         <div id="header">
-          <h1>Giovanni Rodighiero Resume</h1>
+          <h1><span xml:lang="it">Giovanni Rodighiero,</span><span class="subtitle">Personal Resume</span></h1>
+        </div>
+        <div id="path">
+          <p>Admin Panel<a href="home.cgi"> Home</a><span class="active">/ Anagraphic Informations</span></p>
         </div>
         <div id="nav">
+          <h2>Resume Pages:</h2>
           <ul>
-            <li class="active">Edit Anagraphic</li>
-            <li><a href="#">Edit Study Titles</a></li>
+            <li><a href="home.cgi">Overview</a></li>
+            <li class="active">Edit Anagraphic Informations</li>
+            <li><a href="#">Edit Study Titles and Educations</a></li>
             <li><a href="#">Edit Working Experience</a></li>
           </ul>
         </div>
@@ -26,6 +37,7 @@
           <p class="copyright">Copyright (c) 2016 Copyright Holder All Rights Reserved.</p>
         </div>
       </div>
+      <script type="text/javascript" src="../../../public_html/javascript/modal.js"></script>
     </body>
   </xsl:template>
   <xsl:template match="anagraphic">
@@ -37,7 +49,7 @@
       </form>
     </div>
     <div>
-      <form action="new.cgi" method="post">
+      <form class="form" action="new.cgi" method="post">
         <fieldset>
           <input type="hidden" name="collection" value="anagraphic"/>
           <button type="submit">New Anagraphic Info</button>
@@ -57,7 +69,7 @@
               <xsl:value-of select="content"/>
             </p>
           </div>
-          <form action="edit.cgi" method="post">
+          <form class="form" action="edit.cgi" method="post">
             <fieldset>
               <input type="hidden" name="collection" value="anagraphic"/>
               <input type="hidden" name="id" >
@@ -78,7 +90,7 @@
               <button type="submit"> Edit </button>
             </fieldset>
           </form>
-          <form action="delete.cgi" method="post"><xsl:attribute name="onclick">return renderModal("<xsl:value-of select="@id" />", "anagraphic");
+          <form class="form" action="delete.cgi" method="post"><xsl:attribute name="onclick">return renderModal("<xsl:value-of select="@id" />", "anagraphic");
 </xsl:attribute>
             <fieldset>
               <input type="hidden" name="collection" value="anagraphic"/>

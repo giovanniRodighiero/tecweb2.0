@@ -7,14 +7,21 @@ $cgi = new CGI;
 sub getLoginForm{
   my $username = $cgi->param("username");
   my $login = qq{
-        <div id="loginForm">
+        <div class="loginForm">
+        <h1> Access to the admin area </h1>
         <form id="" action="login.cgi" method="post">
           <fieldset>
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" value="$username" />
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password"  />
-            <button type="submit">Log in</button>
+            <div class="group-input">
+              <label for="username">Username</label>
+              <input type="text" id="username" name="username" value="$username" />
+            </div>
+            <div class="group-input">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password"  />
+            </div>
+            <div class="group-input">
+              <button type="submit">Log in</button>
+            </div>
           </fieldset>
         </form>
       </div>};
@@ -22,15 +29,16 @@ sub getLoginForm{
 }
 sub getLogoutForm{
   my $logout = qq{
-        <div id="logoutForm">
-        <h2> Confirm to logout </h2>
+        <div class="loginForm">
+        <h1> Confirm to logout </h1>
         <form id="" action="logout.cgi" method="post">
           <fieldset>
             <input type="hidden" name="logout" value="logout" />
-            <button type="submit">Log out</button>
+            <div class="group-input">
+              <button type="submit">Confirm</button>
+            </div>
           </fieldset>
         </form>
-        <a href="home.cgi"> Cancel </a>
       </div>};
   return $logout;
 }
