@@ -41,7 +41,7 @@ sub destroyNode{
   open(OUT, ">$fileDati");
   print OUT $doc->toString;
   close(OUT);
+  print $cgi->header(-location =>'destroy.cgi',-refresh => '0; ../pages/admin/'.$collection.'.cgi' );
 }
 
 destroyNode();
-print $cgi->header(-location =>'destroy.cgi',-refresh => '0; ../pages/admin/home.cgi' );

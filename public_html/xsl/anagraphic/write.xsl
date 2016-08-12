@@ -5,6 +5,7 @@
     <head>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
       <title>titolo</title>
+      <link rel="stylesheet" type="text/css" href="../../../public_html/styles/main.min.css" media="screen"/>
     </head>
     <body>
       <div id="homepage">
@@ -28,6 +29,13 @@
     </body>
   </xsl:template>
   <xsl:template match="anagraphic">
+    <div id="modal-div">
+      <form action="../../actions/destroy.cgi" method="post">
+        <fieldset id="modal">
+          <button type="submit" id="modal-submit">Confirm</button>
+        </fieldset>
+      </form>
+    </div>
     <div>
       <form action="new.cgi" method="post">
         <fieldset>
@@ -70,7 +78,8 @@
               <button type="submit"> Edit </button>
             </fieldset>
           </form>
-          <form action="delete.cgi" method="post">
+          <form action="delete.cgi" method="post"><xsl:attribute name="onclick">return renderModal("<xsl:value-of select="@id" />", "anagraphic");
+</xsl:attribute>
             <fieldset>
               <input type="hidden" name="collection" value="anagraphic"/>
               <input type="hidden" name="id" >

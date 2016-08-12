@@ -23,7 +23,7 @@
         </div>
         <div id="nav">
           <ul>
-            <li><a href="#">Edit Anagraphic</a></li>
+            <li><a href="anagraphic.cgi">Edit Anagraphic</a></li>
             <li><a href="#">Edit Study Titles</a></li>
             <li><a href="#">Edit Working Experience</a></li>
           </ul>

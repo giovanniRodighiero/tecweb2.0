@@ -16,7 +16,8 @@ sub myPrint{
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   };
   $nuovaPagina = $nuovaPagina.$stylesheet->output_as_bytes($risultato);
-  $nuovaPagina = $nuovaPagina."</html>";
+
+  $nuovaPagina = $nuovaPagina."<script src=\"../../../public_html/javascript/modal.js\" type=\"text/javascript\"></script></html>";
   return $nuovaPagina;
 }
 sub validate{

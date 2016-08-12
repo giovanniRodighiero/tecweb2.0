@@ -5,6 +5,7 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" )
       head
         meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
         title titolo
+        link(rel="stylesheet" type="text/css" href="../../../public_html/styles/main.min.css" media="screen")/
       body
         div(id="homepage")
           div(id="header")
@@ -21,7 +22,13 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" )
           div(id="footer")
             a(href="#") Log out
             p(class="copyright") Copyright (c) 2016 Copyright Holder All Rights Reserved.
+
   xsl:template(match="anagraphic")
+    div(id="modal-div")
+      form(action="../../actions/destroy.cgi" method="post")
+        fieldset(id="modal")
+          button(type="submit" id="modal-submit") Confirm
+
     div
       form(action="new.cgi" method="post")
         fieldset
@@ -59,6 +66,8 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" )
               </input>
               <button type="submit"> Edit </button>
           form(action="delete.cgi" method="post")
+            <xsl:attribute name="onclick">return renderModal("<xsl:value-of select="@id" />", "anagraphic");
+            </xsl:attribute>
             fieldset.
               <input type="hidden" name="collection" value="anagraphic"/>
               <input type="hidden" name="id" >

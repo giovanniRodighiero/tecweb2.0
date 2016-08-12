@@ -24,7 +24,7 @@ sub renderPage{
         print printErrors(@errors);
         renderForm($collection);
       }else{
-        print $cgi->header(-location =>'new.cgi',-refresh => '0; home.cgi' );
+        print $cgi->header(-location =>'new.cgi',-refresh => '0; '.$collection.'.cgi' );
       }
     }
   }
