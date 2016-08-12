@@ -3,7 +3,7 @@
   <xsl:output version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="yes"/>
   <xsl:template match="//db">
     <head>
-      <title>HomePage - Giovanni Rodighiero Resume</title>
+      <title>Anagraphic Informations - Giovanni Rodighiero Resume</title>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
       <meta name="title" content="Giovanni Rodighiero Resume - Anagraphic Informations"/>
       <meta name="description" content="Anagraphic Informations of the website that presents Giovanni Rodighiero's resume."/>

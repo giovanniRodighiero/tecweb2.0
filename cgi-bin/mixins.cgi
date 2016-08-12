@@ -17,7 +17,7 @@ sub myPrint{
   };
   $nuovaPagina = $nuovaPagina.$stylesheet->output_as_bytes($risultato);
 
-  $nuovaPagina = $nuovaPagina."<script src=\"../../../public_html/javascript/modal.js\" type=\"text/javascript\"></script></html>";
+  $nuovaPagina = $nuovaPagina."</html>";
   return $nuovaPagina;
 }
 sub validate{

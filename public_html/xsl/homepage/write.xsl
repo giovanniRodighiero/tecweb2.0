@@ -19,7 +19,7 @@
           <h1><span xml:lang="it">Giovanni Rodighiero,</span><span class="subtitle">Personal Resume</span></h1>
         </div>
         <div id="path">
-          <p><span class="active">Admin Panel Home</span></p>
+          <p>Admin Panel<span class="active">Home</span></p>
         </div>
         <div id="nav">
           <h2>Resume Pages:</h2>
