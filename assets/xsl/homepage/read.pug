@@ -27,7 +27,7 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
             li
               span(class="active") Overview
             li
-              a(href="/cgi-bin/pages/public/anagraphic.cgi") Anagraphic Informations
+              a(href="/cgi-bin/pages/public/anagraphic.cgi") Anagraphical Informations
             li
               a(href="/cgi-bin/pages/public/studyTitles.cgi") Study Titles and Education
             li
@@ -43,7 +43,7 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
           a(href="login.cgi" class="admin") Admin area
           p(class="copyright") Copyright (c) 2016 Copyright Holder All Rights Reserved.
   xsl:template(match="anagraphic")
-    h2 Anagraphic Informations
+    h2 Anagraphical Informations
     ul
       xsl:for-each(select="item[position() < 6]")
         li

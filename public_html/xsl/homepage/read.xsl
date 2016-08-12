@@ -25,7 +25,7 @@
           <h2>Resume Pages:</h2>
           <ul>
             <li><span class="active">Overview</span></li>
-            <li><a href="/cgi-bin/pages/public/anagraphic.cgi">Anagraphic Informations</a></li>
+            <li><a href="/cgi-bin/pages/public/anagraphic.cgi">Anagraphical Informations</a></li>
             <li><a href="/cgi-bin/pages/public/studyTitles.cgi">Study Titles and Education</a></li>
             <li><a href="#">Working Experience</a></li>
           </ul>
@@ -46,7 +46,7 @@
     </body>
   </xsl:template>
   <xsl:template match="anagraphic">
-    <h2>Anagraphic Informations</h2>
+    <h2>Anagraphical Informations</h2>
     <ul>
       <xsl:for-each select="item[position() &lt; 6]">
         <li>

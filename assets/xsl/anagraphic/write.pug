@@ -22,13 +22,13 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" )
             p
               | Admin Panel
               a(href="home.cgi")  Home
-              span(class="active") / Anagraphic Informations
+              span(class="active") / Anagraphical Informations
           div(id="nav")
             h2 Resume Pages:
             ul
               li
                 a(href="home.cgi") Overview
-              li(class="active") Edit Anagraphic Informations
+              li(class="active") Edit Anagraphical Informations
               li
                 a(href="#") Edit Study Titles and Educations
               li
@@ -52,10 +52,11 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" )
         </xsl:attribute>
         | Cancel
     div
+      h2(class="page-title") Anagraphical Informations
       form(class="form" action="new.cgi" method="post")
         fieldset
           input(type="hidden" name="collection" value="anagraphic")
-          button(type="submit") New Anagraphic Info
+          button(type="submit") New Anagraphical Info
     div(class="box-full")
       ul
         xsl:for-each(select="item")

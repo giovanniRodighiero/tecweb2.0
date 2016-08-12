@@ -19,13 +19,13 @@
           <h1><span xml:lang="it">Giovanni Rodighiero,</span><span class="subtitle">Personal Resume</span></h1>
         </div>
         <div id="path">
-          <p>Admin Panel<a href="home.cgi"> Home</a><span class="active">/ Anagraphic Informations</span></p>
+          <p>Admin Panel<a href="home.cgi"> Home</a><span class="active">/ Anagraphical Informations</span></p>
         </div>
         <div id="nav">
           <h2>Resume Pages:</h2>
           <ul>
             <li><a href="home.cgi">Overview</a></li>
-            <li class="active">Edit Anagraphic Informations</li>
+            <li class="active">Edit Anagraphical Informations</li>
             <li><a href="#">Edit Study Titles and Educations</a></li>
             <li><a href="#">Edit Working Experience</a></li>
           </ul>
@@ -54,10 +54,11 @@
       </button>
     </div>
     <div>
+      <h2 class="page-title">Anagraphical Informations</h2>
       <form class="form" action="new.cgi" method="post">
         <fieldset>
           <input type="hidden" name="collection" value="anagraphic"/>
-          <button type="submit">New Anagraphic Info</button>
+          <button type="submit">New Anagraphical Info</button>
         </fieldset>
       </form>
     </div>
