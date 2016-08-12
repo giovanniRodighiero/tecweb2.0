@@ -33,20 +33,25 @@
         <div id="content">
           <xsl:apply-templates select="anagraphic"/>
         </div>
-        <div id="footer"><a href="#">Log out</a>
+        <div id="footer"><a class="admin" href="logout.cgi">Log out</a>
           <p class="copyright">Copyright (c) 2016 Copyright Holder All Rights Reserved.</p>
         </div>
       </div>
-      <script type="text/javascript" src="../../../public_html/javascript/modal.js"></script>
+      <script type="text/javascript" src="../../../public_html/javascript/modal.js">//</script>
     </body>
   </xsl:template>
   <xsl:template match="anagraphic">
     <div id="modal-div">
-      <form action="../../actions/destroy.cgi" method="post">
-        <fieldset id="modal">
+      <h2>Proceed with the deletion ?</h2>
+      <form class="inline" action="../../actions/destroy.cgi" method="post">
+        <fieldset class="inline" id="modal">
           <button type="submit" id="modal-submit">Confirm</button>
         </fieldset>
       </form>
+      <button class="inline">
+        <xsl:attribute name="onclick">return cancelModal("<xsl:value-of select="@id" />", "anagraphic");
+</xsl:attribute>Cancel
+      </button>
     </div>
     <div>
       <form class="form" action="new.cgi" method="post">
@@ -56,64 +61,62 @@
         </fieldset>
       </form>
     </div>
-    <ul>
-      <xsl:for-each select="item">
-        <li>
-          <div><span class="key">Field Name</span>
-            <p class="value">
-              <xsl:value-of select="fieldName"/>
-            </p>
-          </div>
-          <div><span class="key">Field Content</span>
-            <p class="value">
-              <xsl:value-of select="content"/>
-            </p>
-          </div>
-          <form class="form" action="edit.cgi" method="post">
-            <fieldset>
-              <input type="hidden" name="collection" value="anagraphic"/>
-              <input type="hidden" name="id" >
-                <xsl:attribute name="value">
-                  <xsl:value-of select="@id" />
-                </xsl:attribute>
-              </input>
-              <input type="hidden" name="fieldName" >
-                <xsl:attribute name="value">
-                  <xsl:value-of select="fieldName" />
-                </xsl:attribute>
-              </input>
-              <input type="hidden" name="content" >
-                <xsl:attribute name="value">
-                  <xsl:value-of select="content" />
-                </xsl:attribute>
-              </input>
-              <button type="submit"> Edit </button>
-            </fieldset>
-          </form>
-          <form class="form" action="delete.cgi" method="post"><xsl:attribute name="onclick">return renderModal("<xsl:value-of select="@id" />", "anagraphic");
+    <div class="box-full">
+      <ul>
+        <xsl:for-each select="item">
+          <li>
+            <div><span class="key">
+                <xsl:value-of select="fieldName"/></span>
+              <p class="value">
+                <xsl:value-of select="content"/>
+              </p>
+            </div>
+            <form class="form" action="edit.cgi" method="post">
+              <fieldset>
+                <input type="hidden" name="collection" value="anagraphic"/>
+                <input type="hidden" name="id" >
+                  <xsl:attribute name="value">
+                    <xsl:value-of select="@id" />
+                  </xsl:attribute>
+                </input>
+                <input type="hidden" name="fieldName" >
+                  <xsl:attribute name="value">
+                    <xsl:value-of select="fieldName" />
+                  </xsl:attribute>
+                </input>
+                <input type="hidden" name="content" >
+                  <xsl:attribute name="value">
+                    <xsl:value-of select="content" />
+                  </xsl:attribute>
+                </input>
+                <button type="submit"> Edit </button>
+              </fieldset>
+            </form>
+            <form class="form" action="delete.cgi" method="post"><xsl:attribute name="onclick">return renderModal("<xsl:value-of select="@id" />", "anagraphic");
 </xsl:attribute>
-            <fieldset>
-              <input type="hidden" name="collection" value="anagraphic"/>
-              <input type="hidden" name="id" >
-                <xsl:attribute name="value">
-                  <xsl:value-of select="@id" />
-                </xsl:attribute>
-              </input>
-              <input type="hidden" name="fieldName" >
-                <xsl:attribute name="value">
-                  <xsl:value-of select="fieldName" />
-                </xsl:attribute>
-              </input>
-              <input type="hidden" name="content" >
-                <xsl:attribute name="value">
-                  <xsl:value-of select="content" />
-                </xsl:attribute>
-              </input>
-              <button type="submit"> Delete </button>
-            </fieldset>
-          </form>
-        </li>
-      </xsl:for-each>
-    </ul>
+              <fieldset>
+                <input type="hidden" name="collection" value="anagraphic"/>
+                <input type="hidden" name="id" >
+                  <xsl:attribute name="value">
+                    <xsl:value-of select="@id" />
+                  </xsl:attribute>
+                </input>
+                <input type="hidden" name="fieldName" >
+                  <xsl:attribute name="value">
+                    <xsl:value-of select="fieldName" />
+                  </xsl:attribute>
+                </input>
+                <input type="hidden" name="content" >
+                  <xsl:attribute name="value">
+                    <xsl:value-of select="content" />
+                  </xsl:attribute>
+                </input>
+                <button type="submit"> Delete </button>
+              </fieldset>
+            </form>
+          </li>
+        </xsl:for-each>
+      </ul>
+    </div>
   </xsl:template>
 </xsl:stylesheet>

@@ -6,6 +6,34 @@ html
     margin: 0
 #modal-div
   display: none
+.lightbox
+  display: block !important
+  position: fixed
+  top: 0
+  left: 0
+  text-align: center
+  z-index: 999
+  height: 100%
+  width: 100%
+  background-color: rgba(0, 0, 0, 0.7)
+  color: white
+  .inline
+    display: inline
+  form
+    fieldset
+      border: 0
+  button
+    background-color: white
+    border: 1px solid white
+    padding: 2em
+    font-weight: bold
+    margin-left: 3em
+    margin-right: 3em
+    font-size: 1em
+    &:hover
+      cursor: pointer
+      font-size: 1.3em
+
 h1
   font-size: 2.8em
 #header
@@ -77,7 +105,9 @@ h1
   text-align: center
   display: block
 .form
+  display: inline
   fieldset
+    display: inline
     border: 0px
     button
       background-color: white

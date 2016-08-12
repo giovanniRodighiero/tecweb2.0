@@ -58,7 +58,7 @@
           </div>
         </li>
       </xsl:for-each>
-    </ul><a href="#">Edit Anagraphic</a>
+    </ul><a href="anagraphic.cgi">Edit Anagraphic</a>
   </xsl:template>
   <xsl:template match="studyTitles">
     <h2>Study titles</h2>
