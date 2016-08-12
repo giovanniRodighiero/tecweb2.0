@@ -22,8 +22,9 @@
           <p><span class="active">Admin Panel Home</span></p>
         </div>
         <div id="nav">
-          <h2>More about:</h2>
+          <h2>Resume Pages:</h2>
           <ul>
+            <li><span class="active">Overview</span></li>
             <li><a href="anagraphic.cgi">Edit Anagraphic Informations</a></li>
             <li><a href="studyTitles">Edit Study Titles and Educations</a></li>
             <li><a href="#">Edit Working Experience</a></li>

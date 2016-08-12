@@ -7,7 +7,7 @@ html
 #modal-div
   display: none
 h1
-  font-size: 3em
+  font-size: 2.8em
 #header
   text-align: center
   border-bottom: 1px solid #eee
@@ -22,18 +22,22 @@ h1
     font-weight: bold
 #nav
   float: left
-  width: 20%
+  width: 30%
   background-color: #eee
+  margin-bottom: 2em
   h2
     text-align: center
   ul
     li
+      margin: 1em
+      background-color: white
+      border-left: 3px solid #A9A9A9
+      padding: 0.5em
       list-style: none
-      padding-top: 10px
-      padding-bottom: 10px
   border-right: 5px solid #eee
   border-bottom: 5px solid #eee
 #footer
+  clear: both
   background-color: #A9A9A9
   margin-top: 2em
   padding: 1em
@@ -41,3 +45,31 @@ h1
   color: white
   .admin
     float: right
+.loginForm
+  text-align: center
+  fieldset
+    border-width: 0px
+    .group-input
+      label
+        display: block
+        font-weight: bold
+      input
+        border: 0px
+        border-bottom: 1px solid black
+        padding: 0.5em
+      button
+        background-color: white
+        border: 1px solid black
+        padding: 0.5em
+        &:hover
+          cursor: pointer
+      display: block
+      margin: 1em
+.back-home
+  margin-left: 1em
+  margin-top: 1em
+  font-size: 110%
+.error
+  color: red
+  text-align: center
+  display: block
