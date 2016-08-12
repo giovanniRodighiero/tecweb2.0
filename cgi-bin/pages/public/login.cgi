@@ -6,10 +6,13 @@ use CGI;
 use CGI::Session;
 
 require 'cgi-bin/mixins.cgi';
+require 'cgi-bin/globals.cgi';
 require 'cgi-bin/pages/forms/login.cgi';
 $cgi = new CGI;
 my $user = $cgi->param("username");
 my $pass = $cgi->param("password");
+my $layout = getLayout();
+
 sub renderPage{
   if(getSession() ne undef){
     print $session->header(-refresh => '0; ../admin/home.cgi' );
@@ -28,23 +31,6 @@ sub renderPage{
     }
   }
 }
-my $layout = qq{
-  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">\n
-    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-    <head>
-    <title>Login - Giovanni Rodighiero Resume</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="title" content="Giovanni Rodighiero Resume - Login"/>
-    <meta name="description" content="Login to the admin area of the website that presents Giovanni Rodighiero's resume."/>
-    <meta name="keywords" content="Login, Giovanni, Rodighiero, Resume, Curriculum Vitae"/>
-    <meta name="author" content="Giovanni Rodighiero"/>
-    <meta name="language" content="english en"/>
-    <link rel="stylesheet" type="text/css" href="../../../public_html/styles/main.min.css" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../../../public_html/styles/print.min.css" media="print"/>
-    </head>
-    <body>
-  };
-
 sub printLoginForm{
   my ($error) = @_;
   my $form = getLoginForm();

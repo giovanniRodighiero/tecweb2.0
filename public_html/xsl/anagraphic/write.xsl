@@ -72,7 +72,7 @@
                 <xsl:value-of select="content"/>
               </p>
             </div>
-            <form class="form" action="edit.cgi" method="post">
+            <form class="form inline-form" action="edit.cgi" method="post">
               <fieldset>
                 <input type="hidden" name="collection" value="anagraphic"/>
                 <input type="hidden" name="id" >
@@ -93,7 +93,7 @@
                 <button type="submit"> Edit </button>
               </fieldset>
             </form>
-            <form class="form" action="delete.cgi" method="post"><xsl:attribute name="onclick">return renderModal("<xsl:value-of select="@id" />", "anagraphic");
+            <form class="form inline-form" action="delete.cgi" method="post"><xsl:attribute name="onclick">return renderModal("<xsl:value-of select="@id" />", "anagraphic");
 </xsl:attribute>
               <fieldset>
                 <input type="hidden" name="collection" value="anagraphic"/>

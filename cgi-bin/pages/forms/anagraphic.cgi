@@ -9,12 +9,16 @@ sub getCreationForm{
   my $content = $cgi->param("content");
   my $collection = $cgi->param("collection");
   my $anagraphic = qq{
-        <form id="" action="new.cgi" method="post">
+        <form class="form" action="new.cgi" method="post">
           <fieldset>
-            <label for="fieldName">Field Name</label>
+          <div class="group-input">
+            <label for="fieldName">Field's Name</label>
             <input type="text" id="fieldName" name="fieldName" value="$fieldName" />
-            <label for="content">Content</label>
-            <input type="text" id="content" name="content" value="$content" />
+          </div>
+          <div class="group-input">
+            <label for="contentt">Field's Content</label>
+            <input type="text" id="contentt" name="content" value="$content" />
+            </div>
             <input type ="hidden" name="collection" value="$collection" />
             <input type ="hidden" name="submit" value="submit" />
             <button type="submit">Create</button>
@@ -28,12 +32,16 @@ sub getEditionForm{
   my $collection = $cgi->param("collection");
   my $id = $cgi->param("id");
   my $anagraphic = qq{
-        <form id="" action="edit.cgi" method="post">
+        <form class="form" action="edit.cgi" method="post">
           <fieldset>
-            <label for="fieldName">Field Name</label>
+          <div class="group-input">
+            <label for="fieldName">Field's Name</label>
             <input type="text" id="fieldName" name="fieldName" value="$fieldName" />
-            <label for="content">Content</label>
-            <input type="text" id="content" name="content" value="$content" />
+          </div>
+          <div class="group-input">
+            <label for="contentt">Field's Content</label>
+            <input type="text" id="contentt" name="content" value="$content" />
+            </div>
             <input type ="hidden" name="collection" value="$collection" />
             <input type ="hidden" name="id" value="$id" />
             <input type ="hidden" name="submit" value="submit" />

@@ -29,7 +29,7 @@ sub getLoginForm{
 }
 sub getLogoutForm{
   my $logout = qq{
-        <div class="loginForm">
+        <div class="form">
         <h1> Confirm to logout </h1>
         <form id="" action="logout.cgi" method="post">
           <fieldset>

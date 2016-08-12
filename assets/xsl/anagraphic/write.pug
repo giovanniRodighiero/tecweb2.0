@@ -67,7 +67,7 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" )
               p(class="value")
                 xsl:value-of(select="content")/
 
-            form(class="form" action="edit.cgi" method="post")
+            form(class="form inline-form" action="edit.cgi" method="post")
               fieldset.
                 <input type="hidden" name="collection" value="anagraphic"/>
                 <input type="hidden" name="id" >
@@ -86,7 +86,7 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" )
                   </xsl:attribute>
                 </input>
                 <button type="submit"> Edit </button>
-            form(class="form" action="delete.cgi" method="post")
+            form(class="form inline-form" action="delete.cgi" method="post")
               <xsl:attribute name="onclick">return renderModal("<xsl:value-of select="@id" />", "anagraphic");
               </xsl:attribute>
               fieldset.
