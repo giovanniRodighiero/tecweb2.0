@@ -19,14 +19,14 @@
           <h1><span xml:lang="it">Giovanni Rodighiero,</span><span class="subtitle">Personal Resume</span></h1>
         </div>
         <div id="path">
-          <p><a href="/cgi-bin/pages/public/home.cgi">Home</a><span class="active">/ Anagraphic Informations</span></p>
+          <p><a href="/cgi-bin/pages/public/home.cgi">Home</a><span class="active">/ Anagraphical Informations</span></p>
         </div>
         <div id="nav">
           <h2>Resume Pages:</h2>
           <ul>
             <li><a href="/cgi-bin/pages/public/home.cgi">Overview</a></li>
-            <li><span class="active">Anagraphic Informations</span></li>
-            <li><a href="/cgi-bin/pages/public/studyTitles.cgi">Study Titles and Education</a></li>
+            <li><span class="active">Anagraphical Informations</span></li>
+            <li><a href="studyTitles.cgi">Study Titles and Education</a></li>
             <li><a href="#">Working Experience</a></li>
           </ul>
         </div>
@@ -42,7 +42,7 @@
     </body>
   </xsl:template>
   <xsl:template match="anagraphic">
-    <h2>Anagraphic Informations</h2>
+    <h2 class="page-title">Anagraphical Informations</h2>
     <ul>
       <xsl:for-each select="item">
         <li>

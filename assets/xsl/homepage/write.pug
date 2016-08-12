@@ -28,9 +28,9 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
             li
               span(class="active") Overview
             li
-              a(href="anagraphic.cgi") Edit Anagraphic Informations
+              a(href="anagraphic.cgi") Edit Anagraphical Informations
             li
-              a(href="studyTitles") Edit Study Titles and Educations
+              a(href="studyTitles.cgi") Edit Study Titles and Educations
             li
               a(href="#") Edit Working Experience
         div(id="content")
@@ -44,7 +44,7 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
           a(href="logout.cgi" class="admin") Log out
           p(class="copyright") Copyright (c) 2016 Copyright Holder All Rights Reserved.
   xsl:template(match="anagraphic")
-    h2 Anagraphic data
+    h2 Anagraphical data
     ul
       xsl:for-each(select="item[position() < 6]")
         li
@@ -53,7 +53,7 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
               xsl:value-of(select="fieldName")/
             p(class="value")
               xsl:value-of(select="content")/
-    a(href="#") Edit Anagraphic
+    a(href="anagraphic.cgi") Edit Anagraphical Informations
   xsl:template(match="studyTitles")
     h2 Study titles
     ul

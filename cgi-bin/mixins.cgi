@@ -44,7 +44,7 @@ sub validate{
 sub printErrors{
   my (@errors) = @_;
   my $html = qq{
-    <div>
+    <div class="error">
       <h2> Unable to perform the request</h2>
       <p> Make sure to respect the following rules:</p>
       <ul>

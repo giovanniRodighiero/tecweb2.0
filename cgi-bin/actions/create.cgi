@@ -35,7 +35,7 @@ sub buildAnagraphicNode{
 sub buildStudyTitlesNode{
   my ($collection, $year, $title, $school) = @_;
   my @errors;
-  @errors = validate($year, "Year", true, @errors);
+  @errors = validate($year, "Year of attainment", true, @errors);
   @errors = validate($title, "Title", true, @errors);
   @errors = validate($school, "School", true, @errors);
   if(scalar @errors < 1){

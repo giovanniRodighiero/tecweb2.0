@@ -21,16 +21,16 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
         div(id="path")
           p
             a(href="/cgi-bin/pages/public/home.cgi") Home
-            span(class="active") / Anagraphic Informations
+            span(class="active") / Anagraphical Informations
         div(id="nav")
           h2 Resume Pages:
           ul
             li
               a(href="/cgi-bin/pages/public/home.cgi") Overview
             li
-               span(class="active") Anagraphic Informations
+               span(class="active") Anagraphical Informations
             li
-              a(href="/cgi-bin/pages/public/studyTitles.cgi") Study Titles and Education
+              a(href="studyTitles.cgi") Study Titles and Education
             li
               a(href="#") Working Experience
         div(id="content")
@@ -40,7 +40,7 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
           a(href="login.cgi" class="admin") Admin area
           p(class="copyright") Copyright (c) 2016 Copyright Holder All Rights Reserved.
   xsl:template(match="anagraphic")
-    h2 Anagraphic Informations
+    h2(class="page-title") Anagraphical Informations
     ul
       xsl:for-each(select="item")
         li

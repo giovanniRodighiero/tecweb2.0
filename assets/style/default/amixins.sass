@@ -1,11 +1,40 @@
 @import url(https://fonts.googleapis.com/css?family=Slabo+27px)
 
 html
-  font-family: 'Slabo 27px', serif
   body
     margin: 0
+    font-family: 'Slabo 27px', serif
+
 #modal-div
   display: none
+.lightbox
+  display: block !important
+  position: fixed
+  top: 0
+  left: 0
+  text-align: center
+  z-index: 999
+  height: 100%
+  width: 100%
+  background-color: rgba(0, 0, 0, 0.7)
+  color: white
+  .inline
+    display: inline
+  form
+    fieldset
+      border: 0
+  button
+    background-color: white
+    border: 1px solid white
+    padding: 2em
+    font-weight: bold
+    margin-left: 3em
+    margin-right: 3em
+    font-size: 1em
+    &:hover
+      cursor: pointer
+      font-size: 1.3em
+
 h1
   font-size: 2.8em
 #header
@@ -48,7 +77,11 @@ h1
   color: white
   .admin
     float: right
-.loginForm
+.inline-form
+  display: inline
+  fieldset
+    display: inline
+.form
   text-align: center
   fieldset
     border-width: 0px
@@ -57,17 +90,19 @@ h1
         display: block
         font-weight: bold
       input
+        width: 30em
         border: 0px
         border-bottom: 1px solid black
-        padding: 0.5em
-      button
-        background-color: white
-        border: 1px solid black
-        padding: 0.5em
-        &:hover
-          cursor: pointer
+        padding: 0.8em
       display: block
       margin: 1em
+    button
+      background-color: white
+      border: 1px solid black
+      padding: 0.5em
+      &:hover
+        cursor: pointer
+
 .back-home
   margin-left: 1em
   margin-top: 1em
@@ -76,13 +111,6 @@ h1
   color: red
   text-align: center
   display: block
-.form
-  fieldset
-    border: 0px
-    button
-      background-color: white
-      padding: 1em
-      font-weight: bold
-      border: 1px solid black
-      &:hover
-        cursor: pointer
+  ul
+    li
+      list-style: none
