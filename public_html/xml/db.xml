@@ -2,13 +2,10 @@
 <db>
   <anagraphic>
     <item id="1">
-      <fieldName>Nome</fieldName>
+      <fieldName>nome</fieldName>
       <content>Giovanni</content>
     </item>
-    <item id="2">
-      <fieldName>cognome</fieldName>
-      <content>cognome</content>
-    </item>
+    
     <item id="3">
       <fieldName>nascita</fieldName>
       <content>11/02/1993</content>
@@ -25,13 +22,14 @@
   <studyTitles>
     <item id="1">
       <year>2010</year>
-      <title>titolo 1</title>
-      <school>scuola</school>
+      <title>Diploma Liceo Scientifico</title>
+      <school>Farina</school>
     </item>
-    <item id="2">
-      <year>2013</year>
-      <title>titolo 2</title>
-      <school>scuola</school>
-    </item>
-  </studyTitles>
+    
+  	<item id="2">
+		<year>2016</year>
+		<title>Laurea Triennale Informatica</title>
+		<school>Università degli Studi di Padova</school> 
+	</item>
+</studyTitles>
 </db>

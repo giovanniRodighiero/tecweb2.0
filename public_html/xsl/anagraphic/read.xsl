@@ -26,7 +26,7 @@
           <ul>
             <li><a href="/cgi-bin/pages/public/home.cgi">Overview</a></li>
             <li><span class="active">Anagraphical Informations</span></li>
-            <li><a href="/cgi-bin/pages/public/studyTitles.cgi">Study Titles and Education</a></li>
+            <li><a href="studyTitles.cgi">Study Titles and Education</a></li>
             <li><a href="#">Working Experience</a></li>
           </ul>
         </div>

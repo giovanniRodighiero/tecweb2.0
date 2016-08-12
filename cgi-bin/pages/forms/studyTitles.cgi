@@ -10,14 +10,20 @@ sub getCreationForm{
   my $school =$cgi->param("school");
   my $collection = $cgi->param("collection");
   my $studyTitles = qq{
-    <form id="" action="new.cgi" method="post">
+    <form class="form" action="new.cgi" method="post">
       <fieldset>
-        <label for="fieldName">Year</label>
+      <div class="group-input">
+        <label for="fieldName">Year of attainment</label>
         <input type="text" id="year" name="year" value="$year"/>
+      </div>
+      <div class="group-input">
         <label for="title">Title</label>
         <input type="text" id="title" name="title" value="$title"/>
-        <label for="title">SchoolTitle</label>
+      </div>
+      <div class="group-input">
+        <label for="title">School</label>
         <input type="text" id="school" name="school" value="$school"/>
+      </div>
         <input type ="hidden" name="collection" value="$collection" />
         <input type ="hidden" name="submit" value="submit" />
         <button type="submit">Create</button>
@@ -32,14 +38,20 @@ sub getEditionForm{
   my $collection = $cgi->param("collection");
   my $id = $cgi->param("id");
   my $studyTitles = qq{
-    <form id="" action="edit.cgi" method="post">
+    <form class="form" action="edit.cgi" method="post">
       <fieldset>
+      <div class="group-input">
         <label for="fieldName">Year</label>
         <input type="text" id="year" name="year" value="$year"/>
+      </div>
+      <div class="group-input">
         <label for="title">Title</label>
         <input type="text" id="title" name="title" value="$title"/>
+      </div>
+      <div class="group-input">
         <label for="title">SchoolTitle</label>
         <input type="text" id="school" name="school" value="$school"/>
+      </div>
         <input type ="hidden" name="collection" value="$collection" />
         <input type ="hidden" name="id" value="$id" />
         <input type ="hidden" name="submit" value="submit" />

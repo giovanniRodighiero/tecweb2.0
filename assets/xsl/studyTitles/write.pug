@@ -1,28 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
+xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" )
+  xsl:output(version='1.0' encoding='UTF-8' indent='yes' omit-xml-declaration="yes")/
+  xsl:template(match="//db")
+      head
+        title Anagraphic Informations Admin - Giovanni Rodighiero Resume
+        meta(http-equiv="Content-Type" content="text/html; charset=utf-8")/
+        meta(name="title" content="Giovanni Rodighiero Resume - Anagraphic Informations")/
+        meta(name="description" content="Anagraphic Informations admin panel of the website that presents Giovanni Rodighiero's resume.")/
+        meta(name="keywords" content="Anagraphic Informations,Admin, Birth, Address, Giovanni, Rodighiero, Resume, Curriculum Vitae, Experience, Education")/
+        meta(name="author" content="Giovanni Rodighiero")/
+        meta(name="language" content="english en")/
+        link(rel="stylesheet" type="text/css" href="../../../public_html/styles/main.min.css" media="screen")/
+        link(rel="stylesheet" type="text/css" href="../../../public_html/styles/print.min.css" media="print")/
+      body
+        div(id="homepage")
+          div(id="header")
+            h1
+              span(xml:lang="it") Giovanni Rodighiero,
+              span(class="subtitle") Personal Resume
+          div(id="path")
+            p
+              | Admin Panel
+              a(href="home.cgi")  Home
+              span(class="active") / Anagraphical Informations
+          div(id="nav")
+            h2 Resume Pages:
+            ul
+              li
+                a(href="home.cgi") Overview
+              li
+                 a(href="anagraphic.cgi") Edit Anagraphical Informations
+              li(class="active") Edit Study Titles and Educations
+              li
+                a(href="#") Edit Working Experience
+          div(id="content")
+            div(class="box-full")
+              xsl:apply-templates(select="studyTitles")/
+          div(id="footer")
+            a(href="logout.cgi" class="admin") Log out
+            p(class="copyright") Copyright (c) 2016 Copyright Holder All Rights Reserved.
+        script(type="text/javascript" src="../../../public_html/javascript/modal.js" ) //
+
   xsl:template(match="studyTitles")
-    h1 Study Titles
+    div(id="modal-div")
+      h2 Proceed with the deletion ?
+      form(action="../../actions/destroy.cgi" method="post" class="inline")
+        fieldset(id="modal" class="inline")
+          button(type="submit" id="modal-submit") Confirm
+      button(class="inline")
+        <xsl:attribute name="onclick">return cancelModal("<xsl:value-of select="@id" />", "studyTitles");
+        </xsl:attribute>
+        | Cancel
     div
-      form(action="new.cgi" method="post")
+      h2(class="page-title") Study Titles and Education
+      form(class="form" action="new.cgi" method="post")
         fieldset
           input(type="hidden" name="collection" value="studyTitles")
           button(type="submit") New title
     ul
       xsl:for-each(select="item")
+        xsl:sort(select="position()" data-type="number" order="descending")/
         li
-          div
-            strong Year
-            span
-              xsl:value-of(select="year")/
-          div
-            strong Title
-            span
+          div(class="studyTitle")
+            p(class="titleName")
               xsl:value-of(select="title")/
-          div
-            strong School
-            span
-              xsl:value-of(select="school")/
-          form(action="edit.cgi" method="post")
+            div
+              span(class="key")
+                | Year of attainment
+              p(class="value")
+                xsl:value-of(select="year")/
+            div
+              span(class="key")
+                | School
+              p(class="value")
+                xsl:value-of(select="school")/
+          form(class="form inline-form" action="edit.cgi" method="post")
             fieldset.
               <input type="hidden" name="collection" value="studyTitles"/>
               <input type="hidden" name="id" >
@@ -46,7 +98,9 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
                 </xsl:attribute>
               </input>
               <button type="submit"> Edit </button>
-          form(action="delete.cgi" method="post")
+          form(class="form inline-form" action="delete.cgi" method="post")
+            <xsl:attribute name="onclick">return renderModal("<xsl:value-of select="@id" />", "studyTitles");
+            </xsl:attribute>
             fieldset.
               <input type="hidden" name="collection" value="studyTitles"/>
               <input type="hidden" name="id" >

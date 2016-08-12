@@ -10,9 +10,22 @@ $cgi = new CGI;
 my $collection = $cgi->param("collection");
 my $id = $cgi->param("id");
 my $layout = getLayout();
-my $title = qq{
-  <h1 class="page-title"> Updating an Anagraphical Information</h1>
-};
+
+sub setTitle{
+  if($collection eq 'anagraphic'){
+    my $title = qq{
+      <h1 class="page-title"> Updating an Anagraphical Information</h1>
+    };
+    return $title;
+  }
+  if($collection eq 'studyTitles'){
+    my $title = qq{
+      <h1 class="page-title"> Updating a Study Title</h1>
+    };
+    return $title;
+  }
+}
+my $title = setTitle();
 my $cancel = qq{
   <a href="$collection.cgi" class="back-home"> Cancel </a>
 };

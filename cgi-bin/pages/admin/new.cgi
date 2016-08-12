@@ -8,9 +8,21 @@ require 'cgi-bin/actions/create.cgi';
 $cgi = new CGI;
 my $collection = $cgi->param("collection");
 my $layout = getLayout();
-my $title = qq{
-  <h1 class="page-title"> Adding a new Anagraphical Information</h1>
-};
+sub setTitle{
+  if($collection eq 'anagraphic'){
+    my $title = qq{
+      <h1 class="page-title"> Adding a new Anagraphical Information</h1>
+    };
+    return $title;
+  }
+  if($collection eq 'studyTitles'){
+    my $title = qq{
+      <h1 class="page-title"> Adding a new Study Title</h1>
+    };
+    return $title;
+  }
+}
+my $title = setTitle();
 my $cancel = qq{
   <a href="$collection.cgi" class="back-home"> Cancel </a>
 };

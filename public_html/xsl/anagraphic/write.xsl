@@ -26,7 +26,7 @@
           <ul>
             <li><a href="home.cgi">Overview</a></li>
             <li class="active">Edit Anagraphical Informations</li>
-            <li><a href="#">Edit Study Titles and Educations</a></li>
+            <li><a href="studyTitles.cgi">Edit Study Titles and Educations</a></li>
             <li><a href="#">Edit Working Experience</a></li>
           </ul>
         </div>
