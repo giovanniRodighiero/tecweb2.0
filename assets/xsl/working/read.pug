@@ -33,6 +33,8 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
               a(href="studyTitles.cgi") Study Titles and Education
             li
               span(class="active") Working Experience
+            li
+              a(href="contacts.cgi") Contacts and Socials
         div(id="content")
           div(class="box-full")
             xsl:apply-templates(select="working")/
@@ -46,6 +48,8 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
         xsl:sort(select="position()" data-type="number" order="descending")/
         li
           div(class="item")
+            p(class="titleName")
+              xsl:value-of(select="role")
             div
               span(class="key") From
               span(class="value")
@@ -53,10 +57,6 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
               span(class="key") To
               span(class="value")
                 xsl:value-of(select="end")/
-            div
-              span(class="key") Role
-              p(class="value")
-                xsl:value-of(select="role")
             div
               span(class="key") Company
               p(class="value")

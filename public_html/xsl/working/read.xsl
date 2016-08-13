@@ -28,6 +28,7 @@
             <li><a href="anagraphic.cgi">Anagraphical Informations</a></li>
             <li><a href="studyTitles.cgi">Study Titles and Education</a></li>
             <li><span class="active">Working Experience</span></li>
+            <li><a href="contacts.cgi">Contacts and Socials</a></li>
           </ul>
         </div>
         <div id="content">
@@ -48,14 +49,12 @@
         <xsl:sort select="position()" data-type="number" order="descending"/>
         <li>
           <div class="item">
+            <p class="titleName">
+              <xsl:value-of select="role"></xsl:value-of>
+            </p>
             <div><span class="key">From</span><span class="value">
                 <xsl:value-of select="begin"/></span><span class="key">To</span><span class="value">
                 <xsl:value-of select="end"/></span></div>
-            <div><span class="key">Role</span>
-              <p class="value">
-                <xsl:value-of select="role"></xsl:value-of>
-              </p>
-            </div>
             <div><span class="key">Company</span>
               <p class="value">
                 <xsl:value-of select="company"></xsl:value-of>

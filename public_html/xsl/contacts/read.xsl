@@ -3,9 +3,9 @@
   <xsl:output version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="yes"/>
   <xsl:template match="//db">
     <head>
-      <title>Anagraphic Informations - Giovanni Rodighiero Resume</title>
+      <title>Contacts and Socials - Giovanni Rodighiero Resume</title>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-      <meta name="title" content="Giovanni Rodighiero Resume - Anagraphic Informations"/>
+      <meta name="title" content="Giovanni Rodighiero Resume - Contacts and Socials"/>
       <meta name="description" content="Anagraphic Informations of the website that presents Giovanni Rodighiero's resume."/>
       <meta name="keywords" content="Anagraphic Informations, Birth, Address, Giovanni, Rodighiero, Resume, Curriculum Vitae, Experience, Education"/>
       <meta name="author" content="Giovanni Rodighiero"/>
@@ -14,26 +14,26 @@
       <link rel="stylesheet" type="text/css" href="../../../public_html/styles/print.min.css" media="print"/>
     </head>
     <body>
-      <div id="anagraphic">
+      <div id="working">
         <div id="header">
           <h1><span xml:lang="it">Giovanni Rodighiero,</span><span class="subtitle">Personal Resume</span></h1>
         </div>
         <div id="path">
-          <p><a href="/cgi-bin/pages/public/home.cgi">Home</a><span class="active">/ Study Titles and Education</span></p>
+          <p><a href="/cgi-bin/pages/public/home.cgi">Home</a><span class="active">/ Contacts and Socials</span></p>
         </div>
         <div id="nav">
           <h2>Resume Pages:</h2>
           <ul>
-            <li><a href="home.cgi">Overview</a></li>
+            <li><a href="/cgi-bin/pages/public/home.cgi">Overview</a></li>
             <li><a href="anagraphic.cgi">Anagraphical Informations</a></li>
-            <li><span class="active">Study Titles and Education</span></li>
-            <li><a href="working.cgi">Working Experience</a></li>
-            <li><a href="contacts.cgi">Contacts and Socials</a></li>
+            <li><a href="studyTitles.cgi">Study Titles and Education</a></li>
+            <li><a href="studyTitles.cgi">Working Experience</a></li>
+            <li><span class="active">Contacts and Socials</span></li>
           </ul>
         </div>
         <div id="content">
           <div class="box-full">
-            <xsl:apply-templates select="studyTitles"/>
+            <xsl:apply-templates select="contacts"/>
           </div>
         </div>
         <div id="footer"><a class="admin" href="login.cgi">Admin area</a>
@@ -42,24 +42,25 @@
       </div>
     </body>
   </xsl:template>
-  <xsl:template match="studyTitles">
-    <h2 class="page-title">Study Titles and Education</h2>
+  <xsl:template match="contacts">
+    <h2 class="page-title">Contacts and Socials</h2>
     <ul>
       <xsl:for-each select="item">
-        <xsl:sort select="position()" data-type="number" order="descending"/>
         <li>
-          <div class="studyTitle">
-            <p class="titleName">
-              <xsl:value-of select="title"/>
-            </p>
-            <div><span class="key">Year of attainment</span>
+          <div class="item">
+            <div><span class="key">
+                <xsl:value-of select="contactName"></xsl:value-of></span>
               <p class="value">
-                <xsl:value-of select="year"/>
-              </p>
-            </div>
-            <div><span class="key">School</span>
-              <p class="value">
-                <xsl:value-of select="school"/>
+                <xsl:choose>
+                  <xsl:when test="value/@isLink"><a class="external-link">
+                      <xsl:attribute name="href">
+                        <xsl:value-of select="value"/>
+                      </xsl:attribute>
+                      <xsl:value-of select="value"/></a></xsl:when>
+                  <xsl:otherwise>
+                    <xsl:value-of select="value"/>
+                  </xsl:otherwise>
+                </xsl:choose>
               </p>
             </div>
           </div>

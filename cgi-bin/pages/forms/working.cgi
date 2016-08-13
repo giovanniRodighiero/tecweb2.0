@@ -12,7 +12,6 @@ sub getForm{
   my $company =$cgi->param("company");
   my $collection = $cgi->param("collection");
   my $working = qq{
-    <form class="form" action="new.cgi" method="post">
       <fieldset>
       <div class="group-input">
         <label for="begin">Year of begin</label>
@@ -46,6 +45,7 @@ sub getForm{
     <div id="path">
       <p>Admin Panel<a href="home.cgi">Home</a> /<a href="working.cgi">Working Experiences</a> / <span class="active"> Update Working Experience</span></p>
     </div>
+    <form class="form" action="edit.cgi" method="post">
   };
 }else{
   $ending = qq{
@@ -57,6 +57,7 @@ sub getForm{
     <div id="path">
       <p>Admin Panel<a href="home.cgi">Home</a> /<a href="working.cgi">Working Experiences</a> / <span class="active"> New Working Experience</span></p>
     </div>
+    <form class="form" action="new.cgi" method="post">
   };
 }
   return $path.$working.$ending;
