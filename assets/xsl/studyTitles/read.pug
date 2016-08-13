@@ -26,13 +26,13 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
           h2 Resume Pages:
           ul
             li
-              a(href="/cgi-bin/pages/public/home.cgi") Overview
+              a(href="home.cgi") Overview
             li
-               a(href="/cgi-bin/pages/public/anagraphic.cgi") Anagraphical Informations
+               a(href="anagraphic.cgi") Anagraphical Informations
             li
               span(class="active") Study Titles and Education
             li
-              a(href="#") Working Experience
+              a(href="working.cgi") Working Experience
         div(id="content")
           div(class="box-full")
             xsl:apply-templates(select="studyTitles")/

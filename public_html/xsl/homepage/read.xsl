@@ -25,9 +25,9 @@
           <h2>Resume Pages:</h2>
           <ul>
             <li><span class="active">Overview</span></li>
-            <li><a href="/cgi-bin/pages/public/anagraphic.cgi">Anagraphical Informations</a></li>
-            <li><a href="/cgi-bin/pages/public/studyTitles.cgi">Study Titles and Education</a></li>
-            <li><a href="#">Working Experience</a></li>
+            <li><a href="anagraphic.cgi">Anagraphical Informations</a></li>
+            <li><a href="studyTitles.cgi">Study Titles and Education</a></li>
+            <li><a href="working.cgi">Working Experience</a></li>
           </ul>
         </div>
         <div id="content">

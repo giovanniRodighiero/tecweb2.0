@@ -19,19 +19,20 @@
           <h1><span xml:lang="it">Giovanni Rodighiero,</span><span class="subtitle">Personal Resume</span></h1>
         </div>
         <div id="path">
-          <p>Admin Panel<a href="home.cgi"> Home</a><span class="active">/ Anagraphical Informations</span></p>
-        </div>
-        <div id="nav">
-          <h2>Resume Pages:</h2>
-          <ul>
-            <li><a href="home.cgi">Overview</a></li>
-            <li class="active">Edit Anagraphical Informations</li>
-            <li><a href="studyTitles.cgi">Edit Study Titles and Educations</a></li>
-            <li><a href="working.cgi">Edit Working Experience</a></li>
-          </ul>
+          <p>Admin Panel<a href="home.cgi"> Home</a><span class="active">/ Working Experiences</span>
+            <div id="nav">
+              <h2>Resume Pages:</h2>
+              <ul>
+                <li><a href="home.cgi">Overview</a></li>
+                <li><a href="anagraphic.cgi">Edit Anagraphical Informations</a></li>
+                <li><a href="studyTitles.cgi">Edit Study Titles and Education</a></li>
+                <li><span class="active">Edit Working Experience</span></li>
+              </ul>
+            </div>
+          </p>
         </div>
         <div id="content">
-          <xsl:apply-templates select="anagraphic"/>
+          <xsl:apply-templates select="working"/>
         </div>
         <div id="footer"><a class="admin" href="logout.cgi">Log out</a>
           <p class="copyright">Copyright (c) 2016 Copyright Holder All Rights Reserved.</p>
@@ -40,7 +41,7 @@
       <script type="text/javascript" src="../../../public_html/javascript/modal.js">//</script>
     </body>
   </xsl:template>
-  <xsl:template match="anagraphic">
+  <xsl:template match="working">
     <div id="modal-div">
       <h2>Proceed with the deletion ?</h2>
       <form class="inline" action="../../actions/destroy.cgi" method="post">
@@ -49,67 +50,97 @@
         </fieldset>
       </form>
       <button class="inline">
-        <xsl:attribute name="onclick">return cancelModal("<xsl:value-of select="@id" />", "anagraphic");
+        <xsl:attribute name="onclick">return cancelModal("<xsl:value-of select="@id" />", "working");
 </xsl:attribute>Cancel
       </button>
     </div>
     <div>
-      <h2 class="page-title">Anagraphical Informations</h2>
+      <h2 class="page-title">Working Experiences</h2>
       <form class="form" action="new.cgi" method="post">
         <fieldset>
-          <input type="hidden" name="collection" value="anagraphic"/>
-          <button type="submit">New Anagraphical Info</button>
+          <input type="hidden" name="collection" value="working"/>
+          <button type="submit">New Working Experience</button>
         </fieldset>
       </form>
     </div>
     <div class="box-full">
       <ul>
         <xsl:for-each select="item">
+          <xsl:sort select="position()" data-type="number" order="descending"/>
           <li>
-            <div><span class="key">
-                <xsl:value-of select="fieldName"/></span>
-              <p class="value">
-                <xsl:value-of select="content"/>
-              </p>
+            <div class="item">
+              <div><span class="key">From</span><span class="value">
+                  <xsl:value-of select="begin"/></span><span class="key">To</span><span class="value">
+                  <xsl:value-of select="end"/></span></div>
+              <div><span class="key">Role</span>
+                <p class="value">
+                  <xsl:value-of select="role"></xsl:value-of>
+                </p>
+              </div>
+              <div><span class="key">Company</span>
+                <p class="value">
+                  <xsl:value-of select="company"></xsl:value-of>
+                </p>
+              </div>
             </div>
             <form class="form inline-form" action="edit.cgi" method="post">
               <fieldset>
-                <input type="hidden" name="collection" value="anagraphic"/>
+                <input type="hidden" name="collection" value="working"/>
                 <input type="hidden" name="id" >
                   <xsl:attribute name="value">
                     <xsl:value-of select="@id" />
                   </xsl:attribute>
                 </input>
-                <input type="hidden" name="fieldName" >
+                <input type="hidden" name="begin" >
                   <xsl:attribute name="value">
-                    <xsl:value-of select="fieldName" />
+                    <xsl:value-of select="begin" />
                   </xsl:attribute>
                 </input>
-                <input type="hidden" name="content" >
+                <input type="hidden" name="end" >
                   <xsl:attribute name="value">
-                    <xsl:value-of select="content" />
+                    <xsl:value-of select="end" />
+                  </xsl:attribute>
+                </input>
+                <input type="hidden" name="role" >
+                  <xsl:attribute name="value">
+                    <xsl:value-of select="role" />
+                  </xsl:attribute>
+                </input>
+                <input type="hidden" name="company" >
+                  <xsl:attribute name="value">
+                    <xsl:value-of select="company" />
                   </xsl:attribute>
                 </input>
                 <button type="submit"> Edit </button>
               </fieldset>
             </form>
-            <form class="form inline-form" action="delete.cgi" method="post"><xsl:attribute name="onclick">return renderModal("<xsl:value-of select="@id" />", "anagraphic");
+            <form class="form inline-form" action="delete.cgi" method="post"><xsl:attribute name="onclick">return renderModal("<xsl:value-of select="@id" />", "working");
 </xsl:attribute>
               <fieldset>
-                <input type="hidden" name="collection" value="anagraphic"/>
+                <input type="hidden" name="collection" value="working"/>
                 <input type="hidden" name="id" >
                   <xsl:attribute name="value">
                     <xsl:value-of select="@id" />
                   </xsl:attribute>
                 </input>
-                <input type="hidden" name="fieldName" >
+                <input type="hidden" name="begin" >
                   <xsl:attribute name="value">
-                    <xsl:value-of select="fieldName" />
+                    <xsl:value-of select="begin" />
                   </xsl:attribute>
                 </input>
-                <input type="hidden" name="content" >
+                <input type="hidden" name="end" >
                   <xsl:attribute name="value">
-                    <xsl:value-of select="content" />
+                    <xsl:value-of select="end" />
+                  </xsl:attribute>
+                </input>
+                <input type="hidden" name="role" >
+                  <xsl:attribute name="value">
+                    <xsl:value-of select="role" />
+                  </xsl:attribute>
+                </input>
+                <input type="hidden" name="company" >
+                  <xsl:attribute name="value">
+                    <xsl:value-of select="company" />
                   </xsl:attribute>
                 </input>
                 <button type="submit"> Delete </button>

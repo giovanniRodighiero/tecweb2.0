@@ -21,6 +21,12 @@ sub setTitle{
     };
     return $title;
   }
+  if($collection eq 'working'){
+    my $title = qq{
+      <h1 class="page-title"> Adding a new Working Experience</h1>
+    };
+    return $title;
+  }
 }
 my $title = setTitle();
 my $cancel = qq{
@@ -55,11 +61,15 @@ sub renderForm{
   my $html;
   if($collection eq 'anagraphic'){
     require "cgi-bin/pages/forms/anagraphic.cgi";
-    $html = getCreationForm();
+    $html = getForm(0);
   }
   if($collection eq 'studyTitles'){
     require "cgi-bin/pages/forms/studyTitles.cgi";
-    $html = getCreationForm();
+    $html = getForm(0);
+  }
+  if($collection eq 'working'){
+    require "cgi-bin/pages/forms/working.cgi";
+    $html = getForm(0);
   }
   print $layout.$title.$html;
 }
