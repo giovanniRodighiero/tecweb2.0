@@ -43,6 +43,9 @@
             <xsl:apply-templates select="working"/>
           </div>
           <div class="box">
+            <xsl:apply-templates select="skills"/>
+          </div>
+          <div class="box">
             <xsl:apply-templates select="contacts"/>
           </div>
         </div>

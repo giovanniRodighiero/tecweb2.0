@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <db>
   <anagraphic>
     <item id="1">
@@ -53,14 +53,7 @@
       <skillsName>JavaScript</skillsName>
       <level>Good</level>
     </item>
-  	
-	
-	
-	<item id="3">
-		<skillsName>mongoDBcc</skillsName>
-		<level>ok</level>
-	</item>
-</skills>
+  </skills>
   <contacts>
     <item id="1">
       <contactName>Email</contactName>

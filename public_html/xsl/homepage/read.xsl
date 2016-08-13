@@ -43,10 +43,10 @@
             <xsl:apply-templates select="working"/>
           </div>
           <div class="box">
-            <xsl:apply-templates select="contacts"/>
+            <xsl:apply-templates select="skills"/>
           </div>
           <div class="box">
-            <xsl:apply-templates select="skills"/>
+            <xsl:apply-templates select="contacts"/>
           </div>
         </div>
         <div id="footer"><a class="admin" href="login.cgi">Admin area</a>
