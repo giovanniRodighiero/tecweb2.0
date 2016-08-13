@@ -7,7 +7,7 @@ $cgi = new CGI;
 sub getLoginForm{
   my $username = $cgi->param("username");
   my $login = qq{
-        <div class="loginForm">
+        <div class="form">
         <h1> Access to the admin area </h1>
         <form id="" action="login.cgi" method="post">
           <fieldset>
