@@ -38,6 +38,9 @@
           <div class="box">
             <xsl:apply-templates select="studyTitles"/>
           </div>
+          <div class="box">
+            <xsl:apply-templates select="working"/>
+          </div>
         </div>
         <div id="footer"><a class="admin" href="login.cgi">Admin area</a>
           <p class="copyright">Copyright (c) 2016 Copyright Holder All Rights Reserved.</p>
@@ -85,6 +88,36 @@
           </div>
         </li>
       </xsl:for-each>
-    </ul><a href="/cgi-bin/pages/public/studyTitles.cgi">Show all</a>
+    </ul><a href="studyTitles.cgi">Show all</a>
+  </xsl:template>
+  <xsl:template match="working">
+    <h2>Working Experience</h2>
+    <ul>
+      <xsl:for-each select="item[position() &lt; 2]">
+        <xsl:sort select="position()" data-type="number" order="descending"/>
+        <li>
+          <div class="working">
+            <p class="titleName">
+              <xsl:value-of select="role"/>
+            </p>
+            <div class="infos">
+              <div><span class="key">From</span>
+                <p class="value">
+                  <xsl:value-of select="begin"/>
+                </p><span class="key">To</span>
+                <p class="value">
+                  <xsl:value-of select="end"/>
+                </p>
+              </div>
+              <div><span class="key">For</span>
+                <p class="value">
+                  <xsl:value-of select="company"/>
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </xsl:for-each>
+    </ul><a href="working.cgi">Show All</a>
   </xsl:template>
 </xsl:stylesheet>

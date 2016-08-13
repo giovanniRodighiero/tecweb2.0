@@ -38,6 +38,9 @@
           <div class="box">
             <xsl:apply-templates select="studyTitles"/>
           </div>
+          <div class="box">
+            <xsl:apply-templates select="working"/>
+          </div>
         </div>
         <div id="footer"><a class="admin" href="logout.cgi">Log out</a>
           <p class="copyright">Copyright (c) 2016 Copyright Holder All Rights Reserved.</p>
@@ -46,7 +49,7 @@
     </body>
   </xsl:template>
   <xsl:template match="anagraphic">
-    <h2>Anagraphical data</h2>
+    <h2>Anagraphical Informations</h2>
     <ul>
       <xsl:for-each select="item[position() &lt; 6]">
         <li>
@@ -61,7 +64,7 @@
     </ul><a href="anagraphic.cgi">Edit Anagraphical Informations</a>
   </xsl:template>
   <xsl:template match="studyTitles">
-    <h2>Study titles</h2>
+    <h2>Study Titles and Educations</h2>
     <ul>
       <xsl:for-each select="item[position() &lt; 4]">
         <xsl:sort select="position()" data-type="number" order="descending"/>
@@ -85,6 +88,36 @@
           </div>
         </li>
       </xsl:for-each>
-    </ul><a href="/cgi-bin/pages/public/studyTitles.cgi">Edit Study Titles</a>
+    </ul><a href="studyTitles.cgi">Edit Study Titles and Educations</a>
+  </xsl:template>
+  <xsl:template match="working">
+    <h2>Working Experience</h2>
+    <ul>
+      <xsl:for-each select="item[position() &lt; 2]">
+        <xsl:sort select="position()" data-type="number" order="descending"/>
+        <li>
+          <div class="working">
+            <p class="titleName">
+              <xsl:value-of select="role"/>
+            </p>
+            <div class="infos">
+              <div><span class="key">From</span>
+                <p class="value">
+                  <xsl:value-of select="begin"/>
+                </p><span class="key">To</span>
+                <p class="value">
+                  <xsl:value-of select="end"/>
+                </p>
+              </div>
+              <div><span class="key">For</span>
+                <p class="value">
+                  <xsl:value-of select="company"/>
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </xsl:for-each>
+    </ul><a href="working.cgi">Edit Working Experiences</a>
   </xsl:template>
 </xsl:stylesheet>

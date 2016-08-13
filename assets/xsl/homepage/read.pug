@@ -39,6 +39,8 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
             xsl:apply-templates(select="anagraphic")/
           div(class="box")
             xsl:apply-templates(select="studyTitles")/
+          div(class="box")
+            xsl:apply-templates(select="working")/
         div(id="footer")
           a(href="login.cgi" class="admin") Admin area
           p(class="copyright") Copyright (c) 2016 Copyright Holder All Rights Reserved.
@@ -72,4 +74,26 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
                 p(class="value")
                   xsl:value-of(select="school")/
 
-    a(href="/cgi-bin/pages/public/studyTitles.cgi") Show all
+    a(href="studyTitles.cgi") Show all
+  xsl:template(match="working")
+    h2 Working Experience
+    ul
+      xsl:for-each(select="item[position() < 2]")
+        xsl:sort(select="position()" data-type="number" order="descending")/
+        li
+          div(class="working")
+            p(class="titleName")
+              xsl:value-of(select="role")/
+            div(class="infos")
+              div
+                span(class="key") From
+                p(class="value")
+                  xsl:value-of(select="begin")/
+                span(class="key") To
+                p(class="value")
+                  xsl:value-of(select="end")/
+              div
+                span(class="key") For
+                p(class="value")
+                  xsl:value-of(select="company")/
+    a(href="working.cgi") Show All
