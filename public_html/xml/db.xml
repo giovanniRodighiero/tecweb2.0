@@ -48,4 +48,14 @@
       <company>Develon S.r.l</company>
     </item>
   </working>
+  <contacts>
+    <item id="1">
+      <contactName>Email</contactName>
+      <value>giovanni.rodighiero@outlook.it</value>
+    </item>
+    <item id="2">
+      <contactName>GitHub</contactName>
+      <value isLink="true">https://github.com/giovanniRodighiero/</value>
+    </item>
+  </contacts>
 </db>

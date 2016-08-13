@@ -21,9 +21,8 @@ sub updateNode{
 sub anagraphic{
   my($collection ,$id, $fieldName, $content) = @_;
   my @errors;
-  warn $id;
-  @errors = validate($fieldName, "Field's Name", true, @errors);
-  @errors = validate($content, "Field's content", true, @errors);
+  @errors = validate($item_name, "Field's Name", true, @errors);
+  @errors = validate($text, "Field's content", true, @errors);
   if(scalar @errors < 1){
   # update fieldName field
   $fieldName_query="//".$collection."/item[\@id = \"".$id."\"]/fieldName/text()";
@@ -38,9 +37,9 @@ sub anagraphic{
 }
 sub studyTitles{
   my($collection ,$id, $year, $title, $school) = @_;
-  
-  @errors = validate($year, "Year", true, @errors);
-  @errors = validate($title, "Title", true, @errors);
+  my @errors;
+  @errors = validate($year, "Year of attainment", true, @errors);
+  @errors = validate($title, "Title's Name", true, @errors);
   @errors = validate($school, "School", true, @errors);
   if(scalar @errors < 1){
     #update year field
@@ -54,6 +53,32 @@ sub studyTitles{
     # update school field
     $school_query="//".$collection."/item[\@id = \"".$id."\"]/school/text()";
     updateNode($school_query, $school);
+  }
+  return @errors;
+}
+sub working{
+  my ($collection, $id, $begin, $end, $role, $company) = @_;
+  my @errors;
+  @errors = validate($begin, "Year of beginning", true, @errors);
+  @errors = validate($end, "Year of ending", true, @errors);
+  @errors = validate($role, "Perfomed Role", true, @errors);
+  @errors = validate($company, "Company Name", true, @errors);
+  if(scalar @errors < 1){
+    #update Begin fiels
+    my $begin_query="//".$collection."/item[\@id = \"".$id."\"]/begin/text()";
+    updateNode($begin_query, $begin);
+
+    # update end field
+    my $end_query="//".$collection."/item[\@id = \"".$id."\"]/end/text()";
+    updateNode($end_query, $end);
+
+    # update role field
+    my $role_query="//".$collection."/item[\@id = \"".$id."\"]/role/text()";
+    updateNode($role_query, $role);
+
+    # update company field
+    my $company_query="//".$collection."/item[\@id = \"".$id."\"]/company/text()";
+    updateNode($company_query, $company);
   }
   return @errors;
 }
@@ -72,6 +97,13 @@ sub update{
     my $title =$cgi->param("title");
     my $school =$cgi->param("school");
     @errors = studyTitles($collection, $id, $year, $title, $school);
+  }
+  if($collection eq 'working'){
+    my $begin =$cgi->param("begin");
+    my $end =$cgi->param("end");
+    my $role =$cgi->param("role");
+    my $company =$cgi->param("company");
+    @errors = working($collection, $id, $begin, $end, $role, $company);
   }
   if(scalar @errors < 1){
     open(OUT, ">$fileDati");

@@ -27,7 +27,8 @@
             <li><a href="/cgi-bin/pages/public/home.cgi">Overview</a></li>
             <li><span class="active">Anagraphical Informations</span></li>
             <li><a href="studyTitles.cgi">Study Titles and Education</a></li>
-            <li><a href="orking.cgi">Working Experience</a></li>
+            <li><a href="working.cgi">Working Experience</a></li>
+            <li><a href="contacts.cgi">Contacts and Socials</a></li>
           </ul>
         </div>
         <div id="content">

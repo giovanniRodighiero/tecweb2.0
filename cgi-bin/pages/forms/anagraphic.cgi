@@ -10,7 +10,6 @@ sub getForm{
   my $content = $cgi->param("content");
   my $collection = $cgi->param("collection");
   my $anagraphic = qq{
-        <form class="form" action="new.cgi" method="post">
           <fieldset>
           <div class="group-input">
             <label for="fieldName">Field's Name</label>
@@ -35,6 +34,7 @@ sub getForm{
       <div id="path">
         <p>Admin Panel<a href="home.cgi">Home</a> /<a href="anagraphic.cgi">Anagraphical Informations</a> / <span class="active"> Update Anagraphical Information</span></p>
       </div>
+      <form class="form" action="edit.cgi" method="post">
     };
 }else{
   $ending = qq{
@@ -46,6 +46,7 @@ sub getForm{
     <div id="path">
       <p>Admin Panel<a href="home.cgi">Home</a> /<a href="anagraphic.cgi">Anagraphical Informations</a> / <span class="active"> New Anagraphical Information</span></p>
     </div>
+    <form class="form" action="new.cgi" method="post">
   };
 }
   return $path.$anagraphic.$ending;

@@ -12,29 +12,17 @@ my $parser = getParser();
 my $doc = getDoc();
 my $root = getRoot();
 
-sub anagraphic{
-  my($id) = @_;
-  my $query="//anagraphic/item[\@id = \"".$id."\"]";
+sub getQuery{
+  my($id, $collection) = @_;
+  my $query="//".$collection."/item[\@id = \"".$id."\"]";
   return $query;
 }
-sub studyTitles{
-  my($id) = @_;
-  my $query="//studyTitles/item[\@id = \"".$id."\"]";
-  return $query;
-}
-
 
 sub destroyNode{
   my $collection = $cgi->param("collection");
   my $id = $cgi->param("id");
 
-  my $query;
-  if($collection eq 'anagraphic'){
-    $query = anagraphic($id);
-  }
-  if($collection eq 'studyTitles'){
-    $query = studyTitles($id);
-  }
+  my $query = getQuery($id, $collection);
   my $node = $root->findnodes($query)->get_node(1);
   my $parent = $node->parentNode;
   $parent->removeChild($node);

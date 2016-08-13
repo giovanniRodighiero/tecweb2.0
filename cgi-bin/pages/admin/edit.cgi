@@ -30,6 +30,12 @@ sub setTitle{
     };
     return $title;
   }
+  if($collection eq 'contacts'){
+    my $title = qq{
+      <h1 class="page-title"> Updating a Contact</h1>
+    };
+    return $title;
+  }
 }
 my $title = setTitle();
 my $cancel = qq{
@@ -60,19 +66,8 @@ sub renderPage{
 
 sub renderForm{
   my($collection) = @_;
-  my $html;
-  if($collection eq 'anagraphic'){
-    require "cgi-bin/pages/forms/anagraphic.cgi";
-    $html = getForm(1);
-  }
-  if($collection eq 'studyTitles'){
-    require "cgi-bin/pages/forms/studyTitles.cgi";
-    $html = getForm(1);
-  }
-  if($collection eq 'working'){
-    require "cgi-bin/pages/forms/working.cgi";
-    $html = getForm(1);
-  }
+  require "cgi-bin/pages/forms/".$collection.".cgi";
+  my $html = getForm(1);
   print $layout.$title.$html;
 }
 renderPage;

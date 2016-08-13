@@ -16,8 +16,6 @@ function renderModal(id, collection) {
   input2.id = "collectionInfo"
   modal.insertBefore(input2, button);
   div.className = "lightbox";
-
-  console.log('ok');
   return false;
 }
 function cancelModal(id, collection) {
@@ -29,6 +27,5 @@ function cancelModal(id, collection) {
   modal.removeChild(input2);
 
   div.className = "";
-  console.log('ok');
   return false;
 }

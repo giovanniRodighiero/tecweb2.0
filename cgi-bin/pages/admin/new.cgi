@@ -27,6 +27,12 @@ sub setTitle{
     };
     return $title;
   }
+  if($collection eq 'contacts'){
+    my $title = qq{
+      <h1 class="page-title"> Adding a new Contact</h1>
+    };
+    return $title;
+  }
 }
 my $title = setTitle();
 my $cancel = qq{
@@ -42,7 +48,6 @@ sub renderPage{
       print $cancel."</body></html>"
     }else{# came here after the submit of the creation form => validation
       my @errors = buildNode();
-      warn @errors;
       if(@errors != 0){
         warn scalar @errors;
         print "Content-type: text/html\n\n";
@@ -58,19 +63,8 @@ sub renderPage{
 
 sub renderForm{
   my($collection) = @_;
-  my $html;
-  if($collection eq 'anagraphic'){
-    require "cgi-bin/pages/forms/anagraphic.cgi";
-    $html = getForm(0);
-  }
-  if($collection eq 'studyTitles'){
-    require "cgi-bin/pages/forms/studyTitles.cgi";
-    $html = getForm(0);
-  }
-  if($collection eq 'working'){
-    require "cgi-bin/pages/forms/working.cgi";
-    $html = getForm(0);
-  }
+  require "cgi-bin/pages/forms/".$collection.".cgi";
+  my $html = getForm(0);
   print $layout.$title.$html;
 }
 renderPage;

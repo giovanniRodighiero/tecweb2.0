@@ -11,7 +11,6 @@ sub getForm{
   my $school =$cgi->param("school");
   my $collection = $cgi->param("collection");
   my $studyTitles = qq{
-    <form class="form" action="new.cgi" method="post">
       <fieldset>
       <div class="group-input">
         <label for="fieldName">Year of attainment</label>
@@ -40,6 +39,7 @@ sub getForm{
     <div id="path">
       <p>Admin Panel<a href="home.cgi">Home</a> /<a href="studyTitles.cgi">Study Titles and Education</a> / <span class="active"> Update Study Titles</span></p>
     </div>
+    <form class="form" action="edit.cgi" method="post">
   };
 }else{
   $ending = qq{
@@ -51,6 +51,7 @@ sub getForm{
     <div id="path">
       <p>Admin Panel<a href="home.cgi">Home</a> /<a href="studyTitles.cgi.cgi">Study Titles and Education</a> / <span class="active"> New Study Title</span></p>
     </div>
+    <form class="form" action="new.cgi" method="post">
   };
 }
   return $path.$studyTitles.$ending;
