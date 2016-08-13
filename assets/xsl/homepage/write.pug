@@ -101,6 +101,17 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
                 p(class="value")
                   xsl:value-of(select="company")/
     a(href="working.cgi") Edit Working Experiences
+  xsl:template(match="skills")
+    h2 Skills and Languages
+    ul
+      xsl:for-each(select="item[position() < 4]")
+        li
+          div(class="item")
+            span(class="key")
+              xsl:value-of(select="skillsName")/
+            p(class="value")
+              xsl:value-of(select="level")/
+    a(href="skills.cgi") Edit Skills and Languages
   xsl:template(match="contacts")
     h2 Contacts and Socials
     ul
@@ -118,4 +129,4 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
                       xsl:value-of(select="value")/
                   xsl:otherwise
                     xsl:value-of(select="value")/
-    a(href="contacts.cgi") Show All
+    a(href="contacts.cgi") Edit Contacts and Socials

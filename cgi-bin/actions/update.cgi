@@ -26,7 +26,6 @@ sub anagraphic{
   if(scalar @errors < 1){
   # update fieldName field
   $fieldName_query="//".$collection."/item[\@id = \"".$id."\"]/fieldName/text()";
-  warn "FLAG  ";
 
   updateNode($fieldName_query, $fieldName);
   #update content field
@@ -83,7 +82,6 @@ sub working{
   return @errors;
 }
 sub contacts{
-  warn "qua";
   my ($collection, $id, $contactName, $value, $isLink) = @_;
   my @errors;
   @errors = validate($contactName, "Contact's Name", true, @errors);
@@ -104,12 +102,25 @@ sub contacts{
   }
   return @errors;
 }
+sub skills{
+  my($collection ,$id, $skillsName, $level) = @_;
+  my @errors;
+  @errors = validate($skillsName, "Skill's Name", true, @errors);
+  @errors = validate($level, "Level of Knowledge", true, @errors);
+  if(scalar @errors < 1){
+  # update skillName field
+  $skillName_query="//".$collection."/item[\@id = \"".$id."\"]/skillsName/text()";
+  updateNode($skillName_query, $skillsName);
 
+  #update content field
+  $level_query="//".$collection."/item[\@id = \"".$id."\"]/level/text()";
+  updateNode($level_query, $level);
+  }
+  return @errors;
+}
 sub update{
   my $collection = $cgi->param("collection");
   my $id = $cgi->param("id");
-  warn "dentro update";
-  warn $collection;
   my @errors;
   if($collection eq 'anagraphic'){
     my $fieldName =$cgi->param("fieldName");
@@ -130,11 +141,16 @@ sub update{
     @errors = working($collection, $id, $begin, $end, $role, $company);
   }
   if($collection eq 'contacts'){
-    warn "dentro contacts";
     my $contactName =$cgi->param("contactName");
     my $value =$cgi->param("value");
     my $isLink =$cgi->param("isLink");
     @errors = contacts($collection, $id, $contactName, $value, $isLink);
+  }
+  if($collection eq 'skills'){
+    my $skillsName =$cgi->param("skillsName");
+    my $level =$cgi->param("level");
+    warn $skillsName;
+    @errors = skills($collection, $id, $skillsName, $level);
   }
   if(scalar @errors < 1){
     open(OUT, ">$fileDati");

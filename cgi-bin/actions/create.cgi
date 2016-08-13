@@ -76,6 +76,19 @@ sub buildContactNode{
   }
   return @errors;
 }
+sub buildSkillsNode{
+  my ($collection, $skillName, $level) = @_;
+  my @errors;
+  @errors = validate($skillName, "Skill's Name", true, @errors);
+  @errors = validate($level, "Level's content", true, @errors);
+  if(scalar @errors < 1){
+    my $next_id = generateNextId('//'.$collection.'/item[last()]');
+    my $new_node = "\t<item id=\"".$next_id."\">\n\t\t<skillsName>".$skillName."</skillsName>\n\t\t<level>".$level."</level>\n\t</item>\n";
+    $query="//".$collection;
+    appendFragment($query, $new_node);
+  }
+  return @errors;
+}
 sub generateNextId{
   my($query) = @_;
   my $node = $doc->findnodes($query)->get_node(1);
@@ -113,6 +126,11 @@ sub buildNode{
     my $value =$cgi->param("value");
     my $isLink =$cgi->param("isLink");
     @errors = buildContactNode($collection, $contactName, $value, $isLink);
+  }
+  if($collection eq 'skills'){
+    my $skillsName =$cgi->param("skillsName");
+    my $level =$cgi->param("level");
+    @errors = buildSkillsNode($collection, $skillsName, $level);
   }
   if(scalar @errors < 1){
     open(OUT, ">$fileDati");

@@ -33,6 +33,12 @@ sub setTitle{
     };
     return $title;
   }
+  if($collection eq 'skills'){
+    my $title = qq{
+      <h1 class="page-title"> Adding a new Skill</h1>
+    };
+    return $title;
+  }
 }
 my $title = setTitle();
 my $cancel = qq{

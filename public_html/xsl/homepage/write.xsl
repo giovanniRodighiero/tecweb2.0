@@ -124,6 +124,21 @@
       </xsl:for-each>
     </ul><a href="working.cgi">Edit Working Experiences</a>
   </xsl:template>
+  <xsl:template match="skills">
+    <h2>Skills and Languages</h2>
+    <ul>
+      <xsl:for-each select="item[position() &lt; 4]">
+        <li>
+          <div class="item"><span class="key">
+              <xsl:value-of select="skillsName"/></span>
+            <p class="value">
+              <xsl:value-of select="level"/>
+            </p>
+          </div>
+        </li>
+      </xsl:for-each>
+    </ul><a href="skills.cgi">Edit Skills and Languages</a>
+  </xsl:template>
   <xsl:template match="contacts">
     <h2>Contacts and Socials</h2>
     <ul>
@@ -145,6 +160,6 @@
               </p></span></div>
         </li>
       </xsl:for-each>
-    </ul><a href="contacts.cgi">Show All</a>
+    </ul><a href="contacts.cgi">Edit Contacts and Socials</a>
   </xsl:template>
 </xsl:stylesheet>

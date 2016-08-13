@@ -48,18 +48,27 @@
       <company>Develon S.r.l</company>
     </item>
   </working>
+  <skills>
+    <item id="1">
+      <skillsName>JavaScript</skillsName>
+      <level>Good</level>
+    </item>
+  	
+	
+	
+	<item id="3">
+		<skillsName>mongoDBcc</skillsName>
+		<level>ok</level>
+	</item>
+</skills>
   <contacts>
     <item id="1">
       <contactName>Email</contactName>
-      
-    <value isLink="true">giovanni.rodighiero@outlook.it</value></item>
+      <value>giovanni.rodighiero@outlook.it</value>
+    </item>
     <item id="2">
       <contactName>GitHub</contactName>
       <value isLink="true">https://github.com/giovanniRodighiero/</value>
     </item>
-  	<item id="3">
-		<contactName>ff</contactName>
-		<value isLink="">ff</value>
-	</item>
-</contacts>
+  </contacts>
 </db>

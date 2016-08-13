@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
+  xsl:output(version='1.0' encoding='UTF-8' indent='yes' omit-xml-declaration="yes")/
+  xsl:template(match="//db")
+    head
+      title Skills and Languages - Giovanni Rodighiero Resume
+      meta(http-equiv="Content-Type" content="text/html; charset=utf-8")/
+      meta(name="title" content="Giovanni Rodighiero Resume - Skills and Languages")/
+      meta(name="description" content="Anagraphic Informations of the website that presents Giovanni Rodighiero's resume.")/
+      meta(name="keywords" content="Anagraphic Informations, Birth, Address, Giovanni, Rodighiero, Resume, Curriculum Vitae, Experience, Education")/
+      meta(name="author" content="Giovanni Rodighiero")/
+      meta(name="language" content="english en")/
+      link(rel="stylesheet" type="text/css" href="../../../public_html/styles/main.min.css" media="screen")/
+      link(rel="stylesheet" type="text/css" href="../../../public_html/styles/print.min.css" media="print")/
+    body
+      div(id="anagraphic")
+        div(id="header")
+          h1
+            span(xml:lang="it") Giovanni Rodighiero,
+            span(class="subtitle") Personal Resume
+        div(id="path")
+          p
+            a(href="/cgi-bin/pages/public/home.cgi") Home
+            span(class="active") / Skills and Languages
+        div(id="nav")
+          h2 Resume Pages:
+          ul
+            li
+              a(href="/cgi-bin/pages/public/home.cgi") Overview
+            li
+              a(href="anagraphic.cgi") Anagraphical Informations
+            li
+              a(href="studyTitles.cgi") Study Titles and Education
+            li
+              a(href="working.cgi") Working Experience
+            li
+              a(href="contacts.cgi") Contacts and Socials
+            li
+              span(class="active") Skills and Languages
+        div(id="content")
+          div(class="box-full")
+            xsl:apply-templates(select="skills")/
+        div(id="footer")
+          a(href="login.cgi" class="admin") Admin area
+          p(class="copyright") Copyright (c) 2016 Copyright Holder All Rights Reserved.
+  xsl:template(match="skills")
+    h2(class="page-title") Skills and Languages
+    ul
+      xsl:for-each(select="item")
+        li
+          div(class="item")
+            p(class="titleName")
+              xsl:value-of(select="skillsName")/
+            div
+              span(class="key") Level of Knowledge
+              span(class="value")
+                xsl:value-of(select="level")/

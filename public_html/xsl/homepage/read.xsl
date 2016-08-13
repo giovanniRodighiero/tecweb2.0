@@ -45,6 +45,9 @@
           <div class="box">
             <xsl:apply-templates select="contacts"/>
           </div>
+          <div class="box">
+            <xsl:apply-templates select="skills"/>
+          </div>
         </div>
         <div id="footer"><a class="admin" href="login.cgi">Admin area</a>
           <p class="copyright">Copyright (c) 2016 Copyright Holder All Rights Reserved.</p>
@@ -123,6 +126,21 @@
         </li>
       </xsl:for-each>
     </ul><a href="working.cgi">Show All</a>
+  </xsl:template>
+  <xsl:template match="skills">
+    <h2>Skills and Languages</h2>
+    <ul>
+      <xsl:for-each select="item[position() &lt; 4]">
+        <li>
+          <div class="item"><span class="key">
+              <xsl:value-of select="skillsName"/></span>
+            <p class="value">
+              <xsl:value-of select="level"/>
+            </p>
+          </div>
+        </li>
+      </xsl:for-each>
+    </ul><a href="skills.cgi">Show all</a>
   </xsl:template>
   <xsl:template match="contacts">
     <h2>Contacts and Socials</h2>
