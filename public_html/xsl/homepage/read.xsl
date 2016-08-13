@@ -42,6 +42,9 @@
           <div class="box">
             <xsl:apply-templates select="working"/>
           </div>
+          <div class="box">
+            <xsl:apply-templates select="contacts"/>
+          </div>
         </div>
         <div id="footer"><a class="admin" href="login.cgi">Admin area</a>
           <p class="copyright">Copyright (c) 2016 Copyright Holder All Rights Reserved.</p>
@@ -120,5 +123,28 @@
         </li>
       </xsl:for-each>
     </ul><a href="working.cgi">Show All</a>
+  </xsl:template>
+  <xsl:template match="contacts">
+    <h2>Contacts and Socials</h2>
+    <ul>
+      <xsl:for-each select="item[position() &lt; 3]">
+        <li>
+          <div class="contacts"><span class="key">
+              <xsl:value-of select="contactName"/>
+              <p class="value">
+                <xsl:choose>
+                  <xsl:when test="value/@isLink = 'true'"><a class="external-link">
+                      <xsl:attribute name="href">
+                        <xsl:value-of select="value"/>
+                      </xsl:attribute>
+                      <xsl:value-of select="value"/></a></xsl:when>
+                  <xsl:otherwise>
+                    <xsl:value-of select="value"/>
+                  </xsl:otherwise>
+                </xsl:choose>
+              </p></span></div>
+        </li>
+      </xsl:for-each>
+    </ul><a href="contacts.cgi">Show All</a>
   </xsl:template>
 </xsl:stylesheet>

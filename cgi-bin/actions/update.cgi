@@ -82,10 +82,34 @@ sub working{
   }
   return @errors;
 }
+sub contacts{
+  warn "qua";
+  my ($collection, $id, $contactName, $value, $isLink) = @_;
+  my @errors;
+  @errors = validate($contactName, "Contact's Name", true, @errors);
+  @errors = validate($value, "Contact's value", true, @errors);
+  if(scalar @errors < 1){
+    #update contactName fiels
+    my $contactName_query="//".$collection."/item[\@id = \"".$id."\"]/contactName/text()";
+    updateNode($contactName_query, $contactName);
+
+    # update value field
+    my $value_query="//".$collection."/item[\@id = \"".$id."\"]/value";
+    my $node = $root->findnodes($value_query)->get_node(1);
+    my $parent = $node->parentNode;
+    $parent->removeChild($node);
+    $new_value = "<value isLink=\"".$isLink."\">".$value."</value>";
+    $fragment = $parser->parse_balanced_chunk($new_value);
+    $parent->appendChild($fragment);
+  }
+  return @errors;
+}
 
 sub update{
   my $collection = $cgi->param("collection");
   my $id = $cgi->param("id");
+  warn "dentro update";
+  warn $collection;
   my @errors;
   if($collection eq 'anagraphic'){
     my $fieldName =$cgi->param("fieldName");
@@ -104,6 +128,13 @@ sub update{
     my $role =$cgi->param("role");
     my $company =$cgi->param("company");
     @errors = working($collection, $id, $begin, $end, $role, $company);
+  }
+  if($collection eq 'contacts'){
+    warn "dentro contacts";
+    my $contactName =$cgi->param("contactName");
+    my $value =$cgi->param("value");
+    my $isLink =$cgi->param("isLink");
+    @errors = contacts($collection, $id, $contactName, $value, $isLink);
   }
   if(scalar @errors < 1){
     open(OUT, ">$fileDati");

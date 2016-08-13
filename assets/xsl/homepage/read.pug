@@ -43,6 +43,8 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
             xsl:apply-templates(select="studyTitles")/
           div(class="box")
             xsl:apply-templates(select="working")/
+          div(class="box")
+            xsl:apply-templates(select="contacts")/
         div(id="footer")
           a(href="login.cgi" class="admin") Admin area
           p(class="copyright") Copyright (c) 2016 Copyright Holder All Rights Reserved.
@@ -99,3 +101,21 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
                 p(class="value")
                   xsl:value-of(select="company")/
     a(href="working.cgi") Show All
+  xsl:template(match="contacts")
+    h2 Contacts and Socials
+    ul
+      xsl:for-each(select="item[position() < 3]")
+        li
+          div(class="contacts")
+            span(class="key")
+              xsl:value-of(select="contactName")/
+              p(class="value")
+                xsl:choose
+                  xsl:when(test="value/@isLink = 'true'")
+                    a(class="external-link")
+                      xsl:attribute(name="href")
+                        xsl:value-of(select="value")/
+                      xsl:value-of(select="value")/
+                  xsl:otherwise
+                    xsl:value-of(select="value")/
+    a(href="contacts.cgi") Show All

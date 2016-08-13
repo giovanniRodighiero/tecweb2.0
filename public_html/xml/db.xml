@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <db>
   <anagraphic>
     <item id="1">
@@ -51,11 +51,15 @@
   <contacts>
     <item id="1">
       <contactName>Email</contactName>
-      <value>giovanni.rodighiero@outlook.it</value>
-    </item>
+      
+    <value isLink="true">giovanni.rodighiero@outlook.it</value></item>
     <item id="2">
       <contactName>GitHub</contactName>
       <value isLink="true">https://github.com/giovanniRodighiero/</value>
     </item>
-  </contacts>
+  	<item id="3">
+		<contactName>ff</contactName>
+		<value isLink="">ff</value>
+	</item>
+</contacts>
 </db>

@@ -26,7 +26,7 @@ sub validate{
     my $message = "The value of the field \'".$fieldName."\' cannot be empty.";
     push(@errors, $message);
   }else{
-  if($value =~m/\//){
+  if($value =~m/\// and $fieldName ne 'value'){
     my $message = "The field \'".$fieldName."\' contains forbidden characters (/).";
 		push(@errors, $message);
 	}

@@ -23,15 +23,14 @@ sub getForm{
             </div>
           <div class="group-input">
             <label for="isLink">Is the value a link ?</label>};
-warn $isLink;
   if($isLink eq 'true'){
-    my $rest = q{<input type="checkbox" id="isLink" name="isLink" value="true" checked="checked" />
+    my $rest = qq{<input type="checkbox" id="isLink" name="isLink" value="true" checked="checked" />
     </div>
     <input type ="hidden" name="collection" value="$collection" />
     <input type ="hidden" name="submit" value="submit" />};
     $working = $working.$rest;
   }else{
-    my $rest = q{<input type="checkbox" id="isLink" name="isLink" value="true" />
+    my $rest = qq{<input type="checkbox" id="isLink" name="isLink" value="true" />
     </div>
     <input type ="hidden" name="collection" value="$collection" />
     <input type ="hidden" name="submit" value="submit" />};
