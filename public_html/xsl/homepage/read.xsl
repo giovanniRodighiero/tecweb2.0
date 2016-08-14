@@ -49,7 +49,7 @@
           <div class="box">
             <xsl:apply-templates select="contacts"/>
           </div>
-        </div>
+        </div><a class="back-top" href="#content">Back to top          </a>
         <div id="footer"><a class="admin" href="login.cgi">Admin area</a>
           <p class="copyright">Copyright (c) 2016 Copyright Holder All Rights Reserved.</p>
         </div>

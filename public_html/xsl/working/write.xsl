@@ -35,7 +35,7 @@
         </div>
         <div id="content">
           <xsl:apply-templates select="working"/>
-        </div>
+        </div><a class="back-top" href="#content">Back to top          </a>
         <div id="footer"><a class="admin" href="logout.cgi">Log out</a>
           <p class="copyright">Copyright (c) 2016 Copyright Holder All Rights Reserved.</p>
         </div>
