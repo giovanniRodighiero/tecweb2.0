@@ -18,6 +18,7 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
           h1
             span(xml:lang="it") Giovanni Rodighiero,
             span(class="subtitle") Personal Resume
+        a(href="#content" class="skipMenu") Jump to the page content
         div(id="path")
           p
             a(href="/cgi-bin/pages/public/home.cgi") Home
@@ -50,4 +51,4 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
             span(class="key")
               xsl:value-of(select="fieldName")/
             p(class="value")
-              xsl:value-of(select="content")/
+              xsl:copy-of(select="content/node()")/

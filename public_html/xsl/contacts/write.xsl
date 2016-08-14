@@ -17,7 +17,7 @@
       <div id="working">
         <div id="header">
           <h1><span xml:lang="it">Giovanni Rodighiero,</span><span class="subtitle">Personal Resume</span></h1>
-        </div>
+        </div><a class="skipMenu" href="#content">Jump to the page content</a>
         <div id="path">
           <p>Admin Panel<a href="home.cgi">Home</a><span class="active">/ Contacts and Socials</span></p>
         </div>

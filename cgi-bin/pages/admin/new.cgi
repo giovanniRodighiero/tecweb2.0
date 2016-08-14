@@ -7,33 +7,38 @@ require 'cgi-bin/actions/create.cgi';
 
 $cgi = new CGI;
 my $collection = $cgi->param("collection");
-my $layout = getLayout();
+my $layout;
 sub setTitle{
   if($collection eq 'anagraphic'){
+    $layout = getLayout('New Anagraphic Field', 'Page that adds a new anagraphic field', 'New Anagraphic Field');
     my $title = qq{
       <h1 class="page-title"> Adding a new Anagraphical Information</h1>
     };
     return $title;
   }
   if($collection eq 'studyTitles'){
+    $layout = getLayout('New Study Title Field', 'Page that adds a new study title field', 'New Study Title Field, Education');
     my $title = qq{
       <h1 class="page-title"> Adding a new Study Title</h1>
     };
     return $title;
   }
   if($collection eq 'working'){
+    $layout = getLayout('New Working Experience Field', 'Page that adds a new working experience field', 'New Working Experience Field');
     my $title = qq{
       <h1 class="page-title"> Adding a new Working Experience</h1>
     };
     return $title;
   }
   if($collection eq 'contacts'){
+    $layout = getLayout('New Contact Field', 'Page that adds a new contact field', 'New Contact Field');
     my $title = qq{
       <h1 class="page-title"> Adding a new Contact</h1>
     };
     return $title;
   }
   if($collection eq 'skills'){
+    $layout = getLayout('New Skill Field', 'Page that adds a new skill field', 'New Skill Field');
     my $title = qq{
       <h1 class="page-title"> Adding a new Skill</h1>
     };

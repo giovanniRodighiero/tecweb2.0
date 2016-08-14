@@ -11,7 +11,7 @@ require 'cgi-bin/pages/forms/login.cgi';
 $cgi = new CGI;
 my $user = $cgi->param("username");
 my $pass = $cgi->param("password");
-my $layout = getLayout();
+my $layout = getLayout('Login','Login page','Login');
 
 sub renderPage{
   if(getSession() ne undef){
