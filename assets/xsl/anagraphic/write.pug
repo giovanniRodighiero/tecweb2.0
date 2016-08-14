@@ -18,6 +18,7 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" )
             h1
               span(xml:lang="it") Giovanni Rodighiero,
               span(class="subtitle") Personal Resume
+          a(href="#content" class="skipMenu") Jump to the page content
           div(id="path")
             p
               | Admin Panel
@@ -27,16 +28,40 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" )
             h2 Resume Pages:
             ul
               li
-                a(href="home.cgi") Overview
-              li(class="active") Edit Anagraphical Informations
+                a(href="home.cgi" accesskey="o")
+                  span.accesskey O
+                  |verview
+              li(class="active")
+                |Edit
+                = ' '
+                span.accesskey A
+                |nagraphical Informations
               li
-                a(href="studyTitles.cgi") Edit Study Titles and Educations
+                a(href="studyTitles.cgi" accesskey="s")
+                  |Edit
+                  = ' '
+                  span.accesskey S
+                  |tudy Titles and Educations
               li
-                a(href="working.cgi") Edit Working Experience
+                a(href="working.cgi" accesskey="w")
+                  |Edit
+                  = ' '
+                  span.accesskey W
+                  |orking Experience
               li
-                a(href="contacts.cgi") Contacts and Socials
+                a(href="skills.cgi" accesskey="k")
+                  |Edit S
+                  span.accesskey k
+                  |ills and Languages
+              li
+                a(href="contacts.cgi" accesskey="c")
+                  |Edit
+                  = ' '
+                  span.accesskey C
+                  |ontacts and Socials
           div(id="content")
             xsl:apply-templates(select="anagraphic")/
+          a.back-top(href="#content") Back to top
           div(id="footer")
             a(href="logout.cgi" class="admin") Log out
             p(class="copyright") Copyright (c) 2016 Copyright Holder All Rights Reserved.
@@ -96,6 +121,16 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" )
                 <input type="hidden" name="id" >
                   <xsl:attribute name="value">
                     <xsl:value-of select="@id" />
+                  </xsl:attribute>
+                </input>
+                <input type="hidden" name="fieldName" >
+                  <xsl:attribute name="value">
+                    <xsl:value-of select="fieldName" />
+                  </xsl:attribute>
+                </input>
+                <input type="hidden" name="content" >
+                  <xsl:attribute name="value">
+                    <xsl:value-of select="content" />
                   </xsl:attribute>
                 </input>
                 <button type="submit"> Delete </button>

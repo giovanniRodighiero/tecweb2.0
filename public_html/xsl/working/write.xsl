@@ -17,24 +17,25 @@
       <div id="homepage">
         <div id="header">
           <h1><span xml:lang="it">Giovanni Rodighiero,</span><span class="subtitle">Personal Resume</span></h1>
-        </div>
+        </div><a class="skipMenu" href="#content">Jump to the page content</a>
         <div id="path">
           <p>Admin Panel<a href="home.cgi"> Home</a><span class="active">/ Working Experiences</span>
             <div id="nav">
               <h2>Resume Pages:</h2>
               <ul>
-                <li><a href="home.cgi">Overview</a></li>
-                <li><a href="anagraphic.cgi">Edit Anagraphical Informations</a></li>
-                <li><a href="studyTitles.cgi">Edit Study Titles and Education</a></li>
-                <li><span class="active">Edit Working Experience</span></li>
-                <li><a href="contacts.cgi">Contacts and Socials</a></li>
+                <li><a href="home.cgi" accesskey="o"></a><span class="accesskey">O</span>verview</li>
+                <li><a href="anagraphic.cgi" accesskey="a">Edit <span class="accesskey">A</span>nagraphical Informations</a></li>
+                <li><a href="studyTitles.cgi" accesskey="s">Edit <span class="accesskey">S</span>tudy Titles and Education</a></li>
+                <li><span class="active" accesskey="w">Edit <span class="accesskey">W</span>orking Experience</span></li>
+                <li><a href="skills.cgi" accesskey="k">Edit S<span class="accesskey">k</span>ills and Languages</a></li>
+                <li><a href="contacts.cgi" accesskey="c">Edit <span class="accesskey">C</span>ontacts and Socials</a></li>
               </ul>
             </div>
           </p>
         </div>
         <div id="content">
           <xsl:apply-templates select="working"/>
-        </div>
+        </div><a class="back-top" href="#content">Back to top</a>
         <div id="footer"><a class="admin" href="logout.cgi">Log out</a>
           <p class="copyright">Copyright (c) 2016 Copyright Holder All Rights Reserved.</p>
         </div>
@@ -120,6 +121,26 @@
                 <input type="hidden" name="id" >
                   <xsl:attribute name="value">
                     <xsl:value-of select="@id" />
+                  </xsl:attribute>
+                </input>
+                <input type="hidden" name="begin" >
+                  <xsl:attribute name="value">
+                    <xsl:value-of select="begin" />
+                  </xsl:attribute>
+                </input>
+                <input type="hidden" name="end" >
+                  <xsl:attribute name="value">
+                    <xsl:value-of select="end" />
+                  </xsl:attribute>
+                </input>
+                <input type="hidden" name="role" >
+                  <xsl:attribute name="value">
+                    <xsl:value-of select="role" />
+                  </xsl:attribute>
+                </input>
+                <input type="hidden" name="company" >
+                  <xsl:attribute name="value">
+                    <xsl:value-of select="company" />
                   </xsl:attribute>
                 </input>
                 <button type="submit"> Delete </button>

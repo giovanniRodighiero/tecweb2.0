@@ -17,25 +17,26 @@
       <div id="homepage">
         <div id="header">
           <h1><span xml:lang="it">Giovanni Rodighiero,</span><span class="subtitle">Personal Resume</span></h1>
-        </div>
+        </div><a class="skipMenu" href="#content">Jump to the page content</a>
         <div id="path">
           <p>Admin Panel<a href="home.cgi"> Home</a><span class="active">/ Study Titles and Education</span></p>
         </div>
         <div id="nav">
           <h2>Resume Pages:</h2>
           <ul>
-            <li><a href="home.cgi">Overview</a></li>
-            <li><a href="anagraphic.cgi">Edit Anagraphical Informations</a></li>
-            <li class="active">Edit Study Titles and Educations</li>
-            <li><a href="working.cgi">Edit Working Experience</a></li>
-            <li><a href="contacts.cgi">Contacts and Socials</a></li>
+            <li><a href="home.cgi" accesskey="o"><span class="accesskey">O</span>verview</a></li>
+            <li><a href="anagraphic.cgi" accesskey="a">Edit <span class="accesskey">A</span>nagraphical Informations</a></li>
+            <li><span class="active" accesskey="o">Edit <span class="accesskey">S</span>tudy Titles and Educations</span></li>
+            <li><a href="working.cgi" accesskey="w">Edit <span class="accesskey">W</span>orking Experience</a></li>
+            <li><a href="skills.cgi" accesskey="k">Edit S<span class="accesskey">k</span>ills and Languages</a></li>
+            <li><a href="contacts.cgi" accesskey="c">Edit <span class="accesskey">C</span>ontacts and Socials</a></li>
           </ul>
         </div>
         <div id="content">
           <div class="box-full">
             <xsl:apply-templates select="studyTitles"/>
           </div>
-        </div>
+        </div><a class="back-top" href="#content">Back to top</a>
         <div id="footer"><a class="admin" href="logout.cgi">Log out</a>
           <p class="copyright">Copyright (c) 2016 Copyright Holder All Rights Reserved.</p>
         </div>
@@ -117,6 +118,21 @@
               <input type="hidden" name="id" >
                 <xsl:attribute name="value">
                   <xsl:value-of select="@id" />
+                </xsl:attribute>
+              </input>
+              <input type="hidden" name="year" >
+                <xsl:attribute name="value">
+                  <xsl:value-of select="year" />
+                </xsl:attribute>
+              </input>
+              <input type="hidden" name="title" >
+                <xsl:attribute name="value">
+                  <xsl:value-of select="title" />
+                </xsl:attribute>
+              </input>
+              <input type="hidden" name="school" >
+                <xsl:attribute name="value">
+                  <xsl:value-of select="school" />
                 </xsl:attribute>
               </input>
               <button type="submit"> Delete </button>

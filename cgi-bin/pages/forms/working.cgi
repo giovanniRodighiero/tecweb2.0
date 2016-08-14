@@ -34,7 +34,7 @@ sub getForm{
       };
   my $ending;
   my $path;
-  if($edit){
+  if($edit == 1){
     my $id = $cgi->param("id");
     $ending = qq{
     <input type ="hidden" name="id" value="$id" />
@@ -47,7 +47,8 @@ sub getForm{
     </div>
     <form class="form" action="edit.cgi" method="post">
   };
-}else{
+}
+if($edit == 0){
   $ending = qq{
     <button type="submit">Create</button>
     </fieldset>
@@ -58,6 +59,42 @@ sub getForm{
       <p>Admin Panel<a href="home.cgi">Home</a> /<a href="working.cgi">Working Experiences</a> / <span class="active"> New Working Experience</span></p>
     </div>
     <form class="form" action="new.cgi" method="post">
+  };
+}
+if($edit == 2){
+  my $id = $cgi->param("id");
+  $working = qq{
+    <fieldset>
+    <input type ="hidden" name="collection" value="$collection" />
+  };
+  $ending = qq{
+  <input type ="hidden" name="id" value="$id" />
+  <button type="submit">Delete</button>
+  </fieldset>
+</form>};
+  $path = qq{
+    <div id="path">
+      <p>Admin Panel<a href="home.cgi">Home</a> /<a href="working.cgi">Working Experiences</a> / <span class="active"> Delete Working Experiences</span></p>
+    </div>
+    <div class="box-delete">
+      <div>
+        <span class="key">Year of beginning</span>
+        <p class="value">$begin</p>
+      </div>
+      <div>
+        <span class="key">Year of ending</span>
+        <p class="value">$end</p>
+      </div>
+      <div>
+        <span class="key">Perfomed Role</span>
+        <p class="value">$role</p>
+      </div>
+      <div>
+        <span class="key">Company</span>
+        <p class="value">$company</p>
+      </div>
+    </div>
+    <form class="form" action="../../destroy.cgi" method="post">
   };
 }
   return $path.$working.$ending;

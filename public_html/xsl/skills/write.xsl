@@ -17,24 +17,24 @@
       <div id="homepage">
         <div id="header">
           <h1><span xml:lang="it">Giovanni Rodighiero,</span><span class="subtitle">Personal Resume</span></h1>
-        </div>
+        </div><a class="skipMenu" href="#content">Jump to the page content</a>
         <div id="path">
           <p>Admin Panel<a href="home.cgi"> Home</a><span class="active">/ Skills and Languages</span></p>
         </div>
         <div id="nav">
           <h2>Resume Pages:</h2>
           <ul>
-            <li><a href="home.cgi">Overview</a></li>
-            <li><a href="anagraphic.cgi">Edit Anagraphical Informations</a></li>
-            <li><a href="studyTitles.cgi">Edit Study Titles and Educations</a></li>
-            <li><a href="working.cgi">Edit Working Experience</a></li>
-            <li><a href="contacts.cgi">Edit Contacts and Socials</a></li>
-            <li><span class="active">Edit Skills and Languages</span></li>
+            <li><a href="home.cgi" accesskey="o"><span class="accesskey">O</span>verview</a></li>
+            <li><a href="anagraphic.cgi" accesskey="a">Edit <span class="accesskey">A</span>nagraphical Informations</a></li>
+            <li><a href="studyTitles.cgi" accesskey="s">Edit <span class="accesskey">S</span>tudy Titles and Educations</a></li>
+            <li><a href="working.cgi" accesskey="w">Edit<span class="accesskey">W</span>orking Experience</a></li>
+            <li><span class="active">Edit <span class="accesskey">S</span>kills and Languages</span></li>
+            <li><a href="contacts.cgi" accesskey="c">Edit <span class="accesskey">C</span>ontacts and Socials</a></li>
           </ul>
         </div>
         <div id="content">
           <xsl:apply-templates select="skills"/>
-        </div>
+        </div><a class="back-top" href="#content">Back to top</a>
         <div id="footer"><a class="admin" href="logout.cgi">Log out</a>
           <p class="copyright">Copyright (c) 2016 Copyright Holder All Rights Reserved.</p>
         </div>
@@ -103,6 +103,16 @@
                 <input type="hidden" name="id" >
                   <xsl:attribute name="value">
                     <xsl:value-of select="@id" />
+                  </xsl:attribute>
+                </input>
+                <input type="hidden" name="skillsName" >
+                  <xsl:attribute name="value">
+                    <xsl:value-of select="skillsName" />
+                  </xsl:attribute>
+                </input>
+                <input type="hidden" name="level" >
+                  <xsl:attribute name="value">
+                    <xsl:value-of select="level" />
                   </xsl:attribute>
                 </input>
                 <button type="submit"> Delete </button>

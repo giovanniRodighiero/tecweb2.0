@@ -18,6 +18,7 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
           h1
             span(xml:lang="it") Giovanni Rodighiero,
             span(class="subtitle") Personal Resume
+        a(href="#content" class="skipMenu") Jump to the page content
         div(id="path")
           p
             span(class="active") Home
@@ -25,15 +26,30 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
           h2 Resume Pages:
           ul
             li
-              span(class="active") Overview
+              span(class="active" accesskey="o")
+                span.accesskey O
+                |verview
             li
-              a(href="anagraphic.cgi") Anagraphical Informations
+              a(href="anagraphic.cgi" accesskey="a")
+                span.accesskey A
+                |nagraphical Informations
             li
-              a(href="studyTitles.cgi") Study Titles and Education
+              a(href="studyTitles.cgi" accesskey="s")
+                span.accesskey S
+                |tudy Titles and Education
             li
-              a(href="working.cgi") Working Experience
+              a(href="working.cgi" accesskey="w")
+                span.accesskey W
+                |orking Experience
             li
-              a(href="contacts.cgi") Contacts and Socials
+              a(href="skills.cgi" accesskey="k")
+                |S
+                span.accesskey k
+                |ills and Languages
+            li
+              a(href="contacts.cgi" accesskey="c")
+                span.accesskey C
+                |ontacts and Socials
         div(id="content")
           div(class="image")
             img(src="../../../public_html/images/photo.png")
@@ -47,6 +63,8 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
             xsl:apply-templates(select="skills")/
           div(class="box")
             xsl:apply-templates(select="contacts")/
+        a.back-top(href="#content") Back to top
+
         div(id="footer")
           a(href="login.cgi" class="admin") Admin area
           p(class="copyright") Copyright (c) 2016 Copyright Holder All Rights Reserved.

@@ -17,25 +17,26 @@
       <div id="anagraphic">
         <div id="header">
           <h1><span xml:lang="it">Giovanni Rodighiero,</span><span class="subtitle">Personal Resume</span></h1>
-        </div>
+        </div><a class="skipMenu" href="#content">Jump to the page content</a>
         <div id="path">
           <p><a href="/cgi-bin/pages/public/home.cgi">Home</a><span class="active">/ Anagraphical Informations</span></p>
         </div>
         <div id="nav">
           <h2>Resume Pages:</h2>
           <ul>
-            <li><a href="/cgi-bin/pages/public/home.cgi">Overview</a></li>
-            <li><span class="active">Anagraphical Informations</span></li>
-            <li><a href="studyTitles.cgi">Study Titles and Education</a></li>
-            <li><a href="working.cgi">Working Experience</a></li>
-            <li><a href="contacts.cgi">Contacts and Socials</a></li>
+            <li><a href="/cgi-bin/pages/public/home.cgi" accesskey="o"><span class="accesskey">O</span>verview</a></li>
+            <li><span class="active"><span class="accesskey">A</span>nagraphical Informations</span></li>
+            <li><a href="studyTitles.cgi" accesskey="s"><span class="accesskey">S</span>tudy Titles and Education</a></li>
+            <li><a href="working.cgi" accesskey="w"><span class="accesskey">W</span>orking Experience</a></li>
+            <li><a href="skills.cgi" accesskey="k">S<span class="accesskey">k</span>ills and Languages</a></li>
+            <li><a href="contacts.cgi" accesskey="c"><span class="accesskey">C</span>ontacts and Socials</a></li>
           </ul>
         </div>
         <div id="content">
           <div class="box-full">
             <xsl:apply-templates select="anagraphic"/>
           </div>
-        </div>
+        </div><a class="back-top" href="#content">Back to top</a>
         <div id="footer"><a class="admin" href="login.cgi">Admin area</a>
           <p class="copyright">Copyright (c) 2016 Copyright Holder All Rights Reserved.</p>
         </div>
@@ -50,7 +51,7 @@
           <div class="item"><span class="key">
               <xsl:value-of select="fieldName"/></span>
             <p class="value">
-              <xsl:value-of select="content"/>
+              <xsl:copy-of select="content/node()"/>
             </p>
           </div>
         </li>

@@ -17,18 +17,19 @@
       <div id="homepage">
         <div id="header">
           <h1><span xml:lang="it">Giovanni Rodighiero,</span><span class="subtitle">Personal Resume</span></h1>
-        </div>
+        </div><a class="skipMenu" href="#content">Jump to the page content</a>
         <div id="path">
           <p>Admin Panel<span class="active">Home</span></p>
         </div>
         <div id="nav">
           <h2>Resume Pages:</h2>
           <ul>
-            <li><span class="active">Overview</span></li>
-            <li><a href="anagraphic.cgi">Edit Anagraphical Informations</a></li>
-            <li><a href="studyTitles.cgi">Edit Study Titles and Educations</a></li>
-            <li><a href="working.cgi">Edit Working Experience</a></li>
-            <li><a href="contacts.cgi">Edit Contacts and Socials</a></li>
+            <li><span class="active" accesskey="o"><span class="accesskey">O</span>verview</span></li>
+            <li><a href="anagraphic.cgi" accesskey="a">Edit <span class="accesskey">A</span>nagraphical Informations</a></li>
+            <li><a href="studyTitles.cgi" accesskey="s">Edit <span class="accesskey">S</span>tudy Titles and Educations</a></li>
+            <li><a href="working.cgi" accesskey="w">Edit <span class="accesskey">W</span>orking Experience</a></li>
+            <li><a href="skills.cgi" accesskey="k">Edit S<span class="accesskey">k</span>ills and Languages</a></li>
+            <li><a href="contacts.cgi" accesskey="c">Edit <span class="accesskey">C</span>ontacts and Socials</a></li>
           </ul>
         </div>
         <div id="content">
@@ -48,7 +49,7 @@
           <div class="box">
             <xsl:apply-templates select="contacts"/>
           </div>
-        </div>
+        </div><a class="back-top" href="#content">Back to top</a>
         <div id="footer"><a class="admin" href="logout.cgi">Log out</a>
           <p class="copyright">Copyright (c) 2016 Copyright Holder All Rights Reserved.</p>
         </div>
