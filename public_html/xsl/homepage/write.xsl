@@ -6,8 +6,8 @@
       <title>HomePage Admin - Giovanni Rodighiero Resume</title>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
       <meta name="title" content="Giovanni Rodighiero Resume - Admin HomePage"/>
-      <meta name="description" content="ADmin homepage of the website that presents Giovanni Rodighiero's resume."/>
-      <meta name="keywords" content="Giovanni, Rodighiero, Resume, Curriculum Vitae, Experience, Education"/>
+      <meta name="description" content="Admin homepage of the website that presents Giovanni Rodighiero's resume."/>
+      <meta name="keywords" content="Giovanni, Rodighiero, Resume, Curriculum Vitae, Experience, Education, Skills, Contacts, Socials"/>
       <meta name="author" content="Giovanni Rodighiero"/>
       <meta name="language" content="english en"/>
       <link rel="stylesheet" type="text/css" href="../../../public_html/styles/main.min.css" media="screen"/>

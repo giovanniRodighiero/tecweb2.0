@@ -7,7 +7,7 @@
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
       <meta name="title" content="Giovanni Rodighiero Resume - Anagraphic Informations"/>
       <meta name="description" content="Anagraphic Informations of the website that presents Giovanni Rodighiero's resume."/>
-      <meta name="keywords" content="Anagraphic Informations, Birth, Address, Giovanni, Rodighiero, Resume, Curriculum Vitae, Experience, Education"/>
+      <meta name="keywords" content="Anagraphic Informations, Birth, Address, Name, Surname, Giovanni, Rodighiero, Resume, Curriculum Vitae"/>
       <meta name="author" content="Giovanni Rodighiero"/>
       <meta name="language" content="english en"/>
       <link rel="stylesheet" type="text/css" href="../../../public_html/styles/main.min.css" media="screen"/>

@@ -3,11 +3,11 @@
   <xsl:output version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="yes"/>
   <xsl:template match="//db">
     <head>
-      <title>Anagraphic Informations Admin - Giovanni Rodighiero Resume</title>
+      <title>Working Experiences Admin - Giovanni Rodighiero Resume</title>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-      <meta name="title" content="Giovanni Rodighiero Resume - Anagraphic Informations"/>
-      <meta name="description" content="Anagraphic Informations admin panel of the website that presents Giovanni Rodighiero's resume."/>
-      <meta name="keywords" content="Anagraphic Informations,Admin, Birth, Address, Giovanni, Rodighiero, Resume, Curriculum Vitae, Experience, Education"/>
+      <meta name="title" content="Giovanni Rodighiero Resume - Working Experiences"/>
+      <meta name="description" content="Working Experiences of Giovanni Rodighiero."/>
+      <meta name="keywords" content="Working, Experiences, Jobs, Company Giovanni, Rodighiero, Resume, Curriculum Vitae"/>
       <meta name="author" content="Giovanni Rodighiero"/>
       <meta name="language" content="english en"/>
       <link rel="stylesheet" type="text/css" href="../../../public_html/styles/main.min.css" media="screen"/>
