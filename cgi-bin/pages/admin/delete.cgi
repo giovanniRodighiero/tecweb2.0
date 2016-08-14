@@ -3,62 +3,71 @@
 use XML::LibXSLT;
 use XML::LibXML;
 use CGI;
-
-print "Content-type: text/html\n\n";
+require 'cgi-bin/globals.cgi';
 
 $cgi = new CGI;
 my $collection = $cgi->param("collection");
-my $id = $cgi->param("id");
-
-sub anagraphic{
-  my $fieldName = $cgi->param("fieldName");
-  my $content = $cgi->param("content");
-  my $anagraphic = qq{
-        <div>
-          <h3> Proceed with the deletion of this field ? </h3>
-          <span>$fieldName:</span><span>$content</span>
-          <form id="" action="../../actions/destroy.cgi" method="post">
-            <fieldset>
-              <input type ="hidden" name="collection" value="$collection" />
-              <input type ="hidden" name="id" value="$id" />
-              <button type="submit">Delete</button>
-            </fieldset>
-          </form>
-          <a href="home.cgi"> Cancel </a>
-        </div>
-        };
-  return $anagraphic;
-}
-sub studyTitles{
-  my $year = $cgi->param("year");
-  my $title = $cgi->param("title");
-  my $school = $cgi->param("school");
-  my $studyTitles = qq{
-        <div>
-          <h3> Proceed with the deletion of this study title ? </h3>
-          <span>$year</span><span>$title</span><span>$school</span>
-          <form id="" action="../../actions/destroy.cgi" method="post">
-            <fieldset>
-              <input type ="hidden" name="collection" value="$collection" />
-              <input type ="hidden" name="id" value="$id" />
-              <button type="submit">Delete</button>
-            </fieldset>
-          </form>
-          <a href="home.cgi"> Cancel </a>
-        </div>
-        };
-  return $studyTitles;
-}
-
-sub renderConfirm{
-  my($collection) = @_;
+my $layout;
+sub setTitle{
   if($collection eq 'anagraphic'){
-   return anagraphic;
+    $layout = getLayout('Delete Anagraphic Field', 'Page that deletes an anagraphic field', 'Delete Anagraphic Field');
+    my $title = qq{
+      <h1 class="page-title"> Deleting an Anagraphical Information</h1>
+    };
+    return $title;
   }
   if($collection eq 'studyTitles'){
-   return studyTitles;
+    $layout = getLayout('Delete a Study Title Field', 'Page that deletes a study title field', 'Delete Study Title Field, Education');
+    my $title = qq{
+      <h1 class="page-title"> Deleting a Study Title</h1>
+    };
+    return $title;
+  }
+  if($collection eq 'working'){
+    $layout = getLayout('Delete Working Experience Field', 'Page that deletes a working experience field', 'Delete Working Experience Field');
+    my $title = qq{
+      <h1 class="page-title"> Deleting a Working Experience</h1>
+    };
+    return $title;
+  }
+  if($collection eq 'contacts'){
+    $layout = getLayout('Delete Contact Field', 'Page that deletes a contact field', 'Delete Contact Field');
+    my $title = qq{
+      <h1 class="page-title"> Deleting a Contact</h1>
+    };
+    return $title;
+  }
+  if($collection eq 'skills'){
+    $layout = getLayout('Delete Skill Field', 'Page that deletes a skill field', 'Delete Skill Field');
+    my $title = qq{
+      <h1 class="page-title"> Deleting a Skill</h1>
+    };
+    return $title;
   }
 }
+my $title = setTitle();
+my $cancel = qq{
+  <a href="$collection.cgi" class="back-home"> Cancel </a>
+};
+sub renderPage{
+  if($collection eq ""){# came here by a simple link or manually typing the url => redirect
+    print $cgi->header(-location =>'new.cgi',-refresh => '0; home.cgi' );
+  }else{
+    if($cgi->param("submit") eq ""){# came here from the home page => the form is rendered
+      print "Content-type: text/html\n\n";
+      renderForm($collection);
+      print $cancel."</body></html>"
+    }else{
+        print $cgi->header(-location =>'new.cgi',-refresh => '0; '.$collection.'.cgi' );
+      }
+    }
+  }
 
-my $confirmPage = renderConfirm($collection);
-print $confirmPage;
+
+sub renderForm{
+  my($collection) = @_;
+  require "cgi-bin/pages/forms/".$collection.".cgi";
+  my $html = getForm(2);
+  print $layout.$title.$html;
+}
+renderPage;

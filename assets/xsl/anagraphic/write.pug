@@ -35,7 +35,9 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" )
               li
                 a(href="working.cgi") Edit Working Experience
               li
-                a(href="contacts.cgi") Contacts and Socials
+                a(href="skills.cgi") Edit Skills and Languages
+              li
+                a(href="contacts.cgi") Edit Contacts and Socials
           div(id="content")
             xsl:apply-templates(select="anagraphic")/
           div(id="footer")
@@ -97,6 +99,16 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" )
                 <input type="hidden" name="id" >
                   <xsl:attribute name="value">
                     <xsl:value-of select="@id" />
+                  </xsl:attribute>
+                </input>
+                <input type="hidden" name="fieldName" >
+                  <xsl:attribute name="value">
+                    <xsl:value-of select="fieldName" />
+                  </xsl:attribute>
+                </input>
+                <input type="hidden" name="content" >
+                  <xsl:attribute name="value">
+                    <xsl:value-of select="content" />
                   </xsl:attribute>
                 </input>
                 <button type="submit"> Delete </button>

@@ -31,11 +31,14 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" )
                 a(href="home.cgi") Overview
               li
                  a(href="anagraphic.cgi") Edit Anagraphical Informations
-              li(class="active") Edit Study Titles and Educations
+              li
+                span(class="active") Edit Study Titles and Educations
               li
                 a(href="working.cgi") Edit Working Experience
               li
-                a(href="contacts.cgi") Contacts and Socials
+                a(href="skills.cgi") Edit Skills and Languages
+              li
+                a(href="contacts.cgi") Edit Contacts and Socials
           div(id="content")
             div(class="box-full")
               xsl:apply-templates(select="studyTitles")/
@@ -109,6 +112,21 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" )
               <input type="hidden" name="id" >
                 <xsl:attribute name="value">
                   <xsl:value-of select="@id" />
+                </xsl:attribute>
+              </input>
+              <input type="hidden" name="year" >
+                <xsl:attribute name="value">
+                  <xsl:value-of select="year" />
+                </xsl:attribute>
+              </input>
+              <input type="hidden" name="title" >
+                <xsl:attribute name="value">
+                  <xsl:value-of select="title" />
+                </xsl:attribute>
+              </input>
+              <input type="hidden" name="school" >
+                <xsl:attribute name="value">
+                  <xsl:value-of select="school" />
                 </xsl:attribute>
               </input>
               <button type="submit"> Delete </button>

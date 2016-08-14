@@ -23,7 +23,7 @@ sub getForm{
             <input type ="hidden" name="submit" value="submit" />};
   my $ending;
   my $path;
-  if($edit){
+  if($edit == 1){
     my $id = $cgi->param("id");
     $ending = qq{
     <input type ="hidden" name="id" value="$id" />
@@ -36,7 +36,8 @@ sub getForm{
       </div>
       <form class="form" action="edit.cgi" method="post">
     };
-}else{
+}
+if($edit == 0){
   $ending = qq{
     <button type="submit">Create</button>
     </fieldset>
@@ -47,6 +48,34 @@ sub getForm{
       <p>Admin Panel<a href="home.cgi">Home</a> /<a href="skills.cgi">Skills and Languages</a> / <span class="active"> New Skills and Languages</span></p>
     </div>
     <form class="form" action="new.cgi" method="post">
+  };
+}
+if($edit == 2){
+  my $id = $cgi->param("id");
+  $skills = qq{
+    <fieldset>
+    <input type ="hidden" name="collection" value="$collection" />
+  };
+  $ending = qq{
+  <input type ="hidden" name="id" value="$id" />
+  <button type="submit">Delete</button>
+  </fieldset>
+</form>};
+  $path = qq{
+    <div id="path">
+      <p>Admin Panel<a href="home.cgi">Home</a> /<a href="skills.cgi">Skills and Languages</a> / <span class="active"> Delete Skills and Languages</span></p>
+    </div>
+    <div class="box-delete">
+      <div>
+        <span class="key">Skill's name</span>
+        <p class="value">$skillsName</p>
+      </div>
+      <div>
+        <span class="key">Skill's Level</span>
+        <p class="value">$level</p>
+      </div>
+    </div>
+    <form class="form" action="../../destroy.cgi" method="post">
   };
 }
   return $path.$skills.$ending;

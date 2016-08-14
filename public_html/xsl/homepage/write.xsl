@@ -28,6 +28,7 @@
             <li><a href="anagraphic.cgi">Edit Anagraphical Informations</a></li>
             <li><a href="studyTitles.cgi">Edit Study Titles and Educations</a></li>
             <li><a href="working.cgi">Edit Working Experience</a></li>
+            <li><a href="skills.cgi">Edit Skills and Languages</a></li>
             <li><a href="contacts.cgi">Edit Contacts and Socials</a></li>
           </ul>
         </div>

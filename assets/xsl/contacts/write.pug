@@ -30,13 +30,15 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
             li
               a(href="home.cgi") Overview
             li
-               a(href="anagraphic.cgi") Anagraphical Informations
+               a(href="anagraphic.cgi") Edit Anagraphical Informations
             li
-              a(href="studyTitles.cgi") Study Titles and Education
+              a(href="studyTitles.cgi") Edit Study Titles and Education
             li
-              a(href="studyTitles.cgi") Working Experience
+              a(href="studyTitles.cgi") Edit Working Experience
             li
-              span(class="active") Contacts and Socials
+              a(href="skills.cgi") Edit Skills and Languages
+            li
+              span(class="active") Edit Contacts and Socials
         div(id="content")
           div(class="box-full")
             xsl:apply-templates(select="contacts")/
@@ -110,6 +112,21 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
                   <input type="hidden" name="id" >
                     <xsl:attribute name="value">
                       <xsl:value-of select="@id" />
+                    </xsl:attribute>
+                  </input>
+                  <input type="hidden" name="contactName" >
+                    <xsl:attribute name="value">
+                      <xsl:value-of select="contactName" />
+                    </xsl:attribute>
+                  </input>
+                  <input type="hidden" name="value" >
+                    <xsl:attribute name="value">
+                      <xsl:value-of select="value" />
+                    </xsl:attribute>
+                  </input>
+                  <input type="hidden" name="isLink" >
+                    <xsl:attribute name="value">
+                      <xsl:value-of select="value/@isLink" />
                     </xsl:attribute>
                   </input>
                   <button type="submit"> Delete </button>

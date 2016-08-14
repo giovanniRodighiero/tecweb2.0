@@ -28,6 +28,7 @@
             <li><a href="anagraphic.cgi">Anagraphical Informations</a></li>
             <li><a href="studyTitles.cgi">Study Titles and Education</a></li>
             <li><a href="working.cgi">Working Experience</a></li>
+            <li><a href="skills.cgi">Skills and Languages</a></li>
             <li><a href="contacts.cgi">Contacts and Socials</a></li>
           </ul>
         </div>

@@ -25,10 +25,11 @@
           <h2>Resume Pages:</h2>
           <ul>
             <li><a href="home.cgi">Overview</a></li>
-            <li><a href="anagraphic.cgi">Anagraphical Informations</a></li>
-            <li><a href="studyTitles.cgi">Study Titles and Education</a></li>
-            <li><a href="studyTitles.cgi">Working Experience</a></li>
-            <li><span class="active">Contacts and Socials</span></li>
+            <li><a href="anagraphic.cgi">Edit Anagraphical Informations</a></li>
+            <li><a href="studyTitles.cgi">Edit Study Titles and Education</a></li>
+            <li><a href="studyTitles.cgi">Edit Working Experience</a></li>
+            <li><a href="skills.cgi">Edit Skills and Languages</a></li>
+            <li><span class="active">Edit Contacts and Socials</span></li>
           </ul>
         </div>
         <div id="content">
@@ -118,6 +119,21 @@
                   <input type="hidden" name="id" >
                     <xsl:attribute name="value">
                       <xsl:value-of select="@id" />
+                    </xsl:attribute>
+                  </input>
+                  <input type="hidden" name="contactName" >
+                    <xsl:attribute name="value">
+                      <xsl:value-of select="contactName" />
+                    </xsl:attribute>
+                  </input>
+                  <input type="hidden" name="value" >
+                    <xsl:attribute name="value">
+                      <xsl:value-of select="value" />
+                    </xsl:attribute>
+                  </input>
+                  <input type="hidden" name="isLink" >
+                    <xsl:attribute name="value">
+                      <xsl:value-of select="value/@isLink" />
                     </xsl:attribute>
                   </input>
                   <button type="submit"> Delete </button>

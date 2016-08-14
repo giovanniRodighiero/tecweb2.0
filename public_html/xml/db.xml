@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <db>
   <anagraphic>
-    <item id="1">
-      <fieldName>First Name</fieldName>
-      <content><span xml:lang="it">Giovanni</span></content>
-    </item>
+    
     <item id="2">
       <fieldName>Surname</fieldName>
       <content><span xml:lang="it">Rodighiero</span></content>
@@ -69,6 +66,5 @@
       <contactName>GitHub</contactName>
       <value isLink="true">https://github.com/giovanniRodighiero/</value>
     </item>
-  	
-</contacts>
+  </contacts>
 </db>

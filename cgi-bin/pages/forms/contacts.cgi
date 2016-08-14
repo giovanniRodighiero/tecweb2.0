@@ -11,7 +11,7 @@ sub getForm{
   my $isLink = $cgi->param("isLink");
   my $collection = $cgi->param("collection");
 
-  my $working = qq{
+  my $contact = qq{
           <fieldset>
           <div class="group-input">
             <label for="contactName">Contact's Name</label>
@@ -38,7 +38,7 @@ sub getForm{
   }
   my $ending;
   my $path;
-  if($edit){
+  if($edit == 1){
     my $id = $cgi->param("id");
     $ending = qq{
     <input type ="hidden" name="id" value="$id" />
@@ -51,7 +51,8 @@ sub getForm{
       </div>
       <form class="form" action="edit.cgi" method="post">
     };
-}else{
+}
+if($edit == 0){
   $ending = qq{
     <button type="submit">Create</button>
     </fieldset>
@@ -64,6 +65,34 @@ sub getForm{
     <form class="form" action="new.cgi" method="post">
   };
 }
-  return $path.$working.$ending;
+if($edit == 2){
+  my $id = $cgi->param("id");
+  $contact = qq{
+    <fieldset>
+    <input type ="hidden" name="collection" value="$collection" />
+  };
+  $ending = qq{
+  <input type ="hidden" name="id" value="$id" />
+  <button type="submit">Delete</button>
+  </fieldset>
+</form>};
+  $path = qq{
+    <div id="path">
+      <p>Admin Panel<a href="home.cgi">Home</a> /<a href="contacts.cgi">Contacts and Socials</a> / <span class="active"> Delete Contacts and Socials</span></p>
+    </div>
+    <div class="box-delete">
+      <div>
+        <span class="key">Contact's name</span>
+        <p class="value">$contactName</p>
+      </div>
+      <div>
+        <span class="key">Contact's value</span>
+        <p class="value">$value</p>
+      </div>
+    </div>
+    <form class="form" action="../../destroy.cgi" method="post">
+  };
+}
+  return $path.$contact.$ending;
 }
 return 1;

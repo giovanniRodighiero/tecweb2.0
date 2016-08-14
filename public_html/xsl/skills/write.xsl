@@ -29,6 +29,7 @@
             <li><a href="studyTitles.cgi">Edit Study Titles and Educations</a></li>
             <li><a href="working.cgi">Edit Working Experience</a></li>
             <li><a href="contacts.cgi">Edit Contacts and Socials</a></li>
+            <li><a href="skills.cgi">Edit Skills and Languages</a></li>
             <li><span class="active">Edit Skills and Languages</span></li>
           </ul>
         </div>
@@ -103,6 +104,16 @@
                 <input type="hidden" name="id" >
                   <xsl:attribute name="value">
                     <xsl:value-of select="@id" />
+                  </xsl:attribute>
+                </input>
+                <input type="hidden" name="skillsName" >
+                  <xsl:attribute name="value">
+                    <xsl:value-of select="skillsName" />
+                  </xsl:attribute>
+                </input>
+                <input type="hidden" name="level" >
+                  <xsl:attribute name="value">
+                    <xsl:value-of select="level" />
                   </xsl:attribute>
                 </input>
                 <button type="submit"> Delete </button>

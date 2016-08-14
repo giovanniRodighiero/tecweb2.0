@@ -59,8 +59,7 @@ sub renderPage{
       print $cancel."</body></html>"
     }else{# came here after the submit of the creation form => validation
       my @errors = buildNode();
-      if(@errors != 0){
-        warn scalar @errors;
+      if(@errors > 0){
         print "Content-type: text/html\n\n";
         renderForm($collection);
         print printErrors(@errors);
