@@ -27,17 +27,30 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
           h2 Resume Pages:
           ul
             li
-              a(href="/cgi-bin/pages/public/home.cgi") Overview
+              a(href="/cgi-bin/pages/public/home.cgi" accesskey="o")
+                span.accesskey O
+                |verview
             li
-               span(class="active") Anagraphical Informations
+               span(class="active")
+                span.accesskey A
+                |nagraphical Informations
             li
-              a(href="studyTitles.cgi") Study Titles and Education
+              a(href="studyTitles.cgi" accesskey="s")
+                span.accesskey S
+                |tudy Titles and Education
             li
-              a(href="working.cgi") Working Experience
+              a(href="working.cgi" accesskey="w")
+                span.accesskey W
+                |orking Experience
             li
-              a(href="skills.cgi") Skills and Languages
+              a(href="skills.cgi" accesskey="k")
+                |S
+                span.accesskey k
+                |ills and Languages
             li
-              a(href="contacts.cgi") Contacts and Socials
+              a(href="contacts.cgi" accesskey="c")
+               span.accesskey C
+               |ontacts and Socials
         div(id="content")
           div(class="box-full")
             xsl:apply-templates(select="anagraphic")/

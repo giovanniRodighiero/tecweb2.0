@@ -24,12 +24,12 @@
         <div id="nav">
           <h2>Resume Pages:</h2>
           <ul>
-            <li><a href="/cgi-bin/pages/public/home.cgi">Overview</a></li>
-            <li><span class="active">Anagraphical Informations</span></li>
-            <li><a href="studyTitles.cgi">Study Titles and Education</a></li>
-            <li><a href="working.cgi">Working Experience</a></li>
-            <li><a href="skills.cgi">Skills and Languages</a></li>
-            <li><a href="contacts.cgi">Contacts and Socials</a></li>
+            <li><a href="/cgi-bin/pages/public/home.cgi" accesskey="o"><span class="accesskey">O</span>verview</a></li>
+            <li><span class="active"><span class="accesskey">A</span>nagraphical Informations</span></li>
+            <li><a href="studyTitles.cgi" accesskey="s"><span class="accesskey">S</span>tudy Titles and Education</a></li>
+            <li><a href="working.cgi" accesskey="w"><span class="accesskey">W</span>orking Experience</a></li>
+            <li><a href="skills.cgi" accesskey="k">S<span class="accesskey">k</span>ills and Languages</a></li>
+            <li><a href="contacts.cgi" accesskey="c"><span class="accesskey">C</span>ontacts and Socials</a></li>
           </ul>
         </div>
         <div id="content">

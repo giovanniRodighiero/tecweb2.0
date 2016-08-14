@@ -24,12 +24,12 @@
         <div id="nav">
           <h2>Resume Pages:</h2>
           <ul>
-            <li><a href="home.cgi">Overview</a></li>
-            <li><a href="anagraphic.cgi">Edit Anagraphical Informations</a></li>
-            <li><a href="studyTitles.cgi">Edit Study Titles and Education</a></li>
-            <li><a href="studyTitles.cgi">Edit Working Experience</a></li>
-            <li><a href="skills.cgi">Edit Skills and Languages</a></li>
-            <li><span class="active">Edit Contacts and Socials</span></li>
+            <li><a href="home.cgi" accesskey="o"><span class="accesskey">O</span>verview</a></li>
+            <li><a href="anagraphic.cgi" accesskey="a">Edit <span class="accesskey">A</span>nagraphical Informations</a></li>
+            <li><a href="studyTitles.cgi" accesskey="s">Edit <span class="accesskey">S</span>tudy Titles and Education</a></li>
+            <li><a href="working.cgi" accesskey="w">Edit <span class="accesskey">W</span>orking Experience</a></li>
+            <li><a href="skills.cgi" accesskey="k">Edit S<span class="accesskey">k</span>ills and Languages</a></li>
+            <li><span class="active" accesskey="c">Edit <span class="accesskey">C</span>ontacts and Socials</span></li>
           </ul>
         </div>
         <div id="content">

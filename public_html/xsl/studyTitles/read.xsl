@@ -24,19 +24,19 @@
         <div id="nav">
           <h2>Resume Pages:</h2>
           <ul>
-            <li><a href="home.cgi">Overview</a></li>
-            <li><a href="anagraphic.cgi">Anagraphical Informations</a></li>
-            <li><span class="active">Study Titles and Education</span></li>
-            <li><a href="working.cgi">Working Experience</a></li>
-            <li><a href="skills.cgi">Skills and Languages</a></li>
-            <li><a href="contacts.cgi">Contacts and Socials</a></li>
+            <li><a href="home.cgi" accesskey="o"><span class="accesskey">O</span>verview</a></li>
+            <li><a href="anagraphic.cgi" accesskey="a"><span class="accesskey">A</span>nagraphical Informations</a></li>
+            <li><span class="active" accesskey="s"><span class="accesskey">S</span>tudy Titles and Education</span></li>
+            <li><a href="working.cgi" accesskey="w"><span class="accesskey">W</span>orking Experience</a></li>
+            <li><a href="skills.cgi" accesskey="k">S<span class="accesskey">k</span>ills and Languages</a></li>
+            <li><a href="contacts.cgi" accesskey="c"><span class="accesskey">C</span>ontacts and Socials</a></li>
           </ul>
         </div>
         <div id="content">
           <div class="box-full">
             <xsl:apply-templates select="studyTitles"/>
           </div>
-        </div><a class="back-top" href="#content">Back to top          </a>
+        </div><a class="back-top" href="#content">Back to top</a>
         <div id="footer"><a class="admin" href="login.cgi">Admin area</a>
           <p class="copyright">Copyright (c) 2016 Copyright Holder All Rights Reserved.</p>
         </div>

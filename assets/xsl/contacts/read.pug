@@ -27,21 +27,34 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
           h2 Resume Pages:
           ul
             li
-              a(href="/cgi-bin/pages/public/home.cgi") Overview
+              a(href="/cgi-bin/pages/public/home.cgi" accesskey="o")
+                span.accesskey O
+                |verview
             li
-               a(href="anagraphic.cgi") Anagraphical Informations
+               a(href="anagraphic.cgi" accesskey="a")
+                 span.accesskey A
+                 |nagraphical Informations
             li
-              a(href="studyTitles.cgi") Study Titles and Education
+              a(href="studyTitles.cgi" accesskey="s")
+                span.accesskey S
+                |tudy Titles and Education
             li
-              a(href="studyTitles.cgi") Working Experience
+              a(href="working.cgi" accesskey="w")
+                span.accesskey W
+                |orking Experience
             li
-              a(href="skills.cgi") Skills and Languages
+              a(href="skills.cgi" accesskey="k")
+                |S
+                span.accesskey k
+                |ills and Languages
             li
-              span(class="active") Contacts and Socials
+              span(class="active" accesskey="c")
+                span.accesskey C
+                |ontacts and Socials
         div(id="content")
           div(class="box-full")
             xsl:apply-templates(select="contacts")/
-        a.back-top(href="#content") Back to top              
+        a.back-top(href="#content") Back to top
         div(id="footer")
           a(href="login.cgi" class="admin") Admin area
           p(class="copyright") Copyright (c) 2016 Copyright Holder All Rights Reserved.

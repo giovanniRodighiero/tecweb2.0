@@ -28,22 +28,43 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" )
             h2 Resume Pages:
             ul
               li
-                a(href="home.cgi") Overview
+                a(href="home.cgi" accesskey="o")
+                  span.accesskey O
+                  |verview
               li
-                a(href="anagraphic.cgi") Edit Anagraphical Informations
+                a(href="anagraphic.cgi" accesskey="a")
+                  |Edit
+                  = ' '
+                  span.accesskey A
+                  |nagraphical Informations
               li
-                a(href="studyTitles.cgi") Edit Study Titles and Educations
+                a(href="studyTitles.cgi" accesskey="s")
+                  |Edit
+                  = ' '
+                  span.accesskey S
+                  |tudy Titles and Educations
               li
-                a(href="working.cgi") Edit Working Experience
+                a(href="working.cgi" accesskey="w")
+                  |Edit
+                  = ''
+                  span.accesskey W
+                  |orking Experience
               li
-                a(href="contacts.cgi") Edit Contacts and Socials
+                span.active
+                  |Edit
+                  = ' '
+                  span.accesskey S
+                  |kills and Languages
               li
-                a(href="skills.cgi") Edit Skills and Languages
-              li
-                span(class="active") Edit Skills and Languages
+                a(href="contacts.cgi" accesskey="c")
+                  |Edit
+                  = ' '
+                  span.accesskey C
+                  |ontacts and Socials
+
           div(id="content")
             xsl:apply-templates(select="skills")/
-          a.back-top(href="#content") Back to top          
+          a.back-top(href="#content") Back to top
 
           div(id="footer")
             a(href="logout.cgi" class="admin") Log out
