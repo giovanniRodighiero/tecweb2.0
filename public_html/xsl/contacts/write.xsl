@@ -5,6 +5,7 @@
     <head>
       <title>Contacts and Socials Admin - Giovanni Rodighiero Resume</title>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
       <meta name="title" content="Giovanni Rodighiero Resume - Contacts and Socials"/>
       <meta name="description" content="Contacts and Social Networks profiles of Giovanni Rodighiero."/>
       <meta name="keywords" content="Contacts, Socials, Social Networks, Email, Giovanni, Rodighiero, Resume, Curriculum Vitae"/>

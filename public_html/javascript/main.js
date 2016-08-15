@@ -1,5 +1,4 @@
 function renderModal(id, collection) {
-
   var div = document.getElementById('modal-div');
   var button = document.getElementById("modal-submit");
   var modal = document.getElementById("modal");
@@ -27,5 +26,16 @@ function cancelModal(id, collection) {
   modal.removeChild(input2);
 
   div.className = "";
+  return false;
+}
+function clearForm(ids, values) {
+  var idsArray = [];
+  idsArray = ids.split(' ');
+  for (var i = 0; i < idsArray.length; i++) {
+    if(values)
+      document.getElementById(idsArray[i]).value = values[i];
+    else
+      document.getElementById(idsArray[i]).value = '';
+  }
   return false;
 }

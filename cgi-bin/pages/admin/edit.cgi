@@ -60,14 +60,14 @@ sub renderPage{
     if($cgi->param("submit") eq ""){# came here from the home page => the form is rendered
       print "Content-type: text/html\n\n";
       renderForm($collection);
-      print $cancel."</body></html>"
+      print $cancel."<script type=\"text/javascript\" src=\"../../../public_html/javascript/main.js\">//</script></body></html>"
     }else{# came here after the submit of the creation form => validation
       @errors = update();
       if(scalar @errors > 0){
         print "Content-type: text/html\n\n";
         renderForm($collection);
         print printErrors(@errors);
-        print $cancel."</body></html>"
+        print $cancel."<script type=\"text/javascript\" src=\"../../../public_html/javascript/main.js\">//</script></body></html>"
       }else{
         print $cgi->header(-location =>'edit.cgi',-refresh => '0; '.$collection.'.cgi' );
       }

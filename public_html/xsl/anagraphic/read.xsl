@@ -5,6 +5,7 @@
     <head>
       <title>Anagraphic Informations - Giovanni Rodighiero Resume</title>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
       <meta name="title" content="Giovanni Rodighiero Resume - Anagraphic Informations"/>
       <meta name="description" content="Anagraphic Informations of the website that presents Giovanni Rodighiero's resume."/>
       <meta name="keywords" content="Anagraphic Informations, Birth, Address, Name, Surname, Giovanni, Rodighiero, Resume, Curriculum Vitae"/>

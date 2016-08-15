@@ -9,6 +9,7 @@ sub getForm{
   my $contactName = $cgi->param("contactName");
   my $value = $cgi->param("value");
   my $isLink = $cgi->param("isLink");
+  my @ids = ('contactName', 'value');
   my $collection = $cgi->param("collection");
 
   my $contact = qq{
@@ -44,7 +45,9 @@ sub getForm{
     <input type ="hidden" name="id" value="$id" />
     <button type="submit">Update</button>
     </fieldset>
-  </form>};
+  </form>
+  <button type="reset" class="reset" onclick="return clearForm('@ids');"> Clear Form</button>
+};
     $path = qq{
       <div id="path">
         <p>Admin Panel<a href="home.cgi">Home</a> /<a href="contacts.cgi">Contacts and Socials</a> / <span class="active"> Update Contact</span></p>
@@ -57,6 +60,7 @@ if($edit == 0){
     <button type="submit">Create</button>
     </fieldset>
   </form>
+  <button type="reset" class="reset" onclick="return clearForm('@ids');"> Clear Form</button>
   };
   $path = qq{
     <div id="path">

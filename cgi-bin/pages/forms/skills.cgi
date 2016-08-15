@@ -8,6 +8,7 @@ sub getForm{
   my ($edit) = @_;
   my $level = $cgi->param("level");
   my $skillsName = $cgi->param("skillsName");
+  my @ids = ('skillName', 'level');
   my $collection = $cgi->param("collection");
   my $skills = qq{
           <fieldset>
@@ -29,7 +30,9 @@ sub getForm{
     <input type ="hidden" name="id" value="$id" />
     <button type="submit">Update</button>
     </fieldset>
-  </form>};
+  </form>
+  <button type="reset" class="reset" onclick="return clearForm('@ids');"> Clear Form</button>
+};
     $path = qq{
       <div id="path">
         <p>Admin Panel<a href="home.cgi">Home</a> /<a href="skills.cgi">Skills and Languages</a> / <span class="active"> Update Skills and Languages</span></p>
@@ -42,6 +45,7 @@ if($edit == 0){
     <button type="submit">Create</button>
     </fieldset>
   </form>
+  <button type="reset" class="reset" onclick="return clearForm('@ids');"> Clear Form</button>
   };
   $path = qq{
     <div id="path">

@@ -8,6 +8,8 @@ sub getForm{
   my ($edit) = @_;
   my $fieldName = $cgi->param("fieldName");
   my $content = $cgi->param("content");
+  my @ids = ('fieldName', 'contentt');
+
   my $collection = $cgi->param("collection");
   my $anagraphic = qq{
           <fieldset>
@@ -28,6 +30,7 @@ if($edit == 0){
     <button type="submit">Create</button>
     </fieldset>
   </form>
+  <button type="reset" class="reset" onclick="return clearForm('@ids');"> Clear Form</button>
   };
   $path = qq{
     <div id="path">
@@ -42,7 +45,9 @@ if($edit == 1){
   <input type ="hidden" name="id" value="$id" />
   <button type="submit">Update</button>
   </fieldset>
-</form>};
+</form>
+<button type="reset" class="reset" onclick="return clearForm('@ids');"> Clear Form</button>
+};
   $path = qq{
     <div id="path">
       <p>Admin Panel<a href="home.cgi">Home</a> /<a href="anagraphic.cgi">Anagraphical Informations</a> / <span class="active"> Update Anagraphical Information</span></p>
