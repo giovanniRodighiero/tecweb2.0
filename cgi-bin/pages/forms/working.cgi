@@ -10,6 +10,7 @@ sub getForm{
   my $end =$cgi->param("end");
   my $role =$cgi->param("role");
   my $company =$cgi->param("company");
+  my @ids = ('begin', 'end', 'role', 'company');
   my $collection = $cgi->param("collection");
   my $working = qq{
       <fieldset>
@@ -40,7 +41,9 @@ sub getForm{
     <input type ="hidden" name="id" value="$id" />
     <button type="submit">Update</button>
     </fieldset>
-  </form>};
+  </form>
+  <button type="reset" class="reset" onclick="return clearForm('@ids');"> Clear Form</button>
+};
   $path = qq{
     <div id="path">
       <p>Admin Panel<a href="home.cgi">Home</a> /<a href="working.cgi">Working Experiences</a> / <span class="active"> Update Working Experience</span></p>
@@ -53,6 +56,8 @@ if($edit == 0){
     <button type="submit">Create</button>
     </fieldset>
   </form>
+  <button type="reset" class="reset" onclick="return clearForm('@ids');"> Clear Form</button>
+  
   };
   $path = qq{
     <div id="path">
