@@ -5,6 +5,7 @@
     <head>
       <title>Skills and Languages Admin - Giovanni Rodighiero Resume</title>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
       <meta name="title" content="Giovanni Rodighiero Resume - Skills and Languages"/>
       <meta name="description" content="Skills and Languages knows and possessed by Giovanni Rodighiero."/>
       <meta name="keywords" content="Skills, Languages, Technologies, level, Giovanni, Rodighiero, Resume, Curriculum Vitae"/>

@@ -5,6 +5,7 @@
     <head>
       <title>Study Titles and Education - Giovanni Rodighiero Resume</title>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
       <meta name="title" content="Giovanni Rodighiero Resume - Study Titles and Education"/>
       <meta name="description" content="Study Titles and Education of Giovanni Rodighiero."/>
       <meta name="keywords" content="Study Titles, Degree, Education, Diploma,School, Giovanni, Rodighiero, Resume, Curriculum Vitae"/>
