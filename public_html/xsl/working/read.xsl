@@ -27,7 +27,7 @@
             <li><a href="home.cgi" accesskey="o"><span class="accesskey">O</span>verview</a></li>
             <li><a href="anagraphic.cgi" accesskey="a"><span class="accesskey">A</span>nagraphical Informations</a></li>
             <li><a href="studyTitles.cgi" accesskey="s"><span class="accesskey">S</span>tudy Titles and Education</a></li>
-            <li><span class="active" accesskey="w"><span class="accesskey">W</span>orking Experience</span></li>
+            <li><span class="active"><span class="accesskey">W</span>orking Experience</span></li>
             <li><a href="skills.cgi" accesskey="k">S<span class="accesskey">k</span>ills and Languages</a></li>
             <li><a href="contacts.cgi" accesskey="c"><span class="accesskey">C</span>ontacts and Socials</a></li>
           </ul>

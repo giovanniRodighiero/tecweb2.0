@@ -29,7 +29,7 @@
             <li><a href="studyTitles.cgi" accesskey="s"><span class="accesskey">S</span>tudy Titles and Education</a></li>
             <li><a href="working.cgi" accesskey="w"><span class="accesskey">W</span>orking Experience</a></li>
             <li><a href="skills.cgi" accesskey="k">S<span class="accesskey">k</span>ills and Languages</a></li>
-            <li><span class="active" accesskey="c"><span class="accesskey">C</span>ontacts and Socials</span></li>
+            <li><span class="active"><span class="accesskey">C</span>ontacts and Socials</span></li>
           </ul>
         </div>
         <div id="content">

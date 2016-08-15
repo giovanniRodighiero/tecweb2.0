@@ -24,7 +24,7 @@
         <div id="nav">
           <h2>Resume Pages:</h2>
           <ul>
-            <li><span class="active" accesskey="o"><span class="accesskey">O</span>verview</span></li>
+            <li><span class="active"><span class="accesskey">O</span>verview</span></li>
             <li><a href="anagraphic.cgi" accesskey="a">Edit <span class="accesskey">A</span>nagraphical Informations</a></li>
             <li><a href="studyTitles.cgi" accesskey="s">Edit <span class="accesskey">S</span>tudy Titles and Educations</a></li>
             <li><a href="working.cgi" accesskey="w">Edit <span class="accesskey">W</span>orking Experience</a></li>

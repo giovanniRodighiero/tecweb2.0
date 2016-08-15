@@ -5,6 +5,7 @@
     <head>
       <title>HomePage - Giovanni Rodighiero Resume</title>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
       <meta name="title" content="Giovanni Rodighiero Resume - HomePage"/>
       <meta name="description" content="HomePage of the website that presents Giovanni Rodighiero's resume."/>
       <meta name="keywords" content="Giovanni, Rodighiero, Resume, Curriculum Vitae, Experience, Education, Skills, Contacts, Socials"/>
@@ -24,7 +25,7 @@
         <div id="nav">
           <h2>Resume Pages:</h2>
           <ul>
-            <li><span class="active" accesskey="o"><span class="accesskey">O</span>verview</span></li>
+            <li><span class="active"><span class="accesskey">O</span>verview</span></li>
             <li><a href="anagraphic.cgi" accesskey="a"><span class="accesskey">A</span>nagraphical Informations</a></li>
             <li><a href="studyTitles.cgi" accesskey="s"><span class="accesskey">S</span>tudy Titles and Education</a></li>
             <li><a href="working.cgi" accesskey="w"><span class="accesskey">W</span>orking Experience</a></li>
@@ -149,19 +150,20 @@
       <xsl:for-each select="item[position() &lt; 3]">
         <li>
           <div class="contacts"><span class="key">
-              <xsl:value-of select="contactName"/>
-              <p class="value">
-                <xsl:choose>
-                  <xsl:when test="value/@isLink = 'true'"><a class="external-link">
-                      <xsl:attribute name="href">
-                        <xsl:value-of select="value"/>
-                      </xsl:attribute>
-                      <xsl:value-of select="value"/></a></xsl:when>
-                  <xsl:otherwise>
-                    <xsl:value-of select="value"/>
-                  </xsl:otherwise>
-                </xsl:choose>
-              </p></span></div>
+              <xsl:value-of select="contactName"/></span>
+            <p class="value">
+              <xsl:choose>
+                <xsl:when test="value/@isLink = 'true'"><a class="external-link">
+                    <xsl:attribute name="href">
+                      <xsl:value-of select="value"/>
+                    </xsl:attribute>
+                    <xsl:value-of select="value"/></a></xsl:when>
+                <xsl:otherwise>
+                  <xsl:value-of select="value"/>
+                </xsl:otherwise>
+              </xsl:choose>
+            </p>
+          </div>
         </li>
       </xsl:for-each>
     </ul><a href="contacts.cgi">Show All</a>

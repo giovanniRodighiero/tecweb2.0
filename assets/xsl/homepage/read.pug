@@ -5,6 +5,7 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
     head
       title HomePage - Giovanni Rodighiero Resume
       meta(http-equiv="Content-Type" content="text/html; charset=utf-8")/
+      meta(name="viewport" content="width=device-width, initial-scale=1")/
       meta(name="title" content="Giovanni Rodighiero Resume - HomePage")/
       meta(name="description" content="HomePage of the website that presents Giovanni Rodighiero's resume.")/
       meta(name="keywords" content="Giovanni, Rodighiero, Resume, Curriculum Vitae, Experience, Education, Skills, Contacts, Socials")/
@@ -26,7 +27,7 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
           h2 Resume Pages:
           ul
             li
-              span(class="active" accesskey="o")
+              span(class="active")
                 span.accesskey O
                 |verview
             li
@@ -140,13 +141,13 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
           div(class="contacts")
             span(class="key")
               xsl:value-of(select="contactName")/
-              p(class="value")
-                xsl:choose
-                  xsl:when(test="value/@isLink = 'true'")
-                    a(class="external-link")
-                      xsl:attribute(name="href")
-                        xsl:value-of(select="value")/
+            p(class="value")
+              xsl:choose
+                xsl:when(test="value/@isLink = 'true'")
+                  a(class="external-link")
+                    xsl:attribute(name="href")
                       xsl:value-of(select="value")/
-                  xsl:otherwise
                     xsl:value-of(select="value")/
+                xsl:otherwise
+                  xsl:value-of(select="value")/
     a(href="contacts.cgi") Show All
