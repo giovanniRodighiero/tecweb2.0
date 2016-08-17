@@ -3,14 +3,14 @@
 use XML::LibXSLT;
 use XML::LibXML;
 use CGI;
-require 'cgi-bin/mixins.cgi';
+require '../../mixins.cgi';
 
 $cgi = new CGI;
 
 
 my $user = getSession();
 if($user eq undef){
-  print $cgi->header(-location =>'working.cgi',-refresh => '0; ../public/home.cgi' );
+  print $cgi->header(-location =>'../public/home.cgi');
 }else{
   print "Content-type: text/html\n\n";
   my $working = myPrint('working', 'write');

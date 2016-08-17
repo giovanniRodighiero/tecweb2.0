@@ -11,8 +11,8 @@
       <meta name="keywords" content="Giovanni, Rodighiero, Resume, Curriculum Vitae, Experience, Education, Skills, Contacts, Socials"/>
       <meta name="author" content="Giovanni Rodighiero"/>
       <meta name="language" content="english en"/>
-      <link rel="stylesheet" type="text/css" href="../../../public_html/styles/main.min.css" media="screen"/>
-      <link rel="stylesheet" type="text/css" href="../../../public_html/styles/print.min.css" media="print"/>
+      <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css" media="screen"/>
+      <link rel="stylesheet" type="text/css" href="../../../styles/print.min.css" media="print"/>
     </head>
     <body>
       <div id="homepage">
@@ -34,7 +34,7 @@
           </ul>
         </div>
         <div id="content">
-          <div class="image"><img src="../../../public_html/images/photo.png" alt="Picture of Giovanni Rodighiero"/></div>
+          <div class="image"><img src="../../../images/photo.png" alt="Picture of Giovanni Rodighiero"/></div>
           <div class="box right-box">
             <xsl:apply-templates select="anagraphic"/>
           </div>

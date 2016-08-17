@@ -4,10 +4,11 @@ use XML::LibXSLT;
 use XML::LibXML;
 use CGI;
 use CGI::Session;
+use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 
-require 'cgi-bin/mixins.cgi';
-require 'cgi-bin/globals.cgi';
-require 'cgi-bin/pages/forms/login.cgi';
+require '../../mixins.cgi';
+require '../../globals.cgi';
+require '../../pages/forms/login.cgi';
 $cgi = new CGI;
 my $user = $cgi->param("username");
 my $pass = $cgi->param("password");
@@ -44,7 +45,7 @@ sub printLoginForm{
 
 sub checkLogin(){
   my $valid=0;
-  open(IN, "public_html/info") or die("errore col file");
+  open(IN, "../../../public_html/info") or die("errore col file");
   while(<IN>) {
     if( /^$user\:$pass$/ ) {
       $valid = 1;

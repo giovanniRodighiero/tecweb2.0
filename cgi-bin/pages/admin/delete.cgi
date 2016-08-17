@@ -3,7 +3,8 @@
 use XML::LibXSLT;
 use XML::LibXML;
 use CGI;
-require 'cgi-bin/globals.cgi';
+require '../../mixins.cgi';
+require '../../globals.cgi';
 
 $cgi = new CGI;
 my $collection = $cgi->param("collection");
@@ -53,14 +54,14 @@ my $cancel = qq{
 };
 sub renderPage{
   if($collection eq ""){# came here by a simple link or manually typing the url => redirect
-    print $cgi->header(-location =>'new.cgi',-refresh => '0; home.cgi' );
+    print $cgi->header(-location =>'home.cgi');
   }else{
     if($cgi->param("submit") eq ""){# came here from the home page => the form is rendered
       print "Content-type: text/html\n\n";
       renderForm($collection);
       print $cancel."</body></html>"
     }else{
-        print $cgi->header(-location =>'new.cgi',-refresh => '0; '.$collection.'.cgi' );
+        print $cgi->header(-location =>$collection.'.cgi');
       }
     }
   }
@@ -68,7 +69,7 @@ sub renderPage{
 
 sub renderForm{
   my($collection) = @_;
-  require "cgi-bin/pages/forms/".$collection.".cgi";
+  require "../forms/".$collection.".cgi";
   my $html = getForm(2);
   print $layout.$title.$html;
 }

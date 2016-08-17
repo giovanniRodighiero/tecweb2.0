@@ -5,12 +5,11 @@ use XML::LibXML;
 use CGI;
 $cgi = new CGI;
 
-require "cgi-bin/globals.cgi";
 
-my $fileDati = getFileData();
-my $parser = getParser();
-my $doc = getDoc();
-my $root = getRoot();
+my $fileDati='../../public_html/xml/db.xml';
+my $parser = XML::LibXML->new();
+my $doc = $parser->parse_file($fileDati);
+my $root = $doc->getDocumentElement || die("Non accedo alla radice");
 
 sub getQuery{
   my($id, $collection) = @_;
@@ -29,7 +28,7 @@ sub destroyNode{
   open(OUT, ">$fileDati");
   print OUT $doc->toString;
   close(OUT);
-  print $cgi->header(-location =>'destroy.cgi',-refresh => '0; ../pages/admin/'.$collection.'.cgi' );
+  print $cgi->header(-location =>'../pages/admin/'.$collection.'.cgi');
 }
 
 destroyNode();

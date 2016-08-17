@@ -3,7 +3,7 @@
 use XML::LibXSLT;
 use XML::LibXML;
 use CGI;
-require 'cgi-bin/actions/create.cgi';
+require '../../actions/create.cgi';
 
 $cgi = new CGI;
 my $collection = $cgi->param("collection");
@@ -53,21 +53,21 @@ my $cancel = qq{
 };
 sub renderPage{
   if($collection eq ""){# came here by a simple link or manually typing the url => redirect
-    print $cgi->header(-location =>'new.cgi',-refresh => '0; home.cgi' );
+    print $cgi->header(-location =>'home.cgi');
   }else{
     if($cgi->param("submit") eq ""){# came here from the home page => the form is rendered
       print "Content-type: text/html\n\n";
       renderForm($collection);
-      print $cancel."<script type=\"text/javascript\" src=\"../../../public_html/javascript/main.js\">//</script>\n</body>\n</html>"
+      print $cancel."<script type=\"text/javascript\" src=\"../../../javascript/main.js\">//</script>\n</body>\n</html>"
     }else{# came here after the submit of the creation form => validation
       my @errors = buildNode();
       if(@errors > 0){
         print "Content-type: text/html\n\n";
         renderForm($collection);
         print printErrors(@errors);
-        print $cancel."<script type=\"text/javascript\" src=\"../../../public_html/javascript/main.js\"</script>\n</body>\n</html>"
+        print $cancel."<script type=\"text/javascript\" src=\"../../../javascript/main.js\"</script>\n</body>\n</html>"
       }else{
-        print $cgi->header(-location =>'new.cgi',-refresh => '0; '.$collection.'.cgi' );
+        print $cgi->header(-location =>$collection.'.cgi');
       }
     }
   }
@@ -75,7 +75,7 @@ sub renderPage{
 
 sub renderForm{
   my($collection) = @_;
-  require "cgi-bin/pages/forms/".$collection.".cgi";
+  require "../forms/".$collection.".cgi";
   my $html = getForm(0);
   print $layout.$title.$html;
 }

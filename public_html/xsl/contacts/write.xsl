@@ -11,8 +11,8 @@
       <meta name="keywords" content="Contacts, Socials, Social Networks, Email, Giovanni, Rodighiero, Resume, Curriculum Vitae"/>
       <meta name="author" content="Giovanni Rodighiero"/>
       <meta name="language" content="english en"/>
-      <link rel="stylesheet" type="text/css" href="../../../public_html/styles/main.min.css" media="screen"/>
-      <link rel="stylesheet" type="text/css" href="../../../public_html/styles/print.min.css" media="print"/>
+      <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css" media="screen"/>
+      <link rel="stylesheet" type="text/css" href="../../../styles/print.min.css" media="print"/>
     </head>
     <body>
       <div id="working">
@@ -41,7 +41,7 @@
         <div id="footer"><a class="admin" href="login.cgi">Admin area</a>
           <p class="copyright">Copyright (c) 2016 Copyright Holder All Rights Reserved.</p>
         </div>
-        <script type="text/javascript" src="../../../public_html/javascript/main.js">//</script>
+        <script type="text/javascript" src="../../../javascript/main.js">//</script>
       </div>
     </body>
   </xsl:template>

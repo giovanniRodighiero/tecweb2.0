@@ -2,10 +2,11 @@
 #!/usr/bin/perl -w
 use XML::LibXSLT;
 use XML::LibXML;
+use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 
 use strict; use warnings;
 
-my $fileDati='public_html/xml/db.xml';
+my $fileDati='../../../public_html/xml/db.xml';
 my $parser = XML::LibXML->new();
 my $doc = $parser->parse_file($fileDati);
 my $root = $doc->getDocumentElement || die("Non accedo alla radice");
@@ -36,8 +37,8 @@ sub getLayout{
       <meta name="keywords" content="$keywords, Giovanni, Rodighiero, Resume, Curriculum Vitae"/>
       <meta name="author" content="Giovanni Rodighiero"/>
       <meta name="language" content="english en"/>
-      <link rel="stylesheet" type="text/css" href="../../../public_html/styles/main.min.css" media="screen"/>
-      <link rel="stylesheet" type="text/css" href="../../../public_html/styles/print.min.css" media="print"/>
+      <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css" media="screen"/>
+      <link rel="stylesheet" type="text/css" href="../../../styles/print.min.css" media="print"/>
       </head>
       <body>
     };

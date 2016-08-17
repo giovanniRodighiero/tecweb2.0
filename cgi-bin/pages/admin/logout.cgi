@@ -5,9 +5,9 @@ use XML::LibXML;
 use CGI;
 use CGI::Session;
 
-require 'cgi-bin/mixins.cgi';
-require 'cgi-bin/globals.cgi';
-require 'cgi-bin/pages/forms/login.cgi';
+require '../../mixins.cgi';
+require '../../globals.cgi';
+require '../../pages/forms/login.cgi';
 
 my $logout = $cgi->param("logout");
 
@@ -26,7 +26,7 @@ sub destroySession() {
   $session->close();
   $session->delete();
   $session->flush();
-  print $cgi->header(-location =>'logout.cgi',-refresh => '0; ../public/home.cgi' );
+  print $cgi->header(-location =>'../public/home.cgi');
 }
 my $layout = getLayout('Logout', 'Logout page', 'Logout');
 sub printLogoutForm{

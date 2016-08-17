@@ -11,8 +11,8 @@
       <meta name="keywords" content="Skills, Languages, Technologies, level, Giovanni, Rodighiero, Resume, Curriculum Vitae"/>
       <meta name="author" content="Giovanni Rodighiero"/>
       <meta name="language" content="english en"/>
-      <link rel="stylesheet" type="text/css" href="../../../public_html/styles/main.min.css" media="screen"/>
-      <link rel="stylesheet" type="text/css" href="../../../public_html/styles/print.min.css" media="print"/>
+      <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css" media="screen"/>
+      <link rel="stylesheet" type="text/css" href="../../../styles/print.min.css" media="print"/>
     </head>
     <body>
       <div id="anagraphic">

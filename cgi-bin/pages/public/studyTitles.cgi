@@ -3,7 +3,7 @@
 use XML::LibXSLT;
 use XML::LibXML;
 use CGI;
-require 'cgi-bin/mixins.cgi';
+require '../../mixins.cgi';
 
 print "Content-type: text/html\n\n";
 

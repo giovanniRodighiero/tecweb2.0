@@ -4,8 +4,8 @@ use XML::LibXSLT;
 use XML::LibXML;
 use CGI;
 $cgi = new CGI;
-require "cgi-bin/mixins.cgi";
-require "cgi-bin/globals.cgi";
+require "../../mixins.cgi";
+require "../../globals.cgi";
 
 my $fileDati = getFileData();
 my $parser = getParser();

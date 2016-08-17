@@ -3,7 +3,9 @@
 use XML::LibXSLT;
 use XML::LibXML;
 use CGI;
-require 'cgi-bin/mixins.cgi';
+use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
+
+require '../../mixins.cgi';
 
 print "Content-type: text/html\n\n";
 

@@ -1,9 +1,10 @@
 use CGI::Session;
+use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 
 sub myPrint{
   my ($xslName, $read_write) = @_;
-  my $fileDati='public_html/xml/db.xml';
-  my $trasformata='public_html/xsl/'.$xslName.'/'.$read_write.'.xsl';
+  my $fileDati='../../../public_html/xml/db.xml';
+  my $trasformata='../../../public_html/xsl/'.$xslName.'/'.$read_write.'.xsl';
 	my $xslt = XML::LibXSLT->new();
   my $parser = XML::LibXML->new();
   my $doc = $parser->parse_file($fileDati);

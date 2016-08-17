@@ -102,7 +102,7 @@ if($edit == 2){
         <p class="value">$company</p>
       </div>
     </div>
-    <form class="form" action="../../destroy.cgi" method="post">
+    <form class="form" action="../../actions/destroy.cgi" method="post">
   };
 }
   return $path.$working.$ending;
