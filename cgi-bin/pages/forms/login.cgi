@@ -9,7 +9,7 @@ sub getLoginForm{
   my $login = qq{
         <div class="form">
         <h1> Access to the admin area </h1>
-        <form id="" action="login.cgi" method="post">
+        <form  action="login.cgi" method="post">
           <fieldset>
             <div class="group-input">
               <label for="username">Username</label>
@@ -31,7 +31,7 @@ sub getLogoutForm{
   my $logout = qq{
         <div class="form">
         <h1> Confirm to logout </h1>
-        <form id="" action="logout.cgi" method="post">
+        <form  action="logout.cgi" method="post">
           <fieldset>
             <input type="hidden" name="logout" value="logout" />
             <div class="group-input">

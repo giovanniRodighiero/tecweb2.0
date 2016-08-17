@@ -34,7 +34,7 @@
           </ul>
         </div>
         <div id="content">
-          <div class="image"><img src="../../../public_html/images/photo.png"/></div>
+          <div class="image"><img src="../../../public_html/images/photo.png" alt="Picture of Giovanni Rodighiero"/></div>
           <div class="box right-box">
             <xsl:apply-templates select="anagraphic"/>
           </div>
@@ -70,12 +70,12 @@
           </div>
         </li>
       </xsl:for-each>
-    </ul><a href="/cgi-bin/pages/public/anagraphic.cgi">Show all</a>
+    </ul><a href="anagraphic.cgi">Show all Anagraphical Informations</a>
   </xsl:template>
   <xsl:template match="studyTitles">
     <h2>Study titles and Education</h2>
     <ul>
-      <xsl:for-each select="item[position() &lt; 4]">
+      <xsl:for-each select="item[position() &lt; 2]">
         <xsl:sort select="position()" data-type="number" order="descending"/>
         <li>
           <div class="studyTitle">
@@ -97,7 +97,7 @@
           </div>
         </li>
       </xsl:for-each>
-    </ul><a href="studyTitles.cgi">Show all</a>
+    </ul><a href="studyTitles.cgi">Show all Study titles and Education</a>
   </xsl:template>
   <xsl:template match="working">
     <h2>Working Experience</h2>
@@ -127,7 +127,7 @@
           </div>
         </li>
       </xsl:for-each>
-    </ul><a href="working.cgi">Show All</a>
+    </ul><a href="working.cgi">Show All Working Experience</a>
   </xsl:template>
   <xsl:template match="skills">
     <h2>Skills and Languages</h2>
@@ -142,7 +142,7 @@
           </div>
         </li>
       </xsl:for-each>
-    </ul><a href="skills.cgi">Show all</a>
+    </ul><a href="skills.cgi">Show all Skills and Languages</a>
   </xsl:template>
   <xsl:template match="contacts">
     <h2>Contacts and Socials</h2>
@@ -166,6 +166,6 @@
           </div>
         </li>
       </xsl:for-each>
-    </ul><a href="contacts.cgi">Show All</a>
+    </ul><a href="contacts.cgi">Show All Contacts and Socials</a>
   </xsl:template>
 </xsl:stylesheet>

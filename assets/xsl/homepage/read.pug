@@ -53,7 +53,7 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
                 |ontacts and Socials
         div(id="content")
           div(class="image")
-            img(src="../../../public_html/images/photo.png")
+            img(src="../../../public_html/images/photo.png" alt="Picture of Giovanni Rodighiero")
           div(class="box right-box")
             xsl:apply-templates(select="anagraphic")/
           div(class="box")
@@ -79,11 +79,11 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
               xsl:value-of(select="fieldName")/
             p(class="value")
               xsl:value-of(select="content")/
-    a(href="/cgi-bin/pages/public/anagraphic.cgi") Show all
+    a(href="anagraphic.cgi") Show all Anagraphical Informations
   xsl:template(match="studyTitles")
     h2 Study titles and Education
     ul
-      xsl:for-each(select="item[position() < 4]")
+      xsl:for-each(select="item[position() < 2]")
         xsl:sort(select="position()" data-type="number" order="descending")/
         li
           div(class="studyTitle")
@@ -99,7 +99,7 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
                 p(class="value")
                   xsl:value-of(select="school")/
 
-    a(href="studyTitles.cgi") Show all
+    a(href="studyTitles.cgi") Show all Study titles and Education
   xsl:template(match="working")
     h2 Working Experience
     ul
@@ -121,7 +121,7 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
                 span(class="key") For
                 p(class="value")
                   xsl:value-of(select="company")/
-    a(href="working.cgi") Show All
+    a(href="working.cgi") Show All Working Experience
   xsl:template(match="skills")
     h2 Skills and Languages
     ul
@@ -132,7 +132,7 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
               xsl:value-of(select="skillsName")/
             p(class="value")
               xsl:value-of(select="level")/
-    a(href="skills.cgi") Show all
+    a(href="skills.cgi") Show all Skills and Languages
   xsl:template(match="contacts")
     h2 Contacts and Socials
     ul
@@ -150,4 +150,4 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
                     xsl:value-of(select="value")/
                 xsl:otherwise
                   xsl:value-of(select="value")/
-    a(href="contacts.cgi") Show All
+    a(href="contacts.cgi") Show All Contacts and Socials

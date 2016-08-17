@@ -41,7 +41,7 @@
         <div id="footer"><a class="admin" href="login.cgi">Admin area</a>
           <p class="copyright">Copyright (c) 2016 Copyright Holder All Rights Reserved.</p>
         </div>
-        <script type="text/javascript" src="../../../public_html/javascript/modal.js">//</script>
+        <script type="text/javascript" src="../../../public_html/javascript/main.js">//</script>
       </div>
     </body>
   </xsl:template>

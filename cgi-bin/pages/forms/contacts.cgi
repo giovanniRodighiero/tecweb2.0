@@ -29,13 +29,13 @@ sub getForm{
     </div>
     <input type ="hidden" name="collection" value="$collection" />
     <input type ="hidden" name="submit" value="submit" />};
-    $working = $working.$rest;
+    $contact = $contact.$rest;
   }else{
     my $rest = qq{<input type="checkbox" id="isLink" name="isLink" value="true" />
     </div>
     <input type ="hidden" name="collection" value="$collection" />
     <input type ="hidden" name="submit" value="submit" />};
-    $working = $working.$rest;
+    $contact = $contact.$rest;
   }
   my $ending;
   my $path;

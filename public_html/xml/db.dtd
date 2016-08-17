@@ -1,0 +1,44 @@
+<?xml encoding="UTF-8"?>
+<!ELEMENT db (anagraphic,studyTitles,working,skills,contacts)>
+
+<!ELEMENT anagraphic (item)*>
+
+<!ELEMENT studyTitles (item)*>
+
+<!ELEMENT working (item)*>
+
+<!ELEMENT skills (item)*>
+
+<!ELEMENT contacts (item)*>
+
+<!ELEMENT item ((fieldName,content)|(begin,end,role,company)
+                |(contactName,value)|(year,title,school)
+                |(skillsName,level))>
+<!ATTLIST item id CDATA #REQUIRED>
+
+<!ELEMENT fieldName (#PCDATA)>
+
+<!ELEMENT content (#PCDATA)>
+
+<!ELEMENT begin (#PCDATA)>
+
+<!ELEMENT end (#PCDATA)>
+
+<!ELEMENT role (#PCDATA)>
+
+<!ELEMENT company (#PCDATA)>
+
+<!ELEMENT contactName (#PCDATA)>
+
+<!ELEMENT value (#PCDATA)>
+<!ATTLIST value isLink CDATA #FIXED "true">
+
+<!ELEMENT year (#PCDATA)>
+
+<!ELEMENT title (#PCDATA)>
+
+<!ELEMENT school (#PCDATA)>
+
+<!ELEMENT skillsName (#PCDATA)>
+
+<!ELEMENT level (#PCDATA)>

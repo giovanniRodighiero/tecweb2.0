@@ -33,7 +33,7 @@ sub printLogoutForm{
   my $form = getLogoutForm();
   my $html = $layout.$form;
 
-  $html = $html."<a class=\"back-home\" href=\"home.cgi\"> Cancel </a></body></html>";
+  $html = $html."<div><a class=\"back-home\" href=\"home.cgi\"> Cancel </a></div></body></html>";
   print $html;
 }
 

@@ -36,9 +36,9 @@ sub printLoginForm{
   my $form = getLoginForm();
   my $html = $layout.$form;
   if($error){
-    $html = $html."<span class=\"error\">Wrong username or password</span></body></html>";
+    $html = $html."<div class=\"error\">Wrong username or password</div></body></html>";
   }
-  $html = $html."<a class=\"back-home\" href=\"home.cgi\">Back to home</a></body></html>";
+  $html = $html."<div><a class=\"back-home\" href=\"home.cgi\">Back to home</a></div></body></html>";
   print $html;
 }
 

@@ -34,7 +34,7 @@
           </ul>
         </div>
         <div id="content">
-          <div class="image"><img src="../../../public_html/images/photo.png"/></div>
+          <div class="image"><img src="../../../public_html/images/photo.png" alt="Picture of Giovanni Rodighiero"/></div>
           <div class="box right-box">
             <xsl:apply-templates select="anagraphic"/>
           </div>
@@ -75,7 +75,7 @@
   <xsl:template match="studyTitles">
     <h2>Study Titles and Educations</h2>
     <ul>
-      <xsl:for-each select="item[position() &lt; 4]">
+      <xsl:for-each select="item[position() &lt; 2]">
         <xsl:sort select="position()" data-type="number" order="descending"/>
         <li>
           <div class="studyTitle">

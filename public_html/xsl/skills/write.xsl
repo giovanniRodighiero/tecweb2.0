@@ -40,7 +40,7 @@
           <p class="copyright">Copyright (c) 2016 Copyright Holder All Rights Reserved.</p>
         </div>
       </div>
-      <script type="text/javascript" src="../../../public_html/javascript/modal.js">//</script>
+      <script type="text/javascript" src="../../../public_html/javascript/main.js">//</script>
     </body>
   </xsl:template>
   <xsl:template match="skills">

@@ -20,12 +20,12 @@
           <h1><span xml:lang="it">Giovanni Rodighiero,</span><span class="subtitle">Personal Resume</span></h1>
         </div><a class="skipMenu" href="#content">Jump to the page content</a>
         <div id="path">
-          <p><a href="/cgi-bin/pages/public/home.cgi">Home</a><span class="active">/ Anagraphical Informations</span></p>
+          <p><a href="home.cgi">Home</a><span class="active">/ Anagraphical Informations</span></p>
         </div>
         <div id="nav">
           <h2>Resume Pages:</h2>
           <ul>
-            <li><a href="/cgi-bin/pages/public/home.cgi" accesskey="o"><span class="accesskey">O</span>verview</a></li>
+            <li><a href="home.cgi" accesskey="o"><span class="accesskey">O</span>verview</a></li>
             <li><span class="active"><span class="accesskey">A</span>nagraphical Informations</span></li>
             <li><a href="studyTitles.cgi" accesskey="s"><span class="accesskey">S</span>tudy Titles and Education</a></li>
             <li><a href="working.cgi" accesskey="w"><span class="accesskey">W</span>orking Experience</a></li>

@@ -20,7 +20,7 @@
           <h1><span xml:lang="it">Giovanni Rodighiero,</span><span class="subtitle">Personal Resume</span></h1>
         </div><a class="skipMenu" href="#content">Jump to the page content</a>
         <div id="path">
-          <p><a href="/cgi-bin/pages/public/home.cgi">Home</a><span class="active">/ Study Titles and Education</span></p>
+          <p><a href="home.cgi">Home</a><span class="active">/ Study Titles and Education</span></p>
         </div>
         <div id="nav">
           <h2>Resume Pages:</h2>
