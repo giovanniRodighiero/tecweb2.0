@@ -47,7 +47,9 @@ sub setTitle{
 }
 my $title = setTitle();
 my $cancel = qq{
+  <div>
   <a href="$collection.cgi" class="back-home"> Cancel </a>
+  </div>
 };
 sub renderPage{
   if($collection eq ""){# came here by a simple link or manually typing the url => redirect

@@ -31,7 +31,9 @@ sub getForm{
     <button type="submit">Update</button>
     </fieldset>
   </form>
+  <div>
   <button type="reset" class="reset" onclick="return clearForm('@ids');"> Clear Form</button>
+  </div>
 };
     $path = qq{
       <div id="path">
@@ -45,7 +47,9 @@ if($edit == 0){
     <button type="submit">Create</button>
     </fieldset>
   </form>
+  <div>
   <button type="reset" class="reset" onclick="return clearForm('@ids');"> Clear Form</button>
+  </div>
   };
   $path = qq{
     <div id="path">

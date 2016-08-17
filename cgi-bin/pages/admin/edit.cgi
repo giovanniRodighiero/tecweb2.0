@@ -50,7 +50,9 @@ sub setTitle{
 }
 my $title = setTitle();
 my $cancel = qq{
+  <div>
   <a href="$collection.cgi" class="back-home"> Cancel </a>
+  </div>
 };
 
 sub renderPage{

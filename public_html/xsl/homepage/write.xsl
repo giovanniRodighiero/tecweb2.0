@@ -150,19 +150,20 @@
       <xsl:for-each select="item[position() &lt; 3]">
         <li>
           <div class="contacts"><span class="key">
-              <xsl:value-of select="contactName"/>
-              <p class="value">
-                <xsl:choose>
-                  <xsl:when test="value/@isLink = 'true'"><a class="external-link">
-                      <xsl:attribute name="href">
-                        <xsl:value-of select="value"/>
-                      </xsl:attribute>
-                      <xsl:value-of select="value"/></a></xsl:when>
-                  <xsl:otherwise>
-                    <xsl:value-of select="value"/>
-                  </xsl:otherwise>
-                </xsl:choose>
-              </p></span></div>
+              <xsl:value-of select="contactName"/></span>
+            <p class="value">
+              <xsl:choose>
+                <xsl:when test="value/@isLink = 'true'"><a class="external-link">
+                    <xsl:attribute name="href">
+                      <xsl:value-of select="value"/>
+                    </xsl:attribute>
+                    <xsl:value-of select="value"/></a></xsl:when>
+                <xsl:otherwise>
+                  <xsl:value-of select="value"/>
+                </xsl:otherwise>
+              </xsl:choose>
+            </p>
+          </div>
         </li>
       </xsl:for-each>
     </ul><a href="contacts.cgi">Edit Contacts and Socials</a>

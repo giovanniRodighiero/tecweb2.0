@@ -149,13 +149,13 @@ xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
           div(class="contacts")
             span(class="key")
               xsl:value-of(select="contactName")/
-              p(class="value")
-                xsl:choose
-                  xsl:when(test="value/@isLink = 'true'")
-                    a(class="external-link")
-                      xsl:attribute(name="href")
-                        xsl:value-of(select="value")/
+            p(class="value")
+              xsl:choose
+                xsl:when(test="value/@isLink = 'true'")
+                  a(class="external-link")
+                    xsl:attribute(name="href")
                       xsl:value-of(select="value")/
-                  xsl:otherwise
                     xsl:value-of(select="value")/
+                xsl:otherwise
+                  xsl:value-of(select="value")/
     a(href="contacts.cgi") Edit Contacts and Socials
